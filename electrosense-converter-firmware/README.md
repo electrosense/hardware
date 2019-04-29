@@ -11,4 +11,4 @@ Directory structure:
  * firmware: This is the actual firmware. Run make here to build the image.
 
 A picture of the hardware this runs on:
-![Downconverter board](/images/prototype.png?raw=true)
+![Downconverter board](/electrosense-converter-firmware/images/prototype.png?raw=true)
