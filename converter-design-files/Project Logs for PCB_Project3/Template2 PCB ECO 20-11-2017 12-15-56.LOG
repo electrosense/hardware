@@ -1,0 +1,11 @@
+Added Component: Designator=U20(LFCSP)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Manufacturer"; Value = "Analog Devices"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "ADL5602ARKZ-R7"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=U20-2
+Added Pin To Net: NetName=NetC002Mx_1 Pin=U20-3
+Added Pin To Net: NetName=NetC001Mx_2 Pin=C001Mx-2
+Added Pin To Net: NetName=NetC001Mx_2 Pin=U20-1
+Added Net: Name=NetC001Mx_2
+Added Member To Class: ClassName=U_Mixer Member=Component U20 ADL5602
+Added Member To Class: ClassName=RF Member=Wire NetC001Mx_2

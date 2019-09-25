@@ -1,0 +1,978 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD17\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">06-Mar-18</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2:21:54 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:03</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc" class="file"><acronym title="C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc">C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">202</td></tr>
+</table>
+</td>
+</table><a name="ID5AAX55KKYSEWJ34WWGDEHGDSKMWF4VVXYPE40MPKNZPVED0BE2GK"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDMEC1VUHYUV4BOCB4CF3X5DBGBOZRPCL0BTRGX0IFJJXKDRJZZCIE">Clearance Constraint (Gap=0.5mm) ((InPolygon)),(InNetClass('RF'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDH4YSGQQZ5X1HFIWKF1CD55RXZB3ITVEH5XKPXUDZWHHQDHKU52JC">Clearance Constraint (Gap=0.15mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCWV535FEZ4IGB4ZKNMDN1FWNHHNLQQP1YHRCXEDS5VQFGFP3QLCL">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCVLNFC1MHMO5MSAI2WLCITGDJK5N1BDTNUMG4YOROWRQPVL0O5BE">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDANONSFAAC5BRGUII0N5A5JRRZOF345A3TUM2PSJVXWQLZMXKKTYG">Width Constraint (Min=0.15mm) (Max=2.54mm) (Preferred=0.22mm) (All)</a></td>
+<td class="column2">15</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID25YSCRT1BYA3PUGHQYWXPOYQFC3T1WUN3ELE33PJ1ENKNKDEQ1KN">Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTERSREVMI5WPEFO0QZ505QTGRMCO4JBQLEPUKCLV4WVPOMBYHMLK">Minimum Annular Ring (Minimum=0.125mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID3HAUTZ0JSLI0DHOHJTLGK2EMIEZMA0GHUCNDQJMVFYNKI0ZI4JLB">Hole Size Constraint (Min=0.025mm) (Max=3.5mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0QJ35EZU2LZFLQ1CADSU2G4E2CSSJDVVYEKYVZBIHCIZ5L3OKMMN">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDEIZQZKHDKQ2AMORP1HKPHTWZNJWYGSB0IPIJ2HDJMOB4RXIPZWNL">Minimum Solder Mask Sliver (Gap=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOAE1DK4NWFBGHD2AVACI1DA0IQOUQJ4AKRUHLHIUMN2PA2X53AF">Silk To Solder Mask (Clearance=0.254mm) (Disabled)(IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQFHZRPIV2KZ1PIQ1BXCBCEQPSJGCUMY5MDFSTBOOTKM3H4U5VR0H">Silk to Silk (Clearance=0.254mm) (Disabled)(All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDS2VFV5FH1NAHBFLMPF4VJ2QJRCDUUSLZ2WPNCJHCWEEL2P0IA5LI">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVJ5HIGZT0SDOOD1DKMZHDWFV0JW2RHEIV1KZH1FSMFSWZUVG1VYB">Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO'))</a></td>
+<td class="column2">63</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2JSYDMSSMNZJG03RKNQMKNHFMBNXYHALGV24MQKK0R5L1M3AM54C">Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer'))</a></td>
+<td class="column2">62</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZS1W2PR51KYMC0RQRKXWECNMEDDEWNVCXCDK0CHQUXRRAWCI5V4G">Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF'))</a></td>
+<td class="column2">28</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUTI2HVYXV0KXEFJDKFB3AAEQHP5QXLUIZSQJ1ULLYERLPMROXNM">Room Toplevel (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('Toplevel'))</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID50LM1MYPJJUJMLUVBN4EDSBAIGT4CVQRWLFZ0JA5WFWOXWIBXFF">Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU'))</a></td>
+<td class="column2">30</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2FETZUMCFFRHMJLBUIJJFV33CPLAON50QPDQXPGML3FJKD0CENII">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">202</td>
+</tr>
+</table><br><a name="IDANONSFAAC5BRGUII0N5A5JRRZOF345A3TUM2PSJVXWQLZMXKKTYG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Width Constraint (Min=0.15mm) (Max=2.54mm) (Preferred=0.22mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15629.966mil|Location2.X=15641.636mil|Location1.Y=1745.08mil|Location2.Y=1751.918mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15629.966mil|Location2.X=15641.636mil|Location1.Y=1745.08mil|Location2.Y=1751.918mil|Absolute=True">Width Constraint: Arc (38.737mm,31.377mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15624.263mil|Location2.X=15637.629mil|Location1.Y=1739.512mil|Location2.Y=1742.906mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15624.263mil|Location2.X=15637.629mil|Location1.Y=1739.512mil|Location2.Y=1742.906mil|Absolute=True">Width Constraint: Track (38.362mm,31.377mm)(38.537mm,31.377mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15608.046mil|Location2.X=15621.413mil|Location1.Y=1739.512mil|Location2.Y=1742.906mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15608.046mil|Location2.X=15621.413mil|Location1.Y=1739.512mil|Location2.Y=1742.906mil|Absolute=True">Width Constraint: Track (37.713mm,31.377mm)(38.362mm,31.377mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15582.457mil|Location2.X=15595.824mil|Location1.Y=1739.512mil|Location2.Y=1742.906mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15582.457mil|Location2.X=15595.824mil|Location1.Y=1739.512mil|Location2.Y=1742.906mil|Absolute=True">Width Constraint: Track (37.062mm,31.377mm)(37.713mm,31.377mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15556.838mil|Location2.X=15570.205mil|Location1.Y=1739.512mil|Location2.Y=1742.906mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15556.838mil|Location2.X=15570.205mil|Location1.Y=1739.512mil|Location2.Y=1742.906mil|Absolute=True">Width Constraint: Track (36.412mm,31.377mm)(37.062mm,31.377mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15536.658mil|Location2.X=15550.025mil|Location1.Y=1739.512mil|Location2.Y=1742.906mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15536.658mil|Location2.X=15550.025mil|Location1.Y=1739.512mil|Location2.Y=1742.906mil|Absolute=True">Width Constraint: Track (36.037mm,31.377mm)(36.412mm,31.377mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15556.842mil|Location2.X=15570.209mil|Location1.Y=1845.811mil|Location2.Y=1849.205mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15556.842mil|Location2.X=15570.209mil|Location1.Y=1845.811mil|Location2.Y=1849.205mil|Absolute=True">Width Constraint: Track (36.412mm,34.077mm)(37.062mm,34.077mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15536.662mil|Location2.X=15550.029mil|Location1.Y=1845.811mil|Location2.Y=1849.205mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15536.662mil|Location2.X=15550.029mil|Location1.Y=1845.811mil|Location2.Y=1849.205mil|Absolute=True">Width Constraint: Track (36.037mm,34.077mm)(36.412mm,34.077mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15582.432mil|Location2.X=15595.798mil|Location1.Y=1845.811mil|Location2.Y=1849.205mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15582.432mil|Location2.X=15595.798mil|Location1.Y=1845.811mil|Location2.Y=1849.205mil|Absolute=True">Width Constraint: Track (37.062mm,34.077mm)(37.712mm,34.077mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15608.028mil|Location2.X=15621.395mil|Location1.Y=1845.811mil|Location2.Y=1849.205mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15608.028mil|Location2.X=15621.395mil|Location1.Y=1845.811mil|Location2.Y=1849.205mil|Absolute=True">Width Constraint: Track (37.712mm,34.077mm)(38.362mm,34.077mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15628.208mil|Location2.X=15641.574mil|Location1.Y=1845.811mil|Location2.Y=1849.205mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15628.208mil|Location2.X=15641.574mil|Location1.Y=1845.811mil|Location2.Y=1849.205mil|Absolute=True">Width Constraint: Track (38.362mm,34.077mm)(38.737mm,34.077mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15631.393mil|Location2.X=15643.063mil|Location1.Y=1838.433mil|Location2.Y=1846.945mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15631.393mil|Location2.X=15643.063mil|Location1.Y=1838.433mil|Location2.Y=1846.945mil|Absolute=True">Width Constraint: Track (38.737mm,33.702mm)(38.737mm,34.077mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15631.393mil|Location2.X=15643.063mil|Location1.Y=1829.745mil|Location2.Y=1838.257mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15631.393mil|Location2.X=15643.063mil|Location1.Y=1829.745mil|Location2.Y=1838.257mil|Absolute=True">Width Constraint: Track (38.737mm,33.635mm)(38.737mm,33.702mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15631.393mil|Location2.X=15643.063mil|Location1.Y=1787.911mil|Location2.Y=1796.423mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15631.393mil|Location2.X=15643.063mil|Location1.Y=1787.911mil|Location2.Y=1796.423mil|Absolute=True">Width Constraint: Track (38.737mm,31.577mm)(38.737mm,33.635mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15525.094mil|Location2.X=15536.764mil|Location1.Y=1792.662mil|Location2.Y=1801.174mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15525.094mil|Location2.X=15536.764mil|Location1.Y=1792.662mil|Location2.Y=1801.174mil|Absolute=True">Width Constraint: Track (36.037mm,31.377mm)(36.037mm,34.077mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDVJ5HIGZT0SDOOD1DKMZHDWFV0JW2RHEIV1KZH1FSMFSWZUVG1VYB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16442.913mil|Location1.Y=0mil|Location2.Y=1462.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16442.913mil|Location1.Y=0mil|Location2.Y=1462.598mil|Absolute=True">Room Definition: Between SMT Small Component C001LO-100nF (58.7mm,22.9mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16277.008mil|Location1.Y=0mil|Location2.Y=1438.662mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16277.008mil|Location1.Y=0mil|Location2.Y=1438.662mil|Absolute=True">Room Definition: Between SMT Small Component C002LO-100nF (54.486mm,22.292mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16158.898mil|Location1.Y=0mil|Location2.Y=1749.686mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16158.898mil|Location1.Y=0mil|Location2.Y=1749.686mil|Absolute=True">Room Definition: Between SMT Small Component C003LO-100nF (50.586mm,31.092mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16418.74mil|Location1.Y=0mil|Location2.Y=1879.607mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16418.74mil|Location1.Y=0mil|Location2.Y=1879.607mil|Absolute=True">Room Definition: Between SMT Small Component C004LO-100nF (58.086mm,33.092mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16607.717mil|Location1.Y=0mil|Location2.Y=1619.764mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16607.717mil|Location1.Y=0mil|Location2.Y=1619.764mil|Absolute=True">Room Definition: Between SMT Small Component C005LO-100nF (61.586mm,27.792mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16163.386mil|Location1.Y=0mil|Location2.Y=1448.819mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16163.386mil|Location1.Y=0mil|Location2.Y=1448.819mil|Absolute=True">Room Definition: Between SMT Small Component C014LO-1uF (50.7mm,23.45mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16387.795mil|Location1.Y=0mil|Location2.Y=1482.284mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16387.795mil|Location1.Y=0mil|Location2.Y=1482.284mil|Absolute=True">Room Definition: Between SMT Small Component C008LO-10nF (57.45mm,23.7mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16551.181mil|Location1.Y=0mil|Location2.Y=1659.449mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16551.181mil|Location1.Y=0mil|Location2.Y=1659.449mil|Absolute=True">Room Definition: Between SMT Small Component C009LO-10nF (60.45mm,28.95mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16154.961mil|Location1.Y=0mil|Location2.Y=1696.536mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16154.961mil|Location1.Y=0mil|Location2.Y=1696.536mil|Absolute=True">Room Definition: Between SMT Small Component C012LO-10nF (50.786mm,29.892mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16462.598mil|Location1.Y=0mil|Location2.Y=1917.322mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16462.598mil|Location1.Y=0mil|Location2.Y=1917.322mil|Absolute=True">Room Definition: Between SMT Small Component C013LO-10nF (58.6mm,35.5mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16076.221mil|Location1.Y=0mil|Location2.Y=1647.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16076.221mil|Location1.Y=0mil|Location2.Y=1647.323mil|Absolute=True">Room Definition: Between SMT Small Component C015LO-1uF (49.386mm,27.592mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16226.378mil|Location1.Y=0mil|Location2.Y=1484.252mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16226.378mil|Location1.Y=0mil|Location2.Y=1484.252mil|Absolute=True">Room Definition: Between SMT Small Component C016LO-1uF (53.2mm,23.45mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16206.142mil|Location1.Y=0mil|Location2.Y=1830.394mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16206.142mil|Location1.Y=0mil|Location2.Y=1830.394mil|Absolute=True">Room Definition: Between SMT Small Component C007LO-22pF (51.686mm,33.292mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16206.142mil|Location1.Y=0mil|Location2.Y=1869.764mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16206.142mil|Location1.Y=0mil|Location2.Y=1869.764mil|Absolute=True">Room Definition: Between SMT Small Component C017LO-22pF (51.686mm,34.292mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16557.087mil|Location1.Y=0mil|Location2.Y=1773.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16557.087mil|Location1.Y=0mil|Location2.Y=1773.622mil|Absolute=True">Room Definition: Between SMT Small Component C018LO-12nF (60.7mm,31.7mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16572.835mil|Location1.Y=0mil|Location2.Y=1714.567mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16572.835mil|Location1.Y=0mil|Location2.Y=1714.567mil|Absolute=True">Room Definition: Between SMT Small Component C019LO-100nF (60.7mm,30.2mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16135.276mil|Location1.Y=0mil|Location2.Y=1647.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16135.276mil|Location1.Y=0mil|Location2.Y=1647.323mil|Absolute=True">Room Definition: Between SMT Small Component C020LO-820pF (50.886mm,27.592mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14546.693mil|Location1.Y=0mil|Location2.Y=1105.985mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14546.693mil|Location1.Y=0mil|Location2.Y=1105.985mil|Absolute=True">Room Definition: Between SMT Small Component C021LO-DNP (10.286mm,13.642mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14970.472mil|Location1.Y=0mil|Location2.Y=1389.763mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14970.472mil|Location1.Y=0mil|Location2.Y=1389.763mil|Absolute=True">Room Definition: Between SMT Small Component C022LO-DNP (20.3mm,22.1mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14990.157mil|Location1.Y=0mil|Location2.Y=1442.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14990.157mil|Location1.Y=0mil|Location2.Y=1442.913mil|Absolute=True">Room Definition: Between SMT Small Component C023LO-DNP (20.5mm,23.3mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14629.371mil|Location1.Y=0mil|Location2.Y=1105.985mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14629.371mil|Location1.Y=0mil|Location2.Y=1105.985mil|Absolute=True">Room Definition: Between SMT Small Component C024LO-DNP (12.386mm,13.642mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15265.197mil|Location1.Y=0mil|Location2.Y=1056.772mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15265.197mil|Location1.Y=0mil|Location2.Y=1056.772mil|Absolute=True">Room Definition: Between SMT Small Component C025LO-DNP (27.286mm,13.242mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15501.418mil|Location1.Y=0mil|Location2.Y=1135.513mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15501.418mil|Location1.Y=0mil|Location2.Y=1135.513mil|Absolute=True">Room Definition: Between SMT Small Component C026LO-DNP (33.286mm,15.242mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14412.835mil|Location1.Y=0mil|Location2.Y=1117.796mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14412.835mil|Location1.Y=0mil|Location2.Y=1117.796mil|Absolute=True">Room Definition: Between SMT Small Component C027LO-DNP (6.886mm,13.942mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14719.922mil|Location1.Y=0mil|Location2.Y=1188.662mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14719.922mil|Location1.Y=0mil|Location2.Y=1188.662mil|Absolute=True">Room Definition: Between SMT Small Component C028LO-DNP (14.686mm,15.742mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15075.237mil|Location1.Y=0mil|Location2.Y=1299.489mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15075.237mil|Location1.Y=0mil|Location2.Y=1299.489mil|Absolute=True">Room Definition: Between SMT Small Component C029LO-100nF (23.961mm,18.357mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15646.103mil|Location1.Y=0mil|Location2.Y=1216.812mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15646.103mil|Location1.Y=0mil|Location2.Y=1216.812mil|Absolute=True">Room Definition: Between SMT Small Component C030LO-DNP (37.161mm,17.557mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15580.708mil|Location1.Y=0mil|Location2.Y=1068.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15580.708mil|Location1.Y=0mil|Location2.Y=1068.897mil|Absolute=True">Room Definition: Between SMT Small Component C031LO-100nF (36.8mm,12.5mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15875.984mil|Location1.Y=0mil|Location2.Y=1336.614mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15875.984mil|Location1.Y=0mil|Location2.Y=1336.614mil|Absolute=True">Room Definition: Between SMT Small Component C032LO-DNP (43.4mm,20.6mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15875.984mil|Location1.Y=0mil|Location2.Y=1285.432mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15875.984mil|Location1.Y=0mil|Location2.Y=1285.432mil|Absolute=True">Room Definition: Between SMT Small Component C033LO-DNP (43.4mm,19.3mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15634.292mil|Location1.Y=0mil|Location2.Y=1271.93mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15634.292mil|Location1.Y=0mil|Location2.Y=1271.93mil|Absolute=True">Room Definition: Between SMT Small Component C34LO-100nF (37.261mm,18.957mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15472.875mil|Location1.Y=0mil|Location2.Y=1354.607mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15472.875mil|Location1.Y=0mil|Location2.Y=1354.607mil|Absolute=True">Room Definition: Between SMT Small Component C035LO-100nF (32.761mm,21.057mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15249.449mil|Location1.Y=0mil|Location2.Y=1135.513mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15249.449mil|Location1.Y=0mil|Location2.Y=1135.513mil|Absolute=True">Room Definition: Between SMT Small Component L001LO-Ferrite (27.286mm,15.242mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16163.386mil|Location1.Y=0mil|Location2.Y=1507.874mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16163.386mil|Location1.Y=0mil|Location2.Y=1507.874mil|Absolute=True">Room Definition: Between SMT Small Component R001LO-5K1 (50.7mm,24.95mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16137.795mil|Location1.Y=0mil|Location2.Y=1269.685mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16137.795mil|Location1.Y=0mil|Location2.Y=1269.685mil|Absolute=True">Room Definition: Between SMT Small Component R002LO-DNP (50.7mm,17.4mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16393.7mil|Location1.Y=0mil|Location2.Y=1328.74mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16393.7mil|Location1.Y=0mil|Location2.Y=1328.74mil|Absolute=True">Room Definition: Between SMT Small Component R003LO-270 (57.2mm,19.3mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16206.142mil|Location1.Y=0mil|Location2.Y=1791.024mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16206.142mil|Location1.Y=0mil|Location2.Y=1791.024mil|Absolute=True">Room Definition: Between SMT Small Component R004LO-50 (51.686mm,32.292mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16253.386mil|Location1.Y=0mil|Location2.Y=1913.072mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16253.386mil|Location1.Y=0mil|Location2.Y=1913.072mil|Absolute=True">Room Definition: Between SMT Small Component R005LO-50 (53.286mm,35.392mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16139.213mil|Location1.Y=0mil|Location2.Y=1913.072mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16139.213mil|Location1.Y=0mil|Location2.Y=1913.072mil|Absolute=True">Room Definition: Between SMT Small Component R009LO-50 (50.386mm,35.392mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16574.252mil|Location1.Y=0mil|Location2.Y=1830.394mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16574.252mil|Location1.Y=0mil|Location2.Y=1830.394mil|Absolute=True">Room Definition: Between SMT Small Component R010LO-240 (60.736mm,33.142mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16586.614mil|Location1.Y=0mil|Location2.Y=1557.087mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16586.614mil|Location1.Y=0mil|Location2.Y=1557.087mil|Absolute=True">Room Definition: Between SMT Small Component R011LO-30.1 (61.45mm,26.2mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15321.3mil|Location1.Y=0mil|Location2.Y=1297.521mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15321.3mil|Location1.Y=0mil|Location2.Y=1297.521mil|Absolute=True">Room Definition: Between SMT Small Component R012LO-0 (29.961mm,18.507mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15099.843mil|Location1.Y=0mil|Location2.Y=1046.93mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15099.843mil|Location1.Y=0mil|Location2.Y=1046.93mil|Absolute=True">Room Definition: Between SMT Small Component R013LO-DNP (23.686mm,13.242mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14332.126mil|Location1.Y=0mil|Location2.Y=1109.922mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14332.126mil|Location1.Y=0mil|Location2.Y=1109.922mil|Absolute=True">Room Definition: Between SMT Small Component R014LO-DNP (5.086mm,13.942mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14469.922mil|Location1.Y=0mil|Location2.Y=1184.725mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14469.922mil|Location1.Y=0mil|Location2.Y=1184.725mil|Absolute=True">Room Definition: Between SMT Small Component R015LO-DNP (7.686mm,16.742mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14615.591mil|Location1.Y=0mil|Location2.Y=1184.725mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14615.591mil|Location1.Y=0mil|Location2.Y=1184.725mil|Absolute=True">Room Definition: Between SMT Small Component R016LO-DNP (11.386mm,16.742mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15768.15mil|Location1.Y=0mil|Location2.Y=1114.45mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15768.15mil|Location1.Y=0mil|Location2.Y=1114.45mil|Absolute=True">Room Definition: Between SMT Small Component R017LO-DNP (40.661mm,14.957mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16035.867mil|Location1.Y=0mil|Location2.Y=1191.222mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16035.867mil|Location1.Y=0mil|Location2.Y=1191.222mil|Absolute=True">Room Definition: Between SMT Small Component R018LO-DNP (46.861mm,16.657mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15937.442mil|Location1.Y=0mil|Location2.Y=1147.029mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15937.442mil|Location1.Y=0mil|Location2.Y=1147.029mil|Absolute=True">Room Definition: Between SMT Small Component REF-DNP (44.361mm,14.257mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16448.819mil|Location1.Y=0mil|Location2.Y=1750mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16448.819mil|Location1.Y=0mil|Location2.Y=1750mil|Absolute=True">Room Definition: Between LCC Component U1-MAX2870 (55.7mm,28.45mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14933.367mil|Location1.Y=0mil|Location2.Y=1011.024mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14933.367mil|Location1.Y=0mil|Location2.Y=1011.024mil|Absolute=True">Room Definition: Between Component U2-DNP (18.086mm,11.242mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14961.248mil|Location1.Y=0mil|Location2.Y=1351.473mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14961.248mil|Location1.Y=0mil|Location2.Y=1351.473mil|Absolute=True">Room Definition: Between SOIC Component U3-DNP (18.886mm,17.642mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15250.434mil|Location1.Y=0mil|Location2.Y=1315.237mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15250.434mil|Location1.Y=0mil|Location2.Y=1315.237mil|Absolute=True">Room Definition: Between Component U4-DNP (26.861mm,18.507mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15521.949mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15521.949mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between Component U5-MCP9804 (33.036mm,10.792mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15798.78mil|Location1.Y=0mil|Location2.Y=1232.56mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15798.78mil|Location1.Y=0mil|Location2.Y=1232.56mil|Absolute=True">Room Definition: Between SOIC Component U6-DNP (41.061mm,16.857mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15491.654mil|Location1.Y=0mil|Location2.Y=1304.293mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15491.654mil|Location1.Y=0mil|Location2.Y=1304.293mil|Absolute=True">Room Definition: Between Component X1-X1G004691000112 (33.261mm,18.457mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16622.253mil|Location1.Y=0mil|Location2.Y=1464.566mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16622.253mil|Location1.Y=0mil|Location2.Y=1464.566mil|Absolute=True">Room Definition: Between SOIC Component R6LO-DNP (61.9mm,23.2mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16667.322mil|Location1.Y=0mil|Location2.Y=1643.7mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16667.322mil|Location1.Y=0mil|Location2.Y=1643.7mil|Absolute=True">Room Definition: Between SMT Small Component R039LO-91 (64.4mm,27.1mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16318.347mil|Location1.Y=0mil|Location2.Y=1478.032mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16318.347mil|Location1.Y=0mil|Location2.Y=1478.032mil|Absolute=True">Room Definition: Between SMT Small Component C011LO-10nF (55.686mm,23.592mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14887.795mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14887.795mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between SMT Small Component C010LO-10nF (18.2mm,9mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16344.488mil|Location1.Y=0mil|Location2.Y=1974.409mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16344.488mil|Location1.Y=0mil|Location2.Y=1974.409mil|Absolute=True">Room Definition: Between SMT Small Component C006LO-100nF (54.9mm,36.8mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15596.456mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15596.456mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between SMT Small Component R040LO-DNP (36.1mm,7.9mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15612.204mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15612.204mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between SMT Small Component R041LO-DNP (36.1mm,5.8mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID2JSYDMSSMNZJG03RKNQMKNHFMBNXYHALGV24MQKK0R5L1M3AM54C"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16403.543mil|Location1.Y=0mil|Location2.Y=2196.85mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16403.543mil|Location1.Y=0mil|Location2.Y=2196.85mil|Absolute=True">Room Definition: Between SOIC Component SAW1-BR39162B3522U410 (56.1mm,41.1mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15671.259mil|Location1.Y=0mil|Location2.Y=1596.456mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15671.259mil|Location1.Y=0mil|Location2.Y=1596.456mil|Absolute=True">Room Definition: Between SMT Small Component R7-750 (38.2mm,27.2mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15671.259mil|Location1.Y=0mil|Location2.Y=1651.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15671.259mil|Location1.Y=0mil|Location2.Y=1651.574mil|Absolute=True">Room Definition: Between SMT Small Component C86-47pF (38.2mm,28.6mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15600.393mil|Location1.Y=0mil|Location2.Y=2037.401mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15600.393mil|Location1.Y=0mil|Location2.Y=2037.401mil|Absolute=True">Room Definition: Between SMT Small Component C85-47pF (37.3mm,37.1mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15549.212mil|Location1.Y=0mil|Location2.Y=2037.401mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15549.212mil|Location1.Y=0mil|Location2.Y=2037.401mil|Absolute=True">Room Definition: Between SMT Small Component C54-100nF (36mm,37.1mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15285.433mil|Location1.Y=0mil|Location2.Y=2124.015mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15285.433mil|Location1.Y=0mil|Location2.Y=2124.015mil|Absolute=True">Room Definition: Between SMT Small Component C49-100nF (29.3mm,39.3mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16017.167mil|Location1.Y=0mil|Location2.Y=1704.411mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16017.167mil|Location1.Y=0mil|Location2.Y=1704.411mil|Absolute=True">Room Definition: Between SMT Small Component C50-10nF (46.886mm,30.092mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15954.175mil|Location1.Y=0mil|Location2.Y=1661.104mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15954.175mil|Location1.Y=0mil|Location2.Y=1661.104mil|Absolute=True">Room Definition: Between SMT Small Component C51-100nF (45.386mm,28.842mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14743.768mil|Location1.Y=0mil|Location2.Y=1656.17mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14743.768mil|Location1.Y=0mil|Location2.Y=1656.17mil|Absolute=True">Room Definition: Between SMT Small Component C52-22pF (14.775mm,27.95mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15464.016mil|Location1.Y=0mil|Location2.Y=1844.174mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15464.016mil|Location1.Y=0mil|Location2.Y=1844.174mil|Absolute=True">Room Definition: Between SMT Small Component C53-22pF (33.236mm,33.642mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14944.881mil|Location1.Y=0mil|Location2.Y=1806.772mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14944.881mil|Location1.Y=0mil|Location2.Y=1806.772mil|Absolute=True">Room Definition: Between SMT Small Component C55-22pF (20.05mm,32.692mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15253.936mil|Location1.Y=0mil|Location2.Y=1807.086mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15253.936mil|Location1.Y=0mil|Location2.Y=1807.086mil|Absolute=True">Room Definition: Between SMT Small Component C56-22pF (27.9mm,32.7mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15463.582mil|Location1.Y=0mil|Location2.Y=1769.685mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15463.582mil|Location1.Y=0mil|Location2.Y=1769.685mil|Absolute=True">Room Definition: Between SMT Small Component C57-22pF (33.225mm,31.75mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15793.307mil|Location1.Y=0mil|Location2.Y=1818.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15793.307mil|Location1.Y=0mil|Location2.Y=1818.897mil|Absolute=True">Room Definition: Between SMT Small Component C58-22pF (41.6mm,33mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15929.133mil|Location1.Y=0mil|Location2.Y=2088.582mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15929.133mil|Location1.Y=0mil|Location2.Y=2088.582mil|Absolute=True">Room Definition: Between SMT Small Component C59-100pF (45.8mm,39.1mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14940.944mil|Location1.Y=0mil|Location2.Y=1757.873mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14940.944mil|Location1.Y=0mil|Location2.Y=1757.873mil|Absolute=True">Room Definition: Between SMT Small Component C60-0.2pF (20.7mm,30.7mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15842.519mil|Location1.Y=0mil|Location2.Y=1816.929mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15842.519mil|Location1.Y=0mil|Location2.Y=1816.929mil|Absolute=True">Room Definition: Between SMT Small Component C62-DNP (43.6mm,32.2mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14667.322mil|Location1.Y=0mil|Location2.Y=1844.488mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14667.322mil|Location1.Y=0mil|Location2.Y=1844.488mil|Absolute=True">Room Definition: Between SMT Small Component C64-47pF (12.7mm,33.5mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14667.322mil|Location1.Y=0mil|Location2.Y=1793.306mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14667.322mil|Location1.Y=0mil|Location2.Y=1793.306mil|Absolute=True">Room Definition: Between SMT Small Component C65-47pF (12.7mm,32.2mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15124.015mil|Location1.Y=0mil|Location2.Y=2204.724mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15124.015mil|Location1.Y=0mil|Location2.Y=2204.724mil|Absolute=True">Room Definition: Between SMT Small Component C66-100pF (24.6mm,42.8mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17257.874mil|Location1.Y=0mil|Location2.Y=2291.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17257.874mil|Location1.Y=0mil|Location2.Y=2291.338mil|Absolute=True">Room Definition: Between SMT Small Component C67-100pF (78.8mm,45mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16738.188mil|Location1.Y=0mil|Location2.Y=1218.503mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16738.188mil|Location1.Y=0mil|Location2.Y=1218.503mil|Absolute=True">Room Definition: Between SMT Small Component C68-100nF (64.9mm,17.6mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15025.59mil|Location1.Y=0mil|Location2.Y=1627.952mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15025.59mil|Location1.Y=0mil|Location2.Y=1627.952mil|Absolute=True">Room Definition: Between SMT Small Component C69-100nF (22.7mm,26.7mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16966.368mil|Location1.Y=0mil|Location2.Y=2263.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16966.368mil|Location1.Y=0mil|Location2.Y=2263.779mil|Absolute=True">Room Definition: Between SMT Small Component C70-47pF (71.096mm,44.15mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16966.368mil|Location1.Y=0mil|Location2.Y=2314.96mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16966.368mil|Location1.Y=0mil|Location2.Y=2314.96mil|Absolute=True">Room Definition: Between SMT Small Component C71-47pF (71.096mm,45.45mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17167.322mil|Location1.Y=0mil|Location2.Y=2431.102mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17167.322mil|Location1.Y=0mil|Location2.Y=2431.102mil|Absolute=True">Room Definition: Between SMT Small Component C72-47pF (77.1mm,47.1mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14600.62mil|Location1.Y=0mil|Location2.Y=2407.761mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14600.62mil|Location1.Y=0mil|Location2.Y=2407.761mil|Absolute=True">Room Definition: Between Component D2-ESD0P8RFL (11.275mm,47.425mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17381.131mil|Location1.Y=0mil|Location2.Y=2294.572mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17381.131mil|Location1.Y=0mil|Location2.Y=2294.572mil|Absolute=True">Room Definition: Between Component D3-ESD0P8RFL (81.9mm,44.55mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14614.399mil|Location1.Y=0mil|Location2.Y=2008.155mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14614.399mil|Location1.Y=0mil|Location2.Y=2008.155mil|Absolute=True">Room Definition: Between Component D4-ESD0P8RFL (11.625mm,37.275mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14616.368mil|Location1.Y=0mil|Location2.Y=1600.675mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14616.368mil|Location1.Y=0mil|Location2.Y=1600.675mil|Absolute=True">Room Definition: Between Component D5-ESD0P8RFL (11.675mm,26.925mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15334.094mil|Location1.Y=0mil|Location2.Y=1835.315mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15334.094mil|Location1.Y=0mil|Location2.Y=1835.315mil|Absolute=True">Room Definition: Between Component F1-DPX165850DT-8017A1 (30.336mm,32.692mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14499.468mil|Location1.Y=0mil|Location2.Y=1735.925mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14499.468mil|Location1.Y=0mil|Location2.Y=1735.925mil|Absolute=True">Room Definition: Between Component HIGH-CONSMA (5.836mm,27.242mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15194.881mil|Location1.Y=0mil|Location2.Y=1954.724mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15194.881mil|Location1.Y=0mil|Location2.Y=1954.724mil|Absolute=True">Room Definition: Between SMT Small Component L4-SPL603/51nH (27mm,35.4mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14495.532mil|Location1.Y=0mil|Location2.Y=2548.918mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14495.532mil|Location1.Y=0mil|Location2.Y=2548.918mil|Absolute=True">Room Definition: Between Component LOW-CONSMA (5.736mm,47.892mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14499.468mil|Location1.Y=0mil|Location2.Y=2147.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14499.468mil|Location1.Y=0mil|Location2.Y=2147.343mil|Absolute=True">Room Definition: Between Component MID-CONSMA (5.836mm,37.692mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16830.373mil|Location1.Y=0mil|Location2.Y=2311.191mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16830.373mil|Location1.Y=0mil|Location2.Y=2311.191mil|Absolute=True">Room Definition: Between SMT Small Component R30-51 (67.641mm,45.354mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15110.236mil|Location1.Y=0mil|Location2.Y=1639.763mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15110.236mil|Location1.Y=0mil|Location2.Y=1639.763mil|Absolute=True">Room Definition: Between SMT Small Component R31-1K5 (24.6mm,26.8mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17218.503mil|Location1.Y=0mil|Location2.Y=2431.102mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17218.503mil|Location1.Y=0mil|Location2.Y=2431.102mil|Absolute=True">Room Definition: Between SMT Small Component R32-51 (78.4mm,47.1mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17740.177mil|Location1.Y=0mil|Location2.Y=2435.059mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17740.177mil|Location1.Y=0mil|Location2.Y=2435.059mil|Absolute=True">Room Definition: Between Component SDR1-CONSMA (88.15mm,45mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14830.157mil|Location1.Y=0mil|Location2.Y=1877.638mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14830.157mil|Location1.Y=0mil|Location2.Y=1877.638mil|Absolute=True">Room Definition: Between Component U10-SKY13322-375LF (16.586mm,32.692mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15977.797mil|Location1.Y=0mil|Location2.Y=1905.198mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15977.797mil|Location1.Y=0mil|Location2.Y=1905.198mil|Absolute=True">Room Definition: Between Component U12-LTC5549 (45.736mm,32.892mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17125.984mil|Location1.Y=0mil|Location2.Y=2358.267mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17125.984mil|Location1.Y=0mil|Location2.Y=2358.267mil|Absolute=True">Room Definition: Between Component U13-SKY13322-375LF (74.9mm,44.9mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14647.637mil|Location1.Y=0mil|Location2.Y=1895.669mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14647.637mil|Location1.Y=0mil|Location2.Y=1895.669mil|Absolute=True">Room Definition: Between SMT Small Component R8-51 (12.2mm,34.8mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14663.385mil|Location1.Y=0mil|Location2.Y=1742.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14663.385mil|Location1.Y=0mil|Location2.Y=1742.125mil|Absolute=True">Room Definition: Between SMT Small Component R27-51 (12.2mm,30.9mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16830.373mil|Location1.Y=0mil|Location2.Y=2261.811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16830.373mil|Location1.Y=0mil|Location2.Y=2261.811mil|Absolute=True">Room Definition: Between SMT Small Component R28-51 (67.641mm,44.1mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15492.126mil|Location1.Y=0mil|Location2.Y=1622.047mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15492.126mil|Location1.Y=0mil|Location2.Y=1622.047mil|Absolute=True">Room Definition: Between SOIC Component U14-TCA6408A (30.6mm,25.1mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14740.816mil|Location1.Y=0mil|Location2.Y=2009.854mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14740.816mil|Location1.Y=0mil|Location2.Y=2009.854mil|Absolute=True">Room Definition: Between SMT Small Component C63-22pF (14.7mm,37.175mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16515.748mil|Location1.Y=0mil|Location2.Y=2151.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16515.748mil|Location1.Y=0mil|Location2.Y=2151.574mil|Absolute=True">Room Definition: Between SMT Small Component C001Mx-CSMD402/100nF (60.7mm,40.3mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17026.586mil|Location1.Y=0mil|Location2.Y=2160.445mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17026.586mil|Location1.Y=0mil|Location2.Y=2160.445mil|Absolute=True">Room Definition: Between SMT Small Component C002Mx-CSMD402/100nF (73mm,41mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16826.771mil|Location1.Y=0mil|Location2.Y=2013.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16826.771mil|Location1.Y=0mil|Location2.Y=2013.779mil|Absolute=True">Room Definition: Between SMT Small Component C003Mx-CSMD402/1.5nF (68.6mm,36.8mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16779.527mil|Location1.Y=0mil|Location2.Y=2013.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16779.527mil|Location1.Y=0mil|Location2.Y=2013.779mil|Absolute=True">Room Definition: Between SMT Small Component C004Mx-CSMD402/100pF (67.4mm,36.8mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16722.44mil|Location1.Y=0mil|Location2.Y=2001.968mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16722.44mil|Location1.Y=0mil|Location2.Y=2001.968mil|Absolute=True">Room Definition: Between SMT Small Component C005Mx-1uF (65.8mm,36.6mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16143.7mil|Location1.Y=0mil|Location2.Y=2118.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16143.7mil|Location1.Y=0mil|Location2.Y=2118.11mil|Absolute=True">Room Definition: Between SMT Small Component C006Mx-CSMD402/100nF (50.5mm,40.6mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15923.228mil|Location1.Y=0mil|Location2.Y=1917.322mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15923.228mil|Location1.Y=0mil|Location2.Y=1917.322mil|Absolute=True">Room Definition: Between SMT Small Component C61-DNP (44.9mm,35.5mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16901.574mil|Location1.Y=0mil|Location2.Y=2096.456mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16901.574mil|Location1.Y=0mil|Location2.Y=2096.456mil|Absolute=True">Room Definition: Between SMT Small Component L5Mx-SPL805/470nH (70.1mm,38.4mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16017.716mil|Location1.Y=0mil|Location2.Y=2120.078mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16017.716mil|Location1.Y=0mil|Location2.Y=2120.078mil|Absolute=True">Room Definition: Between SMT Small Component L6Mx-SPL603/82nH (47.9mm,39.6mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16687.992mil|Location1.Y=0mil|Location2.Y=2261.811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16687.992mil|Location1.Y=0mil|Location2.Y=2261.811mil|Absolute=True">Room Definition: Between SMT Small Component U20-ADL5602 (63.4mm,42.1mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15188.976mil|Location1.Y=0mil|Location2.Y=2084.645mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15188.976mil|Location1.Y=0mil|Location2.Y=2084.645mil|Absolute=True">Room Definition: Between SMT Small Component C70Mx-CSMD402/1nF (27mm,39mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15397.637mil|Location1.Y=0mil|Location2.Y=2013.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15397.637mil|Location1.Y=0mil|Location2.Y=2013.779mil|Absolute=True">Room Definition: Between SMT Small Component R_U11pol-20R/402 (32.3mm,37.2mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15138.779mil|Location1.Y=0mil|Location2.Y=1982.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15138.779mil|Location1.Y=0mil|Location2.Y=1982.283mil|Absolute=True">Room Definition: Between SMT Small Component U11-SBB3089Z (23.8mm,34.8mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15272.2mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15272.2mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between Small Component CON_I2C-CON HDR1X3/JST/B3BPHKS (26.835mm,6.3mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15669.757mil|Location1.Y=0mil|Location2.Y=1879.996mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15669.757mil|Location1.Y=0mil|Location2.Y=1879.996mil|Absolute=True">Room Definition: Between Component U16-SKY13286-359LF (37.387mm,32.727mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDZS1W2PR51KYMC0RQRKXWECNMEDDEWNVCXCDK0CHQUXRRAWCI5V4G"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14665.354mil|Location1.Y=0mil|Location2.Y=2971.456mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14665.354mil|Location1.Y=0mil|Location2.Y=2971.456mil|Absolute=True">Room Definition: Between SMT Small Component BAT1-BAT1704WH6327XTSA1 (12mm,60.7mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15619.528mil|Location1.Y=0mil|Location2.Y=2885.512mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15619.528mil|Location1.Y=0mil|Location2.Y=2885.512mil|Absolute=True">Room Definition: Between SMT Small Component C73HF-10nF (36.886mm,59.942mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15619.528mil|Location1.Y=0mil|Location2.Y=2936.693mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15619.528mil|Location1.Y=0mil|Location2.Y=2936.693mil|Absolute=True">Room Definition: Between SMT Small Component C74HF-100nF (36.886mm,61.242mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15359.685mil|Location1.Y=0mil|Location2.Y=2814.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15359.685mil|Location1.Y=0mil|Location2.Y=2814.646mil|Absolute=True">Room Definition: Between SMT Small Component C75HF-10nF (29.886mm,58.142mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15454.174mil|Location1.Y=0mil|Location2.Y=2602.048mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15454.174mil|Location1.Y=0mil|Location2.Y=2602.048mil|Absolute=True">Room Definition: Between SMT Small Component C76HF-47pF (33.586mm,51.442mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15690.394mil|Location1.Y=0mil|Location2.Y=2507.56mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15690.394mil|Location1.Y=0mil|Location2.Y=2507.56mil|Absolute=True">Room Definition: Between SMT Small Component C77HF-6.8pF (38.686mm,50.342mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14792.756mil|Location1.Y=0mil|Location2.Y=2818.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14792.756mil|Location1.Y=0mil|Location2.Y=2818.583mil|Absolute=True">Room Definition: Between SMT Small Component C78HF-47pF (16.786mm,57.342mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15005.355mil|Location1.Y=0mil|Location2.Y=2818.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15005.355mil|Location1.Y=0mil|Location2.Y=2818.583mil|Absolute=True">Room Definition: Between SMT Small Component C79HF-47pF (22.186mm,57.342mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15363.622mil|Location1.Y=0mil|Location2.Y=2755.591mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15363.622mil|Location1.Y=0mil|Location2.Y=2755.591mil|Absolute=True">Room Definition: Between SMT Small Component C80HF-10nF (29.986mm,56.642mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15824.252mil|Location1.Y=0mil|Location2.Y=2716.221mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15824.252mil|Location1.Y=0mil|Location2.Y=2716.221mil|Absolute=True">Room Definition: Between SMT Small Component C81HF-10nF (42.086mm,55.642mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15686.457mil|Location1.Y=0mil|Location2.Y=2582.363mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15686.457mil|Location1.Y=0mil|Location2.Y=2582.363mil|Absolute=True">Room Definition: Between SMT Small Component C82HF-47pF (38.586mm,52.242mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16355.748mil|Location1.Y=0mil|Location2.Y=2791.024mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16355.748mil|Location1.Y=0mil|Location2.Y=2791.024mil|Absolute=True">Room Definition: Between SMT Small Component C83HF-47pF (55.586mm,57.542mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16060.473mil|Location1.Y=0mil|Location2.Y=2791.024mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16060.473mil|Location1.Y=0mil|Location2.Y=2791.024mil|Absolute=True">Room Definition: Between SMT Small Component C84HF-9.1pF (48.086mm,57.542mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15780.945mil|Location1.Y=0mil|Location2.Y=2946.536mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15780.945mil|Location1.Y=0mil|Location2.Y=2946.536mil|Absolute=True">Room Definition: Between SMT Small Component L5HF-Ferrite (40.786mm,61.242mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14741.575mil|Location1.Y=0mil|Location2.Y=2820.552mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14741.575mil|Location1.Y=0mil|Location2.Y=2820.552mil|Absolute=True">Room Definition: Between SMT Small Component L6HF-470nH (13.986mm,58.042mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14954.174mil|Location1.Y=0mil|Location2.Y=2816.615mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14954.174mil|Location1.Y=0mil|Location2.Y=2816.615mil|Absolute=True">Room Definition: Between SMT Small Component L7HF-470nH (19.386mm,57.942mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15162.835mil|Location1.Y=0mil|Location2.Y=2820.552mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15162.835mil|Location1.Y=0mil|Location2.Y=2820.552mil|Absolute=True">Room Definition: Between SMT Small Component L8HF-470nH (24.686mm,58.042mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15546.693mil|Location1.Y=0mil|Location2.Y=2602.048mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15546.693mil|Location1.Y=0mil|Location2.Y=2602.048mil|Absolute=True">Room Definition: Between SMT Small Component L9HF-470nH (35.686mm,51.242mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15916.772mil|Location1.Y=0mil|Location2.Y=2798.898mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15916.772mil|Location1.Y=0mil|Location2.Y=2798.898mil|Absolute=True">Room Definition: Between SMT Small Component L10HF-470nH (45.086mm,56.642mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16107.717mil|Location1.Y=0mil|Location2.Y=2897.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16107.717mil|Location1.Y=0mil|Location2.Y=2897.323mil|Absolute=True">Room Definition: Between SMT Small Component R33HF-10K (48.886mm,60.242mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15217.953mil|Location1.Y=0mil|Location2.Y=2814.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15217.953mil|Location1.Y=0mil|Location2.Y=2814.646mil|Absolute=True">Room Definition: Between SMT Small Component R34HF-51 (27.586mm,57.242mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14568.347mil|Location1.Y=0mil|Location2.Y=2814.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14568.347mil|Location1.Y=0mil|Location2.Y=2814.646mil|Absolute=True">Room Definition: Between SMT Small Component R35HF-10K (11.086mm,57.242mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16206.142mil|Location1.Y=0mil|Location2.Y=2791.024mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16206.142mil|Location1.Y=0mil|Location2.Y=2791.024mil|Absolute=True">Room Definition: Between SMT Small Component R36HF-390 (51.786mm,57.542mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16206.142mil|Location1.Y=0mil|Location2.Y=2720.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16206.142mil|Location1.Y=0mil|Location2.Y=2720.158mil|Absolute=True">Room Definition: Between SMT Small Component R37HF-51 (51.786mm,55.742mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16060.473mil|Location1.Y=0mil|Location2.Y=2720.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16060.473mil|Location1.Y=0mil|Location2.Y=2720.158mil|Absolute=True">Room Definition: Between SMT Small Component R38HF-51 (48.086mm,55.742mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14493.563mil|Location1.Y=0mil|Location2.Y=2948.524mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14493.563mil|Location1.Y=0mil|Location2.Y=2948.524mil|Absolute=True">Room Definition: Between Component SW_HF-CONSMA (5.686mm,58.042mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15938.059mil|Location1.Y=0mil|Location2.Y=2983.508mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15938.059mil|Location1.Y=0mil|Location2.Y=2983.508mil|Absolute=True">Room Definition: Between SMT Small Component T2HF-BC856 (44.586mm,61.242mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15681.536mil|Location1.Y=0mil|Location2.Y=2838.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15681.536mil|Location1.Y=0mil|Location2.Y=2838.465mil|Absolute=True">Room Definition: Between SOIC Component U15-SA612 (36.086mm,56.242mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDUTI2HVYXV0KXEFJDKFB3AAEQHP5QXLUIZSQJ1ULLYERLPMROXNM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Room Toplevel (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('Toplevel'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17651.575mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17651.575mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between Small Component H1-MOUNTHOLE_3MM (90.5mm,5mm) on Top Layer And Room Toplevel (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('Toplevel')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14383.858mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14383.858mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between Small Component H2-MOUNTHOLE_3MM (5mm,5mm) on Top Layer And Room Toplevel (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('Toplevel')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17651.575mil|Location1.Y=0mil|Location2.Y=3139.764mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17651.575mil|Location1.Y=0mil|Location2.Y=3139.764mil|Absolute=True">Room Definition: Between Small Component H3-MOUNTHOLE_3MM (90.5mm,65mm) on Top Layer And Room Toplevel (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('Toplevel')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14383.858mil|Location1.Y=0mil|Location2.Y=3139.763mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14383.858mil|Location1.Y=0mil|Location2.Y=3139.763mil|Absolute=True">Room Definition: Between Small Component H4-MOUNTHOLE_3MM (5mm,65mm) on Top Layer And Room Toplevel (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('Toplevel')) </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID50LM1MYPJJUJMLUVBN4EDSBAIGT4CVQRWLFZ0JA5WFWOXWIBXFF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU'))</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16222.44mil|Location1.Y=0mil|Location2.Y=1253.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16222.44mil|Location1.Y=0mil|Location2.Y=1253.937mil|Absolute=True">Room Definition: Between SMT Small Component C01CPU-100nF (53.1mm,17.2mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16198.818mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16198.818mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between SMT Small Component C02CPU-100nF (52.5mm,7mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16537.401mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16537.401mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between SMT Small Component C03CPU-100nF (61.1mm,6mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16641.732mil|Location1.Y=0mil|Location2.Y=1070.866mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16641.732mil|Location1.Y=0mil|Location2.Y=1070.866mil|Absolute=True">Room Definition: Between SMT Small Component C04CPU-10pF (63.75mm,12.55mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16942.913mil|Location1.Y=0mil|Location2.Y=1057.086mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16942.913mil|Location1.Y=0mil|Location2.Y=1057.086mil|Absolute=True">Room Definition: Between SMT Small Component C05CPU-10pF (71.4mm,12.6mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16773.622mil|Location1.Y=0mil|Location2.Y=1167.322mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16773.622mil|Location1.Y=0mil|Location2.Y=1167.322mil|Absolute=True">Room Definition: Between SMT Small Component C06CPU-100nF (65.8mm,16.3mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15379.921mil|Location1.Y=0mil|Location2.Y=2513.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15379.921mil|Location1.Y=0mil|Location2.Y=2513.779mil|Absolute=True">Room Definition: Between SMT Small Component C07CPU-10uF (31.3mm,48.8mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14929.133mil|Location1.Y=0mil|Location2.Y=2525.59mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14929.133mil|Location1.Y=0mil|Location2.Y=2525.59mil|Absolute=True">Room Definition: Between SMT Small Component C08CPU-10uF (19mm,49.1mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14809.055mil|Location1.Y=0mil|Location2.Y=2517.716mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14809.055mil|Location1.Y=0mil|Location2.Y=2517.716mil|Absolute=True">Room Definition: Between SMT Small Component C09CPU-100nF (17.2mm,49.3mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14813.976mil|Location1.Y=0mil|Location2.Y=2595.472mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14813.976mil|Location1.Y=0mil|Location2.Y=2595.472mil|Absolute=True">Room Definition: Between SMT Small Component C10CPU-100nF (16.025mm,52.575mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14671.259mil|Location1.Y=0mil|Location2.Y=2580.708mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14671.259mil|Location1.Y=0mil|Location2.Y=2580.708mil|Absolute=True">Room Definition: Between SMT Small Component C11CPU-10nF (12.8mm,52.2mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16835.995mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16835.995mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between SMT Small Component CLK-DNP (67.546mm,5.154mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17755.542mil|Location1.Y=0mil|Location2.Y=1682.087mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17755.542mil|Location1.Y=0mil|Location2.Y=1682.087mil|Absolute=True">Room Definition: Between Component USB-B-USB-B (77.5mm,23.2mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16101.358mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16101.358mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between DIP Component GPS1-DNP (45mm,7.4mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14750.984mil|Location1.Y=0mil|Location2.Y=2544.291mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=14750.984mil|Location1.Y=0mil|Location2.Y=2544.291mil|Absolute=True">Room Definition: Between SMT Small Component L01CPU-Ferrite (15.475mm,50.175mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16835.995mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16835.995mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between SMT Small Component LOCK-HSMG-C190 (67.546mm,8.354mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16835.995mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16835.995mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between SMT Small Component MIX-HSMY-C190 (67.546mm,9.954mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16972.283mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16972.283mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between SMT Small Component R01CPU-DNP (71.246mm,5.154mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16972.283mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16972.283mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between SMT Small Component R02CPU-750 (71.246mm,6.754mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16972.283mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16972.283mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between SMT Small Component R03CPU-750 (71.246mm,8.354mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16972.283mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16972.283mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between SMT Small Component R04CPU-750 (71.246mm,9.954mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16482.283mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16482.283mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between SMT Small Component R05CPU-1K5 (58.4mm,5.1mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16112.204mil|Location1.Y=0mil|Location2.Y=1088.582mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16112.204mil|Location1.Y=0mil|Location2.Y=1088.582mil|Absolute=True">Room Definition: Between SMT Small Component R06CPU-1K5 (49mm,14.3mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16112.204mil|Location1.Y=0mil|Location2.Y=1037.401mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16112.204mil|Location1.Y=0mil|Location2.Y=1037.401mil|Absolute=True">Room Definition: Between SMT Small Component R07CPU-51 (49mm,13mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16112.204mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16112.204mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between SMT Small Component R08CPU-51 (49mm,11.7mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16559.055mil|Location1.Y=0mil|Location2.Y=1177.165mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16559.055mil|Location1.Y=0mil|Location2.Y=1177.165mil|Absolute=True">Room Definition: Between LCC Component U7_CPU-STM32F103C8T6 (56.9mm,11.8mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17030.511mil|Location1.Y=0mil|Location2.Y=1428.238mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=17030.511mil|Location1.Y=0mil|Location2.Y=1428.238mil|Absolute=True">Room Definition: Between SOIC Component U8_CPU-IP4220CZ6 (72.45mm,21.8mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15291.452mil|Location1.Y=0mil|Location2.Y=2525.421mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=15291.452mil|Location1.Y=0mil|Location2.Y=2525.421mil|Absolute=True">Room Definition: Between Component U9_CPU-LD1117-SOT223 (25.8mm,47.6mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16835.995mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16835.995mil|Location1.Y=0mil|Location2.Y=1000mil|Absolute=True">Room Definition: Between SMT Small Component USB-HSMH-C190 (67.546mm,6.754mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16879.921mil|Location1.Y=0mil|Location2.Y=1117.204mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\fminucci\ownCloud\electrosense\Electrosense_new\Template2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=0mil|Location2.X=16879.921mil|Location1.Y=0mil|Location2.Y=1117.204mil|Absolute=True">Room Definition: Between Component X2_CPU-KTL/5x3.2mm16MHz (69.3mm,13.7mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
