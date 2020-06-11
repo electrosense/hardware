@@ -1,0 +1,36 @@
+Removed Pin From Net: NetName=5V Pin=USB-B-1
+Removed Pin From Net: NetName=USB_D-_CON Pin=USB-B-2
+Removed Pin From Net: NetName=USB_D+_CON Pin=USB-B-3
+Removed Pin From Net: NetName=GND Pin=USB-B-4
+Removed Pin From Net: NetName=GND Pin=USB-B-5
+Removed Pin From Net: NetName=GND Pin=USB-B-6
+Removed Member From Class: ClassName=U_CPU Member=USB-B
+Added Component: Designator=C010LO(smd C0402)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CSMD402/100nF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=JUSB(SMD USB MOLEX)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C010LO-1
+Added Pin To Net: NetName=3V3 Pin=C010LO-2
+Added Pin To Net: NetName=5V Pin=JUSB-1
+Added Pin To Net: NetName=USB_D-_CON Pin=JUSB-2
+Added Pin To Net: NetName=USB_D+_CON Pin=JUSB-3
+Added Pin To Net: NetName=GND Pin=JUSB-4
+Added Pin To Net: NetName=GND Pin=JUSB-5
+Added Pin To Net: NetName=GND Pin=JUSB-6
+Added Pin To Net: NetName=GND Pin=JUSB-6
+Added Pin To Net: NetName=GND Pin=JUSB-6
+Added Pin To Net: NetName=GND Pin=JUSB-6
+Added Pin To Net: NetName=GND Pin=JUSB-6
+Added Pin To Net: NetName=GND Pin=JUSB-6
+Added Pin To Net: NetName=GND Pin=JUSB-6
+Added Pin To Net: NetName=GND Pin=JUSB-6
+Added Member To Class: ClassName=U_LO Member=Component C010LO 10nF
+Added Member To Class: ClassName=U_CPU Member=Component JUSB CON SMD USB Micro MOLEX
+Added Room: Name=U_Mixer

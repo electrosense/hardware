@@ -1,0 +1,98 @@
+Bill of Material for 
+On 06-Mar-18 at 2:33:57 PM
+
+ Comment             Pattern     Quantity  Components
+------------------------------------------------------------------------------
+                     smd C0805_0.50    3    R002LO, R040LO, R041LO       weerstand SMD805, 270R 
+ 0.2pF               smd C0402        1    C60                          smd capaciteit, verp.0402, 22pF 
+ 0                   smd C0805_0.50    1    R012LO                       weerstand SMD805, 270R 
+ 100nF               smd C0603_0.80   23    C01CPU, C001LO, C02CPU       smd capaciteit, verp.0603, 100nF 
+                                           C002LO, C03CPU, C003LO
+                                           C004LO, C005LO, C06CPU
+                                           C006LO, C09CPU, C10CPU
+                                           C019LO, C029LO, C031LO, C34LO
+                                           C035LO, C49, C51, C54, C68
+                                           C69, C74HF
+ 100pF               smd C0402        3    C59, C66, C67                smd capaciteit, verp.0402, 22pF 
+ 10K                 smd C0603_0.45    2    R33HF, R35HF                 weerstand SMD603, 10K 
+ 10nF                smd C0402        7    C008LO, C009LO, C010LO       smd capaciteit, verp.0402, 10nF 
+                                           C011LO, C012LO, C013LO, C50
+ 10nF                smd C0603_0.80    5    C11CPU, C73HF, C75HF, C80HF  smd capaciteit, verp.0603, 100nF 
+                                           C81HF
+ 10pF                smd C0603_0.80    2    C04CPU, C05CPU               smd capaciteit, verp.0603, 10pF 
+ 10uF                smd C1206 polar    2    C07CPU, C08CPU               smd capaciteit, tantalium, verp.1206, 10uF/10V 
+ 12nF                smd C0603_0.80    1    C018LO                       smd capaciteit, verp.0603, 12nF 
+ 1K5                 smd C0603_0.45    2    R05CPU, R06CPU               weerstand SMD603, 1K5 
+ 1K5                 smd C0805_0.50    1    R31                          weerstand SMD805, 1K8 
+ 1uF                 smd C0603_0.80    4    C005Mx, C014LO, C015LO       smd capaciteit, verp.0603, 1uF 
+                                           C016LO
+ 20R/402             smd C0402_0.35    1    R_U11pol                     weerstand SMD402, 20R 
+ 22pF                smd C0402        9    C007LO, C017LO, C52, C53, C55 smd capaciteit, verp.0402, 22pF 
+                                           C56, C57, C58, C63
+ 240                 smd C0603_0.45    1    R010LO                       weerstand SMD603, 240K 
+ 270                 smd C0805_0.50    1    R003LO                       weerstand SMD805, 270R 
+ 30.1                smd C0603_0.45    1    R011LO                       weerstand SMD603, 240K 
+ 390                 smd C0603_0.45    1    R36HF                        weerstand SMD603, 390R 
+ 470nH               smd C0805        5    L6HF, L7HF, L8HF, L9HF, L10HF smd spoel, verpakking 805, 250nH 
+ 47pF                smd C0603_0.80   12    C64, C65, C70, C71, C72      smd capaciteit, verp.0603, 100pF 
+                                           C76HF, C78HF, C79HF, C82HF
+                                           C83HF, C85, C86
+ 50                  smd C0402_0.35    3    R004LO, R005LO, R009LO       weerstand SMD402, 47K 
+ 51                  smd C0603_0.45   10    R07CPU, R8, R08CPU, R27, R28 weerstand SMD603, 22R 
+                                           R30, R32, R34HF, R37HF, R38HF
+ 5K1                 smd C0603_0.45    1    R001LO                       weerstand SMD603, 5K1 
+ 6.8pF               smd C0603_0.80    1    C77HF                        smd capaciteit, verp.0603, 10pF 
+ 750                 smd C0603_0.45    4    R02CPU, R03CPU, R04CPU, R7   weerstand SMD603, 470R 
+ 820pF               smd C0603_0.80    1    C020LO                       smd capaciteit, verp.0603, 12nF 
+ 9.1pF               smd C0603_0.80    1    C84HF                        smd capaciteit, verp.0603, 100nF 
+ 91                  smd C0603_0.45    1    R039LO                       weerstand SMD603, 240K 
+ ADL5602             LFCSP            1    U20                          Gain block           
+ BAT1704WH6327XTSA1  SOT95P230X110-3N    1    BAT1                                              
+ BC856               smd SOT-23       1    T2HF                         PNP transistor, smd  
+ BR39162B3522U410    SAW_package      1    SAW1                         Saw Filter           
+ CON HDR1X3/JST/B3BPHKS con HDR/BNR1x3 (pitch 2mm, JST B3B-PH-K-S)    1    CON_I2C                      header 1x3, JST B3B-PH-K-S 
+ CONSMA              con SMA (recht)    5    HIGH, LOW, MID, SDR1, SW_HF  SMA connector, rechtop 
+ CSMD402/1.5nF       smd C0402        1    C003Mx                       smd capaciteit, verp.0402, 1.5nF 
+ CSMD402/100nF       smd C0402        3    C001Mx, C002Mx, C006Mx       smd capaciteit, verp.0402, 100nF 
+ CSMD402/100pF       smd C0402        1    C004Mx                       smd capaciteit, verp.0402, 100pF 
+ CSMD402/1nF         smd C0402        1    C70Mx                        smd capaciteit, verp.0402, 1nF 
+ DNP                 hdr 2x4          1    GPS1                         pcb header recht 2x4  pitch 100mil 
+ DNP                 led HSMH-C190 (Avago Technologies)    1    CLK                          led smd rood, Avago Techn., HSMH-C190 
+ DNP                 smd C0402        3    C022LO, C61, C62             smd capaciteit, verp.0402, 10nF 
+ DNP                 smd C0603_0.45    6    R01CPU, R013LO, R014LO       weerstand SMD603, 470R 
+                                           R015LO, R016LO, R017LO
+ DNP                 smd C0603_0.80    4    C023LO, C030LO, C032LO       smd capaciteit, verp.0603, 100nF 
+                                           C033LO
+ DNP                 smd C0805_0.50    1    R018LO                       weerstand SMD805, 270R 
+ DNP                 smd C0805_0.60    3    C025LO, C026LO, C028LO       smd capaciteit, verp.0805, 330nF 
+ DNP                 smd C0805_1.30    3    C021LO, C024LO, C027LO       smd capaciteit, verp.0805, 1uF 
+ DNP                 smd MSOP/8       1    U2                           12-Bit Micro Power DAC with I2C interface 
+ DNP                 smd R EXB38v     1    R6LO                         weerstandsnetwerk SMD603, 4x 22R 
+ DNP                 SMD SC-70 (6-pin)    1    U6                           TinyLogic  2-Input Non-Inverting Multiplexer 
+ DNP                 smd soicn/8      1    U3                           Dual 2.7V to 6.0V Single Supply CMOS Op Amp 
+ DNP                 smd U.FL         1    REF                          connector Hirose, U.FL serie, U.FL-R-SMT(01) 
+ DNP                 SO23-5 TI        1    U4                                                
+ DPX165850DT-8017A1  DPX165850DT-8017A1    1    F1                                                
+ ESD0P8RFL           ESD0P8RFL        4    D2, D3, D4, D5                                    
+ Ferrite             smd C0805        3    L01CPU, L001LO, L5HF         Ferrite bead, 0805 package 
+ HSMG-C190           led HSMH-C190 (Avago Technologies)    1    LOCK                         led smd groen, Avago Techn., HSMG-C190 
+ HSMH-C190           led HSMH-C190 (Avago Technologies)    1    USB                          led smd rood, Avago Techn., HSMH-C190 
+ HSMY-C190           led HSMH-C190 (Avago Technologies)    1    MIX                          led smd geel, Avago Techn., HSMY-C190 
+ IP4220CZ6           smd SOT-457      1    U8_CPU                       Dual USB 2.0 integrated ESD protection 
+ KTL/5x3.2mm16MHz    smd KTL 5x3.2    1    X2_CPU                       TXC Xtal 16.000 MHz, 5x3.2mm 
+ LD1117-SOT223       SOT223           1    U9_CPU                                            
+ LTC5549             LTC5549          1    U12                                               
+ MAX2870             MAXIM-T3255      1    U1                                                
+ MCP9804             smd MSOP/8       1    U5                           ±0.25°C Typical Accuracy Digital Temperature Sensor 
+ MOUNTHOLE_3MM       MOUNT_3MM        4    H1, H2, H3, H4                                    
+ SA612               SOIC127P600X175-8N    1    U15                                               
+ SBB3089Z            SB3089Z_footprint    1    U11                          RF Amplifier         
+ SKY13286-359LF      QFN-16_skyworks    1    U16                          SPDT-J2/J1 to RFC    
+ SKY13322-375LF      QFN50P200X300X80-10N    2    U10, U13                                          
+ SPL603/51nH         smd C0603        1    L4                                                
+ SPL603/82nH         smd C0603        1    L6Mx                                              
+ SPL805/470nH        smd C0805        1    L5Mx                         smd spoel, verpakking 805, 470nH 
+ STM32F103C8T6       TSQFP50P900X900X160-48N    1    U7_CPU                                            
+ TCA6408A            TSOP65P640X100-16M    1    U14                                               
+ USB-B               USB-B            1    USB-B                        USB B DEVICE CONNECTOR 
+ X1G004691000112     X1G004691000112    1    X1                                                

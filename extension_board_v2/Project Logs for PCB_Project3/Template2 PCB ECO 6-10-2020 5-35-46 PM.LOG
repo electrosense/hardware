@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=NetC001Mx_1 Pin=C001Mx-1
+Removed Pin From Net: NetName=GND Pin=H2-0
+Removed Pin From Net: NetName=NetC001Mx_1 Pin=SAW1-5
+Change Net Name : Old Net Name=NetC001Mx_1 New Net Name=NetC001Mx_2
+Added Pin To Net: NetName=NetC001Mx_1 Pin=C001Mx-1
+Added Pin To Net: NetName=NetC001Mx_1 Pin=SAW1-5
+Added Net: Name=NetC001Mx_1
+Added Member To Class: ClassName=U_CPU Member=Component C02CPU 100nF
+Added Member To Class: ClassName=U_MixerHF Member=Component L10HF 470nH
+Added Member To Class: ClassName=U_LO Member=Component U5 MCP9804
+Added Member To Class: ClassName=U_CPU Member=Component U7_CPU STM32F103C8T6
+Added Member To Class: ClassName=RF Member=Wire NetC001Mx_2
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF

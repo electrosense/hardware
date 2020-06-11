@@ -1,0 +1,31 @@
+Removed Pin From Net: NetName=NetC006Mx_1 Pin=L6Mx-1
+Removed Pin From Net: NetName=GND Pin=L6Mx-2
+Removed Pin From Net: NetName=GND Pin=TERM1-2
+Removed Member From Class: ClassName=U_MixerHF Member=TERM1
+Change Component Footprint: Designator=L6Mx Old Footprint=smd C0805 New Footprint=smd C0603
+Change Component Comment : Designator=L6Mx Old Comment=SPL805/470nH New Comment=SPL603/82nH
+Change component parameters: Designator = "L6Mx"; Footprint = "smd C0603"; UniqueID = "\RVAQQRVL\GJRDCSFM"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Manufacturer part number"; Value = "0603CS-82NXGLW"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Series"; Value = "https://www.coilcraft.com/0603cs.cfm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Mouser"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "994-0603CS-82NXGLW"; VariantName = "[No Variations]"
+Added Component: Designator=CON_I2C(con HDR/BNR1x3 (pitch 2mm, JST B3B-PH-K-S))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CON HDR1X3/JST/B3BPHKS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=CPU_SDA Pin=CON_I2C-1
+Added Pin To Net: NetName=CPU_SCL Pin=CON_I2C-2
+Added Pin To Net: NetName=GND Pin=CON_I2C-3
+Added Pin To Net: NetName=GND Pin=L6Mx-1
+Added Pin To Net: NetName=NetC006Mx_1 Pin=L6Mx-2
+Added Pin To Net: NetName=GND Pin=R34HF-1
+Added Member To Class: ClassName=U_Mixer Member=Component CON_I2C CON HDR1X3/JST/B3BPHKS
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF

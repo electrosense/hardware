@@ -1,0 +1,59 @@
+Protel Design System Design Rule Check
+PCB File : D:\elesensehw\hardware\extension_board_v2\Template2.PcbDoc
+Date     : 6/10/2020
+Time     : 6:24:25 PM
+
+WARNING: Unplated multi-layer pad(s) detected
+   Pad JUSB-6(5.05mm,20.225mm) on Multi-Layer on Net GND
+   Pad JUSB-6(5.05mm,24.675mm) on Multi-Layer on Net GND
+   Pad JUSB-6(1.87mm,26.54mm) on Multi-Layer on Net GND
+   Pad JUSB-6(1.87mm,18.36mm) on Multi-Layer on Net GND
+
+Processing Rule : Clearance Constraint (Gap=0.15mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.5mm) ((InPolygon)),(InNetClass('RF'))
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.15mm) (Max=2.54mm) (Preferred=0.22mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.125mm) (All)
+   Violation between Minimum Annular Ring: (0.097mm < 0.125mm) Pad JUSB-6(1.87mm,18.36mm) on Multi-Layer (Annular Ring=0.098mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.097mm < 0.125mm) Pad JUSB-6(1.87mm,26.54mm) on Multi-Layer (Annular Ring=0.098mm) On (Top Layer)
+Rule Violations :2
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=3.5mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (Disabled)(IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 2
+Waived Violations : 0
+Time Elapsed        : 00:00:00

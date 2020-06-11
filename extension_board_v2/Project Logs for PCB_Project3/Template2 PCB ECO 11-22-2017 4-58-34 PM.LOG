@@ -1,0 +1,13 @@
+Added Component: Designator=REF(smd U.FL)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=REF-0
+Added Pin To Net: NetName=GND Pin=REF-0
+Added Pin To Net: NetName=REF_CLK_IN Pin=REF-1
+Added Member To Class: ClassName=U_LO Member=Component REF DNP
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF

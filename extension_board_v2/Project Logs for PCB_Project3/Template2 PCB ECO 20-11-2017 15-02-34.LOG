@@ -1,0 +1,23 @@
+Removed Pin From Net: NetName=GND Pin=U16-1
+Removed Pin From Net: NetName=GND Pin=U16-2
+Removed Pin From Net: NetName=5V Pin=U16-5
+Removed Pin From Net: NetName=NetC53_2 Pin=U16-8
+Removed Pin From Net: NetName=GND Pin=U16-9
+Removed Pin From Net: NetName=GND Pin=U16-12
+Removed Pin From Net: NetName=NetC57_2 Pin=U16-13
+Removed Pin From Net: NetName=NetC86_2 Pin=U16-16
+Removed Pin From Net: NetName=GND Pin=U16-17
+Change Component Footprint: Designator=U16 Old Footprint=QFN50P300X300X100-16N New Footprint=QFN-16_skyworks
+Change Component Comment : Designator=U16 Old Comment=RF3025 New Comment=SKY13286-359LF
+Change component parameters: Designator = "U16"; Footprint = "QFN-16_skyworks"; UniqueID = "\RVAQQRVL\OGBQIVAN"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Skyworks"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=5V Pin=U16-1
+Added Pin To Net: NetName=NetC86_2 Pin=U16-2
+Added Pin To Net: NetName=GND Pin=U16-5
+Added Pin To Net: NetName=GND Pin=U16-8
+Added Pin To Net: NetName=NetC57_2 Pin=U16-9
+Added Pin To Net: NetName=NetC53_2 Pin=U16-12
+Added Pin To Net: NetName=GND Pin=U16-13
+Added Pin To Net: NetName=GND Pin=U16-16
+Change Net Name : Old Net Name=NetC86_2 New Net Name=U16_VCTL
