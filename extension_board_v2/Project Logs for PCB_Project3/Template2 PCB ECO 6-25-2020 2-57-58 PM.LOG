@@ -1,0 +1,84 @@
+Removed Pin From Net: NetName=NetC66_1 Pin=C66-1
+Removed Pin From Net: NetName=NetC66_2 Pin=C66-2
+Removed Pin From Net: NetName=GND Pin=H2-0
+Removed Pin From Net: NetName=NetC66_2 Pin=U13-1
+Removed Member From Class: ClassName=U_Mixer Member=C66
+Removed Member From Class: ClassName=RF Member=NetC66_1
+Removed Member From Class: ClassName=RF Member=NetC66_2
+Added Component: Designator=C006Mx(smd C0402)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CSMD402/100nF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C007Mx(smd C0402)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CSMD402/100nF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C008Mx(smd C0402)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CSMD402/100pF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C009Mx(smd C0402)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CSMD402/1.5nF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C010Mx(smd C0603_0.80)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CSMD603/18nF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=L7Mx(smd C0805)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U31(LFCSP)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Manufacturer"; Value = "Analog Devices"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer part number"; Value = "ADL5602ARKZ-R7"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC66_1 Pin=C006Mx-1
+Added Pin To Net: NetName=NetC66_2 Pin=C006Mx-2
+Added Pin To Net: NetName=5V Pin=C008Mx-1
+Added Pin To Net: NetName=GND Pin=C008Mx-2
+Added Pin To Net: NetName=5V Pin=C009Mx-1
+Added Pin To Net: NetName=GND Pin=C009Mx-2
+Added Pin To Net: NetName=GND Pin=C010Mx-1
+Added Pin To Net: NetName=5V Pin=C010Mx-2
+Added Pin To Net: NetName=5V Pin=L7Mx-2
+Added Pin To Net: NetName=NetC66_2 Pin=U31-1
+Added Pin To Net: NetName=GND Pin=U31-2
+Change Net Name : Old Net Name=NetC66_1 New Net Name=NetC006Mx_1
+Change Net Name : Old Net Name=NetC66_2 New Net Name=NetC006Mx_2
+Added Pin To Net: NetName=NetC007Mx_1 Pin=C007Mx-1
+Added Pin To Net: NetName=NetC007Mx_1 Pin=L7Mx-1
+Added Pin To Net: NetName=NetC007Mx_1 Pin=U31-3
+Added Net: Name=NetC007Mx_1
+Added Pin To Net: NetName=NetC007Mx_2 Pin=C007Mx-2
+Added Pin To Net: NetName=NetC007Mx_2 Pin=U13-1
+Added Net: Name=NetC007Mx_2
+Added Member To Class: ClassName=U_Mixer Member=Component C006Mx CSMD402/100nF
+Added Member To Class: ClassName=U_Mixer Member=Component C007Mx CSMD402/100nF
+Added Member To Class: ClassName=U_Mixer Member=Component C008Mx CSMD402/100pF
+Added Member To Class: ClassName=U_Mixer Member=Component C009Mx CSMD402/1.5nF
+Added Member To Class: ClassName=U_Mixer Member=Component C010Mx 1uF
+Added Member To Class: ClassName=U_Mixer Member=Component L7Mx SPL805/470nH
+Added Member To Class: ClassName=U_Mixer Member=Component U31 ADL5602
+Added Member To Class: ClassName=RF Member=Wire NetC007Mx_1
+Added Member To Class: ClassName=RF Member=Wire NetC007Mx_2
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF

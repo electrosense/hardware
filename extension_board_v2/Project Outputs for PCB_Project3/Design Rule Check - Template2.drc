@@ -1,13 +1,13 @@
 Protel Design System Design Rule Check
 PCB File : D:\elesensehw\hardware\extension_board_v2\Template2.PcbDoc
-Date     : 6/11/2020
-Time     : 2:29:52 PM
+Date     : 6/25/2020
+Time     : 3:32:22 PM
 
 WARNING: Unplated multi-layer pad(s) detected
-   Pad JUSB-6(5.05mm,20.225mm) on Multi-Layer on Net GND
-   Pad JUSB-6(5.05mm,24.675mm) on Multi-Layer on Net GND
-   Pad JUSB-6(1.87mm,26.54mm) on Multi-Layer on Net GND
    Pad JUSB-6(1.87mm,18.36mm) on Multi-Layer on Net GND
+   Pad JUSB-6(1.87mm,26.54mm) on Multi-Layer on Net GND
+   Pad JUSB-6(5.05mm,24.675mm) on Multi-Layer on Net GND
+   Pad JUSB-6(5.05mm,20.225mm) on Multi-Layer on Net GND
 
 Processing Rule : Clearance Constraint (Gap=0.15mm) (All),(All)
 Rule Violations :0
@@ -28,9 +28,7 @@ Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (
 Rule Violations :0
 
 Processing Rule : Minimum Annular Ring (Minimum=0.125mm) (All)
-   Violation between Minimum Annular Ring: (0.097mm < 0.125mm) Pad JUSB-6(1.87mm,18.36mm) on Multi-Layer (Annular Ring=0.098mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.097mm < 0.125mm) Pad JUSB-6(1.87mm,26.54mm) on Multi-Layer (Annular Ring=0.098mm) On (Top Layer)
-Rule Violations :2
+Rule Violations :0
 
 Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=3.5mm) (All)
 Rule Violations :0
@@ -54,6 +52,6 @@ Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (Al
 Rule Violations :0
 
 
-Violations Detected : 2
+Violations Detected : 0
 Waived Violations : 0
-Time Elapsed        : 00:00:00
+Time Elapsed        : 00:00:01
