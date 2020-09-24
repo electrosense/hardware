@@ -1,0 +1,83 @@
+Removed Pin From Net: NetName=SW_SW Pin=U7_CPU-18
+Removed Pin From Net: NetName=SW_MIX Pin=U7_CPU-26
+Removed Pin From Net: NetName=NetC56_2 Pin=U12-5
+Added Component: Designator=C100(smd C0402)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CSMD402/22pF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C101(smd C0402)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CSMD402/22pF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C102(smd C0603_0.80)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CSMD603/100nF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C103(smd C0603_0.80)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CSMD603/100pF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=URFSW1(QFN-16_skyworks)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Manufacturer"; Value = "Skyworks"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C102-1
+Added Pin To Net: NetName=5V Pin=C102-2
+Added Pin To Net: NetName=GND Pin=C103-1
+Added Pin To Net: NetName=5V Pin=C103-2
+Added Pin To Net: NetName=SW_MIX Pin=U7_CPU-18
+Added Pin To Net: NetName=SW_SW Pin=U7_CPU-26
+Added Pin To Net: NetName=5V Pin=URFSW1-1
+Added Pin To Net: NetName=GND Pin=URFSW1-4
+Added Pin To Net: NetName=GND Pin=URFSW1-5
+Added Pin To Net: NetName=GND Pin=URFSW1-6
+Added Pin To Net: NetName=GND Pin=URFSW1-7
+Added Pin To Net: NetName=GND Pin=URFSW1-8
+Added Pin To Net: NetName=GND Pin=URFSW1-10
+Added Pin To Net: NetName=GND Pin=URFSW1-11
+Added Pin To Net: NetName=GND Pin=URFSW1-13
+Added Pin To Net: NetName=GND Pin=URFSW1-14
+Added Pin To Net: NetName=GND Pin=URFSW1-15
+Added Pin To Net: NetName=GND Pin=URFSW1-16
+Added Pin To Net: NetName=GND Pin=URFSW1-17
+Change Net Name : Old Net Name=SW_SW New Net Name=SW_MIX_CPU
+Added Pin To Net: NetName=BAND_SEL Pin=U7_CPU-12
+Added Pin To Net: NetName=BAND_SEL Pin=URFSW1-2
+Added Net: Name=BAND_SEL
+Added Pin To Net: NetName=IMG_F_HIGH Pin=C101-1
+Added Net: Name=IMG_F_HIGH
+Added Pin To Net: NetName=IMG_F_LOW Pin=C100-1
+Added Net: Name=IMG_F_LOW
+Added Pin To Net: NetName=NetU12_5 Pin=U12-5
+Added Pin To Net: NetName=NetU12_5 Pin=URFSW1-3
+Added Net: Name=NetU12_5
+Added Pin To Net: NetName=URFSW_J1 Pin=C100-2
+Added Pin To Net: NetName=URFSW_J1 Pin=URFSW1-12
+Added Net: Name=URFSW_J1
+Added Pin To Net: NetName=URFSW_J2 Pin=C101-2
+Added Pin To Net: NetName=URFSW_J2 Pin=URFSW1-9
+Added Net: Name=URFSW_J2
+Added Member To Class: ClassName=U_Mixer Member=Component C100 22pF
+Added Member To Class: ClassName=U_Mixer Member=Component C101 22pF
+Added Member To Class: ClassName=U_Mixer Member=Component C102 100nF
+Added Member To Class: ClassName=U_Mixer Member=Component C103 47pF
+Added Member To Class: ClassName=U_Mixer Member=Component URFSW1 SKY13286-359LF
+Added Member To Class: ClassName=RF Member=Wire IMG_F_HIGH
+Added Member To Class: ClassName=RF Member=Wire IMG_F_LOW
+Added Member To Class: ClassName=RF Member=Wire NetU12_5
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF

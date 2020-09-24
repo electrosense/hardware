@@ -1,0 +1,19 @@
+Removed Pin From Net: NetName=NetC001Mx_2 Pin=C002BPMx-1
+Removed Pin From Net: NetName=NetC002BPMx_2 Pin=C002BPMx-2
+Removed Pin From Net: NetName=GND Pin=H2-0
+Removed Member From Class: ClassName=U_Mixer Member=C002BPMx
+Removed Member From Class: ClassName=RF Member=NetC002BPMx_2
+Change Component Designator: OldDesignator=C006Mx NewDesignator=C62
+Change Net Name : Old Net Name=NetC002BPMx_2 New Net Name=NetC002Mx_1
+Change Net Name : Old Net Name=NetC006Mx_1 New Net Name=NetC62_1
+Change Net Name : Old Net Name=NetC006Mx_2 New Net Name=NetC62_2
+Change Net Name : Old Net Name=NetR6LO_8 New Net Name=CE_U1
+Added Member To Class: ClassName=U_Mixer Member=Component C62 CSMD402/100nF
+Added Member To Class: ClassName=RF Member=Wire NetC002Mx_1
+Added Member To Class: ClassName=RF Member=Wire NetC62_1
+Added Member To Class: ClassName=RF Member=Wire NetC62_2
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF
