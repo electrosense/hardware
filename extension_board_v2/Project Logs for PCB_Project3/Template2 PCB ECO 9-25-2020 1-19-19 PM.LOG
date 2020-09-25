@@ -1,0 +1,79 @@
+Removed Pin From Net: NetName=GND Pin=C012LO-1
+Removed Pin From Net: NetName=3V3 Pin=C012LO-2
+Removed Pin From Net: NetName=GND Pin=C013LO-1
+Removed Pin From Net: NetName=3V3 Pin=C013LO-2
+Removed Member From Class: ClassName=U_LO Member=C012LO
+Removed Member From Class: ClassName=U_LO Member=C013LO
+Change Component DesignItemId : Designator=C008LO Old DesignItemId=CSMD402/100nF New DesignItemId=CSMD402/10nF
+Change Component DesignItemId : Designator=C009LO Old DesignItemId=CSMD402/100nF New DesignItemId=CSMD402/10nF
+Change Component DesignItemId : Designator=C010LO Old DesignItemId=CSMD402/100nF New DesignItemId=CSMD402/10nF
+Change Component DesignItemId : Designator=C011LO Old DesignItemId=CSMD402/100nF New DesignItemId=CSMD402/10nF
+Change Component DesignItemId : Designator=C019LO Old DesignItemId=CSMD603/12nF New DesignItemId=CSMD603/100nF
+Change Component DesignItemId : Designator=C020LO Old DesignItemId=CSMD603/12nF New DesignItemId=CSMD603/820pF
+Change Component Designator: OldDesignator=C008LO NewDesignator=C16
+Change Component Designator: OldDesignator=C009LO NewDesignator=C17
+Change Component Designator: OldDesignator=C010LO NewDesignator=C18
+Change Component Designator: OldDesignator=C011LO NewDesignator=C19
+Change Component Designator: OldDesignator=C014LO NewDesignator=C20
+Change Component Designator: OldDesignator=C015LO NewDesignator=C21
+Change Component Designator: OldDesignator=C016LO NewDesignator=C22
+Change Component Designator: OldDesignator=C018LO NewDesignator=C23
+Change Component Designator: OldDesignator=C019LO NewDesignator=C24
+Change Component Designator: OldDesignator=C020LO NewDesignator=C25
+Change Component Description : Designator=C24 Old Description=smd capaciteit, verp.0603, 12nF New Description=smd capaciteit, verp.0603, 100nF
+Change Component Description : Designator=C25 Old Description=smd capaciteit, verp.0603, 12nF New Description=smd capaciteit, verp.0603, 820pF
+Change Component Library : Designator=C23 Old Library=CDE_Library_Local.IntLib New Library=CDE_Library.IntLib
+Change Component Library : Designator=C24 Old Library=CDE_Library_Local.IntLib New Library=CDE_Library.IntLib
+Change Component Library : Designator=C25 Old Library=CDE_Library_Local.IntLib New Library=CDE_Library.IntLib
+Change component parameters: Designator = "C18"; Footprint = "smd C0402"; UniqueID = "\CHCMGKKC\FDGSTOUA"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "CSMD402/10nF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "C16"; Footprint = "smd C0402"; UniqueID = "\CHCMGKKC\JKCKJFFT"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "CSMD402/10nF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "C17"; Footprint = "smd C0402"; UniqueID = "\CHCMGKKC\YKHUCJRJ"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "CSMD402/10nF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "C19"; Footprint = "smd C0402"; UniqueID = "\CHCMGKKC\RLYSLRCO"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "CSMD402/10nF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "C24"; Footprint = "smd C0603_0.80"; UniqueID = "\CHCMGKKC\CKJRPJSI"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "CSMD603/100nF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "C25"; Footprint = "smd C0603_0.80"; UniqueID = "\CHCMGKKC\GSGIGHSR"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "CSMD603/820pF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Change Net Name : Old Net Name=NetC014LO_2 New Net Name=NetC20_2
+Change Net Name : Old Net Name=NetC015LO_2 New Net Name=NetC21_2
+Change Net Name : Old Net Name=NetC016LO_2 New Net Name=NetC22_2
+Change Net Name : Old Net Name=NetC018LO_2 New Net Name=NetC23_2
+Change Net Name : Old Net Name=NetC019LO_1 New Net Name=NetC24_1
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF

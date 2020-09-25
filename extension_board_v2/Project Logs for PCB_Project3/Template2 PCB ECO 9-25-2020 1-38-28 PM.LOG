@@ -1,0 +1,39 @@
+Removed Pin From Net: NetName=GND Pin=C029LO-1
+Removed Pin From Net: NetName=3V3 Pin=C029LO-2
+Removed Pin From Net: NetName=3V3 Pin=R012LO-1
+Removed Member From Class: ClassName=U_LO Member=C029LO
+Removed Member From Class: ClassName=U_LO Member=R012LO
+Change Component DesignItemId : Designator=R011LO Old DesignItemId=240K/603 New DesignItemId=30R/603
+Change Component DesignItemId : Designator=R039LO Old DesignItemId=240K/603 New DesignItemId=91R/603
+Change Component Comment : Designator=R011LO Old Comment=30.1 New Comment=
+Change Component Comment : Designator=R6LO Old Comment=DNP New Comment=
+Change Component Designator: OldDesignator=R001LO NewDesignator=R08
+Change Component Designator: OldDesignator=R002LO NewDesignator=R11
+Change Component Designator: OldDesignator=R003LO NewDesignator=R09
+Change Component Designator: OldDesignator=R004LO NewDesignator=R12
+Change Component Designator: OldDesignator=R005LO NewDesignator=R13
+Change Component Designator: OldDesignator=R6LO NewDesignator=R10
+Change Component Designator: OldDesignator=R009LO NewDesignator=R14
+Change Component Designator: OldDesignator=R010LO NewDesignator=R15
+Change Component Designator: OldDesignator=R011LO NewDesignator=R16
+Change Component Designator: OldDesignator=R039LO NewDesignator=R17
+Change Component Designator: OldDesignator=R040LO NewDesignator=R18
+Change Component Designator: OldDesignator=R041LO NewDesignator=R19
+Change Component Description : Designator=R16 Old Description=weerstand SMD603, 240K New Description=weerstand SMD603, 30R
+Change Component Description : Designator=R17 Old Description=weerstand SMD603, 240K New Description=weerstand SMD603, 91R
+Change Component Library : Designator=R16 Old Library=CDE_Library_Local.IntLib New Library=CDE_Library.IntLib
+Change Component Library : Designator=R17 Old Library=CDE_Library_Local.IntLib New Library=CDE_Library.IntLib
+Change Component Library : Designator=R18 Old Library=CDE_Library_Local.IntLib New Library=CDE_Library.IntLib
+Change Component Library : Designator=R19 Old Library=CDE_Library_Local.IntLib New Library=CDE_Library.IntLib
+Change component parameters: Designator = "R16"; Footprint = "smd C0603_0.45"; UniqueID = "\CHCMGKKC\PXEMOKVJ"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "R17"; Footprint = "smd C0603_0.45"; UniqueID = "\CHCMGKKC\XSTLKIBK"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3V3 Pin=C29-2
+Added Pin To Net: NetName=3V3 Pin=X100-4
+Change Net Name : Old Net Name=NetR001LO_2 New Net Name=NetR08_2
+Change Net Name : Old Net Name=NetR6LO_2 New Net Name=NetR10_2

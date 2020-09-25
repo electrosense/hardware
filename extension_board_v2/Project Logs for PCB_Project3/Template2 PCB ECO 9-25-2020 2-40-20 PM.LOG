@@ -1,0 +1,39 @@
+Removed Member From Class: ClassName=RF Member=NetU12_5
+Change Component DesignItemId : Designator=R28 Old DesignItemId=750R/603 New DesignItemId=51R/402
+Change Component DesignItemId : Designator=R30 Old DesignItemId=750R/603 New DesignItemId=51R/402
+Change Component DesignItemId : Designator=R32 Old DesignItemId=750R/603 New DesignItemId=51R/402
+Change Component Footprint: Designator=R28 Old Footprint=smd C0603_0.45 New Footprint=smd C0402_0.35
+Change Component Footprint: Designator=R30 Old Footprint=smd C0603_0.45 New Footprint=smd C0402_0.35
+Change Component Footprint: Designator=R32 Old Footprint=smd C0603_0.45 New Footprint=smd C0402_0.35
+Change Component Designator: OldDesignator=L4 NewDesignator=L2
+Change Component Designator: OldDesignator=L5Mx NewDesignator=L3
+Change Component Designator: OldDesignator=L7Mx NewDesignator=L4
+Change Component Designator: OldDesignator=R28 NewDesignator=R21
+Change Component Designator: OldDesignator=R30 NewDesignator=R22
+Change Component Designator: OldDesignator=R32 NewDesignator=R23
+Change Component Designator: OldDesignator=R_U11pol NewDesignator=R20
+Change Component Designator: OldDesignator=U11 NewDesignator=U6
+Change Component Designator: OldDesignator=U12 NewDesignator=U8
+Change Component Designator: OldDesignator=U13 NewDesignator=U11
+Change Component Designator: OldDesignator=U20 NewDesignator=U9
+Change Component Designator: OldDesignator=U31 NewDesignator=U10
+Change Component Designator: OldDesignator=URFSW1 NewDesignator=U7
+Change Component Description : Designator=R21 Old Description=weerstand SMD603, 750R New Description=weerstand SMD402, 51R
+Change Component Description : Designator=R22 Old Description=weerstand SMD603, 750R New Description=weerstand SMD402, 51R
+Change Component Description : Designator=R23 Old Description=weerstand SMD603, 750R New Description=weerstand SMD402, 51R
+Change Net Name : Old Net Name=NetU12_5 New Net Name=NetU7_3
+Added Member To Class: ClassName=U_Mixer Member=Component C38 100nF
+Added Member To Class: ClassName=U_Mixer Member=Component C39 47pF
+Added Member To Class: ClassName=U_Mixer Member=Component C41 100nF
+Added Member To Class: ClassName=U_Mixer Member=Component C42 100pF
+Added Member To Class: ClassName=U_Mixer Member=Component C50 1uF
+Added Member To Class: ClassName=U_Mixer Member=Component C53 100pF
+Added Member To Class: ClassName=U_Mixer Member=Component C54 47pF
+Added Member To Class: ClassName=U_Mixer Member=Component C55 47pF
+Added Member To Class: ClassName=U_Mixer Member=Component C56 47pF
+Added Member To Class: ClassName=RF Member=Wire NetU7_3
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF

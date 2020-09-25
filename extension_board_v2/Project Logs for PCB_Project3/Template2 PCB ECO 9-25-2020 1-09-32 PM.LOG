@@ -1,0 +1,20 @@
+Removed Pin From Net: NetName=GND Pin=C005LO-1
+Removed Pin From Net: NetName=3V3 Pin=C005LO-2
+Removed Pin From Net: NetName=GND Pin=C006LO-1
+Removed Pin From Net: NetName=3V3 Pin=C006LO-2
+Removed Member From Class: ClassName=U_LO Member=C005LO
+Removed Member From Class: ClassName=U_LO Member=C006LO
+Change Component Designator: OldDesignator=C001LO NewDesignator=C12
+Change Component Designator: OldDesignator=C002LO NewDesignator=C13
+Change Component Designator: OldDesignator=C003LO NewDesignator=C14
+Change Component Designator: OldDesignator=C004LO NewDesignator=C15
+Added Member To Class: ClassName=U_CPU Member=Component R02 750
+Added Member To Class: ClassName=U_CPU Member=Component R03 750
+Added Member To Class: ClassName=U_CPU Member=Component R04 750
+Added Member To Class: ClassName=U_CPU Member=Component R06 51
+Added Member To Class: ClassName=U_CPU Member=Component R07 51
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF

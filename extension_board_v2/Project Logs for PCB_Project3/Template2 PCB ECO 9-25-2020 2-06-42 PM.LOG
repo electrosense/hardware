@@ -1,0 +1,38 @@
+Removed Member From Class: ClassName=RF Member=NetC52_1
+Removed Member From Class: ClassName=RF Member=NetC52_2
+Removed Member From Class: ClassName=RF Member=NetC56_1
+Removed Member From Class: ClassName=RF Member=NetC56_2
+Change Component DesignItemId : Designator=C60 Old DesignItemId=CSMD402/22pF New DesignItemId=CSMD402/1pF
+Change Component DesignItemId : Designator=C49 Old DesignItemId=CSMD603/100nF New DesignItemId=CSMD402/100nF
+Change Component Footprint: Designator=C49 Old Footprint=smd C0603_0.80 New Footprint=smd C0402
+Change Component Comment : Designator=C60 Old Comment=0.2pF New Comment=
+Change Component Designator: OldDesignator=C49 NewDesignator=C34
+Change Component Designator: OldDesignator=C52 NewDesignator=C31
+Change Component Designator: OldDesignator=C56 NewDesignator=C35
+Change Component Designator: OldDesignator=C60 NewDesignator=C32
+Change Component Designator: OldDesignator=C70Mx NewDesignator=C33
+Change Component Description : Designator=C32 Old Description=smd capaciteit, verp.0402, 22pF New Description=smd capaciteit, verp.0402, 1pF
+Change Component Description : Designator=C34 Old Description=smd capaciteit, verp.0603, 100nF New Description=smd capaciteit, verp.0402, 100nF
+Change component parameters: Designator = "C34"; Footprint = "smd C0402"; UniqueID = "\RVAQQRVL\KSUJMIFK"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "CSMD402/100nF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "C32"; Footprint = "smd C0402"; UniqueID = "\RVAQQRVL\BQQWHTYA"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "CSMD402/100nF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Change Net Name : Old Net Name=NetC49_2 New Net Name=NetC33_1
+Change Net Name : Old Net Name=NetC52_1 New Net Name=NetC31_1
+Change Net Name : Old Net Name=NetC52_2 New Net Name=NetC31_2
+Change Net Name : Old Net Name=NetC56_1 New Net Name=NetC35_1
+Change Net Name : Old Net Name=NetC56_2 New Net Name=NetC35_2
+Added Member To Class: ClassName=RF Member=Wire NetC31_1
+Added Member To Class: ClassName=RF Member=Wire NetC31_2
+Added Member To Class: ClassName=RF Member=Wire NetC35_1
+Added Member To Class: ClassName=RF Member=Wire NetC35_2
