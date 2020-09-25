@@ -1,0 +1,30 @@
+Removed Pin From Net: NetName=CLK_LED Pin=CLK-2
+Removed Pin From Net: NetName=5V Pin=R01CPU-2
+Removed Member From Class: ClassName=U_CPU Member=CLK
+Removed Member From Class: ClassName=U_CPU Member=R01CPU
+Change Component DesignItemId : Designator=C11CPU Old DesignItemId=CSMD603/100nF New DesignItemId=CSMD603/10nF
+Change Component Designator: OldDesignator=C01CPU NewDesignator=C01
+Change Component Designator: OldDesignator=C02CPU NewDesignator=C02
+Change Component Designator: OldDesignator=C03CPU NewDesignator=C03
+Change Component Designator: OldDesignator=C04CPU NewDesignator=C04
+Change Component Designator: OldDesignator=C05CPU NewDesignator=C05
+Change Component Designator: OldDesignator=C06CPU NewDesignator=C06
+Change Component Designator: OldDesignator=C07CPU NewDesignator=C07
+Change Component Designator: OldDesignator=C08CPU NewDesignator=C08
+Change Component Designator: OldDesignator=C09CPU NewDesignator=C09
+Change Component Designator: OldDesignator=C10CPU NewDesignator=C10
+Change Component Designator: OldDesignator=C11CPU NewDesignator=C11
+Change Component Description : Designator=C11 Old Description=smd capaciteit, verp.0603, 100nF New Description=smd capaciteit, verp.0603, 10nF
+Change component parameters: Designator = "C11"; Footprint = "smd C0603_0.80"; UniqueID = "\UNEDAOCQ\ADNMIAGK"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "CSMD603/10nF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Change Net Name : Old Net Name=NetC06CPU_2 New Net Name=NetC06_2
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF

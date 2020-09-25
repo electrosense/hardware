@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=NetC006Mx_2 Pin=C006Mx-2
+Removed Pin From Net: NetName=GND Pin=L6Mx-1
+Removed Member From Class: ClassName=U_Mixer Member=C006Mx
+Removed Member From Class: ClassName=U_Mixer Member=L6Mx
+Removed Member From Class: ClassName=RF Member=NetC006Mx_1
+Removed Member From Class: ClassName=RF Member=NetC006Mx_2
+Added Pin To Net: NetName=NetC006Mx_2 Pin=C59-2
+Change Net Name : Old Net Name=NetC006Mx_2 New Net Name=NetC59_2
+Added Member To Class: ClassName=RF Member=Wire NetC59_2
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF

@@ -1,0 +1,32 @@
+Change Component DesignItemId : Designator=R07CPU Old DesignItemId=22R/603 New DesignItemId=51R/603
+Change Component DesignItemId : Designator=R08CPU Old DesignItemId=22R/603 New DesignItemId=51R/603
+Change Component DesignItemId : Designator=R02CPU Old DesignItemId=470R/603 New DesignItemId=750R/603
+Change Component DesignItemId : Designator=R03CPU Old DesignItemId=470R/603 New DesignItemId=750R/603
+Change Component DesignItemId : Designator=R04CPU Old DesignItemId=470R/603 New DesignItemId=750R/603
+Change Component Designator: OldDesignator=L01CPU NewDesignator=L01
+Change Component Designator: OldDesignator=R02CPU NewDesignator=R02
+Change Component Designator: OldDesignator=R03CPU NewDesignator=R03
+Change Component Designator: OldDesignator=R04CPU NewDesignator=R04
+Change Component Designator: OldDesignator=R05CPU NewDesignator=R01
+Change Component Designator: OldDesignator=R06CPU NewDesignator=R05
+Change Component Designator: OldDesignator=R07CPU NewDesignator=R06
+Change Component Designator: OldDesignator=R08CPU NewDesignator=R07
+Change Component Designator: OldDesignator=U1 NewDesignator=U100
+Change Component Designator: OldDesignator=U7_CPU NewDesignator=U1
+Change Component Designator: OldDesignator=U8_CPU NewDesignator=U2
+Change Component Designator: OldDesignator=U9_CPU NewDesignator=U3
+Change Component Designator: OldDesignator=X1 NewDesignator=X100
+Change Component Designator: OldDesignator=X2_CPU NewDesignator=X1
+Change Component Description : Designator=R06 Old Description=weerstand SMD603, 22R New Description=weerstand SMD603, 51R
+Change Component Description : Designator=R07 Old Description=weerstand SMD603, 22R New Description=weerstand SMD603, 51R
+Change Component Description : Designator=R02 Old Description=weerstand SMD603, 470R New Description=weerstand SMD603, 750R
+Change Component Description : Designator=R03 Old Description=weerstand SMD603, 470R New Description=weerstand SMD603, 750R
+Change Component Description : Designator=R04 Old Description=weerstand SMD603, 470R New Description=weerstand SMD603, 750R
+Change Net Name : Old Net Name=NetR02CPU_1 New Net Name=NetR02_1
+Change Net Name : Old Net Name=NetR05CPU_2 New Net Name=NetR01_2
+Added Member To Class: ClassName=U_CPU Member=Component C11 10nF
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF
