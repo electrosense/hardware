@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : D:\elesensehw\hardware\extension_board_v2\Template2.PcbDoc
-Date     : 9/24/2020
-Time     : 3:19:26 PM
+Date     : 11/26/2020
+Time     : 11:00:11 AM
 
 WARNING: Unplated multi-layer pad(s) detected
    Pad JUSB-6(1.87mm,18.36mm) on Multi-Layer on Net GND
@@ -22,7 +22,22 @@ Processing Rule : Un-Routed Net Constraint ( (All) )
 Rule Violations :0
 
 Processing Rule : Width Constraint (Min=0.15mm) (Max=2.54mm) (Preferred=0.22mm) (All)
-Rule Violations :0
+   Violation between Width Constraint: Arc (38.25mm,34.475mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (35.55mm,34.475mm)(35.55mm,35.8mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (35.55mm,34.475mm)(35.925mm,34.475mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (35.55mm,37.175mm)(35.55mm,35.8mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (35.55mm,37.175mm)(35.925mm,37.175mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (35.925mm,34.475mm)(36.575mm,34.475mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (35.925mm,37.175mm)(36.575mm,37.175mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (36.575mm,34.475mm)(37.226mm,34.475mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (36.575mm,37.175mm)(37.225mm,37.175mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (37.225mm,37.175mm)(37.875mm,37.175mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (37.226mm,34.475mm)(37.875mm,34.475mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (37.875mm,34.475mm)(38.05mm,34.475mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (37.875mm,37.175mm)(38.25mm,37.175mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (38.25mm,34.675mm)(38.25mm,36.8mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (38.25mm,36.8mm)(38.25mm,37.175mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+Rule Violations :15
 
 Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
 Rule Violations :0
@@ -48,170 +63,10 @@ Rule Violations :0
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
 Rule Violations :0
 
-Processing Rule : Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO'))
-   Violation between Room Definition: Between Component U5-MCP9804 (37.9mm,8.95mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) 
-   Violation between Room Definition: Between Component X1-X1G004691000112 (42.711mm,12.411mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) 
-   Violation between Room Definition: Between LCC Component U1-MAX2870 (47mm,27mm) on Top Layer And Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C001LO-100nF (50mm,21.45mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C002LO-100nF (45.786mm,20.842mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C003LO-100nF (41.886mm,29.642mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C004LO-100nF (49.386mm,31.642mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C005LO-100nF (52.886mm,26.342mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C006LO-100nF (45.75mm,35.2mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C007LO-22pF (42.986mm,31.842mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C008LO-10nF (48.75mm,22.25mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C009LO-10nF (51.75mm,27.5mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C010LO-10nF (38.258mm,13.354mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C011LO-10nF (46.986mm,22.142mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C012LO-10nF (42.086mm,28.442mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C013LO-10nF (49.9mm,34.05mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C014LO-1uF (42mm,22mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C015LO-1uF (40.686mm,26.142mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C016LO-1uF (44.5mm,22mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C017LO-22pF (42.986mm,32.842mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C018LO-12nF (52mm,30.25mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C019LO-100nF (52mm,28.75mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C020LO-820pF (42.186mm,26.142mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C029LO-100nF (38.2mm,14.7mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C031LO-100nF (43.85mm,8.8mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C035LO-100nF (42.211mm,15.011mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component C34LO-100nF (46.711mm,12.911mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component R001LO-5K1 (42mm,23.5mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component R002LO (48.55mm,17.55mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component R003LO-270 (40.286mm,18.6mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component R004LO-50R/402 (42.986mm,30.842mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component R005LO-50R/402 (44.586mm,33.942mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component R009LO-50R/402 (41.686mm,33.942mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component R010LO-240 (52.036mm,31.692mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component R011LO-30.1 (52.75mm,24.75mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component R012LO-0 (40.1mm,16.554mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component R039LO-91 (55.7mm,25.65mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component R040LO (31.6mm,12.6mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SMT Small Component R041LO (34.4mm,12.6mm) on Top Layer 
-   Violation between Room Definition: Between Room U_LO (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_LO')) And SOIC Component R6LO-DNP (53.2mm,21.75mm) on Top Layer 
-Rule Violations :40
-
-Processing Rule : Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU'))
-   Violation between Room Definition: Between Component JUSB-CON SMD USB Micro MOLEX (0.6mm,22.45mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) 
-   Violation between Room Definition: Between Component U9_CPU-LD1117-SOT223 (56.65mm,12.56mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) 
-   Violation between Room Definition: Between Component X2_CPU-KTL/5x3.2mm16MHz (27.8mm,23.1mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) 
-   Violation between Room Definition: Between DIP Component GPS1-DNP (28.9mm,5mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) 
-   Violation between Room Definition: Between LCC Component U7_CPU-STM32F103C8T6 (20.036mm,21.45mm) on Top Layer And Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component C01CPU-100nF (13mm,17.35mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component C02CPU-100nF (24.033mm,15.72mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component C03CPU-100nF (13mm,15.5mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component C04CPU-10pF (29.3mm,17.55mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component C05CPU-10pF (28.83mm,24.95mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component C06CPU-100nF (28.4mm,26.3mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component C07CPU-10uF (52.9mm,6.9mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component C08CPU-10uF (63mm,15.2mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component C09CPU-100nF (62.8mm,11.3mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component C10CPU-100nF (48.4mm,8.8mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component C11CPU-10nF (48.3mm,7.3mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component CLK-DNP (16.054mm,12.4mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component L01CPU-Ferrite (48.827mm,11.2mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component LOCK-HSMG-C190 (19.3mm,12.4mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component MIX-HSMY-C190 (20.854mm,12.4mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component R01CPU-DNP (16.054mm,8.396mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component R02CPU-750 (17.654mm,8.396mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component R03CPU-750 (19.254mm,8.396mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component R04CPU-750 (20.854mm,8.396mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component R05CPU-1K5 (24.817mm,13.45mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component R06CPU-1K5 (8.4mm,18.4mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component R07CPU-51 (8.4mm,24.675mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component R08CPU-51 (8.4mm,19.8mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SMT Small Component USB-HSMH-C190 (17.7mm,12.4mm) on Top Layer 
-   Violation between Room Definition: Between Room U_CPU (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_CPU')) And SOIC Component U8_CPU-IP4220CZ6 (8.24mm,22.2mm) on Top Layer 
-Rule Violations :30
-
-Processing Rule : Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer'))
-   Violation between Room Definition: Between Component D2-ESD0P8RFL (12mm,46.6mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) 
-   Violation between Room Definition: Between Component D3-ESD0P8RFL (65mm,42.2mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) 
-   Violation between Room Definition: Between Component D5-ESD0P8RFL (11.3mm,33.558mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) 
-   Violation between Room Definition: Between Component HIGH-CONSMA (5.55mm,34mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) 
-   Violation between Room Definition: Between Component MID-CONSMA (5.64mm,46.94mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) 
-   Violation between Room Definition: Between Component SDR1-CONSMA (65.5mm,35.928mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) 
-   Violation between Room Definition: Between Component U12-LTC5549 (29.236mm,34.05mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) 
-   Violation between Room Definition: Between Component U13-SKY13322-375LF (55.6mm,45.1mm) on Top Layer And Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C001Mx-CSMD402/100nF (40.686mm,38.552mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C002Mx-CSMD402/100nF (53.6mm,41.1mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C003Mx-CSMD402/1.5nF (53.45mm,36.426mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C004Mx-CSMD402/100pF (54.422mm,36.4mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C005Mx-1uF (52.1mm,36.3mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C006Mx-CSMD402/100nF (32.9mm,38.5mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C007Mx-CSMD402/100nF (26.5mm,47.1mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C008Mx-CSMD402/100pF (25.636mm,44.351mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C009Mx-CSMD402/1.5nF (26.75mm,42.8mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C010Mx-1uF (27.892mm,42.9mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C49-100nF (24.3mm,38.2mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C50-10nF (38.3mm,29.981mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C51-100nF (37.1mm,29.7mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C52-22pF (14.2mm,34mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C56-22pF (25.6mm,34.05mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C59-100pF (29.236mm,37.8mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C60-0.2pF (16.4mm,32.9mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C62-CSMD402/100nF (15.49mm,47.1mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C67-100pF (59mm,45.2mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C70-47pF (52.1mm,43.5mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C70Mx-CSMD402/1nF (22.9mm,38.1mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C71-47pF (52.1mm,45mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component C72-47pF (57.8mm,47.3mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component L4-SPL603/51nH (22.9mm,34.9mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component L5Mx-SPL805/470nH (48.978mm,37.2mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component L6Mx-SPL603/82nH (30.5mm,39.35mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component L7Mx-SPL805/470nH (23.259mm,46.1mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component R_U11pol-20R/402 (25.575mm,38.1mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component R28-51 (48.6mm,43.5mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component R30-51 (48.6mm,44.95mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component R32-51 (59.1mm,47.3mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component U11-SBB3089Z (19.4mm,36.45mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component U20-ADL5602 (44.475mm,40.9mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SMT Small Component U31-ADL5602 (19.65mm,49.35mm) on Top Layer 
-   Violation between Room Definition: Between Room U_Mixer (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_Mixer')) And SOIC Component SAW1-BR39162B3522U410 (36.7mm,38.5mm) on Top Layer 
-Rule Violations :43
-
-Processing Rule : Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF'))
-   Violation between Room Definition: Between Component LOW-CONSMA (5.5mm,58.692mm) on Top Layer And Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component BAT1-BAT1704WH6327XTSA1 (12mm,60.7mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component C73HF-10nF (36.886mm,59.942mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component C74HF-100nF (36.886mm,61.242mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component C75HF-10nF (29.886mm,58.142mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component C76HF-47pF (33.586mm,51.442mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component C77HF-6.8pF (38.686mm,50.342mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component C78HF-47pF (16.786mm,57.342mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component C79HF-47pF (22.186mm,57.342mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component C80HF-10nF (29.986mm,56.642mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component C81HF-10nF (42.086mm,55.642mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component C82HF-47pF (38.586mm,52.242mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component C83HF-47pF (55.586mm,57.542mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component C84HF-9.1pF (48.086mm,57.542mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component L10HF-470nH (45.086mm,56.642mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component L5HF-Ferrite (40.786mm,61.242mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component L6HF-470nH (13.986mm,58.042mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component L7HF-470nH (19.386mm,57.942mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component L8HF-470nH (24.686mm,58.042mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component L9HF-470nH (35.686mm,51.242mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component R33HF-10K (48.886mm,60.242mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component R34HF-51 (27.586mm,57.242mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component R35HF-10K (10.7mm,57.742mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component R36HF-390 (51.786mm,57.542mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component R37HF-51 (51.786mm,55.742mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component R38HF-51 (48.086mm,55.742mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SMT Small Component T2HF-BC856 (44.586mm,61.242mm) on Top Layer 
-   Violation between Room Definition: Between Room U_MixerHF (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('U_MixerHF')) And SOIC Component U15-SA612 (36.086mm,56.242mm) on Top Layer 
-Rule Violations :28
-
-Processing Rule : Room Toplevel (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('Toplevel'))
-   Violation between Room Definition: Between Room Toplevel (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('Toplevel')) And Small Component H1-MOUNTHOLE_3MM (90.5mm,5mm) on Top Layer 
-   Violation between Room Definition: Between Room Toplevel (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('Toplevel')) And Small Component H2-MOUNTHOLE_3MM (5mm,5mm) on Top Layer 
-   Violation between Room Definition: Between Room Toplevel (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('Toplevel')) And Small Component H3-MOUNTHOLE_3MM (90.5mm,65mm) on Top Layer 
-   Violation between Room Definition: Between Room Toplevel (Bounding Region = (0mm, 0mm, 50.8mm, 25.4mm) (InComponentClass('Toplevel')) And Small Component H4-MOUNTHOLE_3MM (7.6mm,67.1mm) on Top Layer 
-Rule Violations :4
-
 Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
 Rule Violations :0
 
 
-Violations Detected : 145
+Violations Detected : 15
 Waived Violations : 0
 Time Elapsed        : 00:00:00
