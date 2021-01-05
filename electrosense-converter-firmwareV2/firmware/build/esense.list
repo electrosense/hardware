@@ -85,7 +85,7 @@ Disassembly of section .text:
  8002204:	20000000 	.word	0x20000000
  8002208:	20000400 	.word	0x20000400
  800220c:	20000400 	.word	0x20000400
- 8002210:	0800d088 	.word	0x0800d088
+ 8002210:	0800d08c 	.word	0x0800d08c
  8002214:	20000800 	.word	0x20000800
  8002218:	20000928 	.word	0x20000928
  800221c:	20000928 	.word	0x20000928
@@ -4809,7 +4809,7 @@ static bool gpioCPUGetValue(const GPIOPort* driver, uint32_t* value)
  80054ba:	5c58      	ldrb	r0, [r3, r1]
  80054bc:	bd38      	pop	{r3, r4, r5, pc}
  80054be:	bf00      	nop
- 80054c0:	0800cbec 	.word	0x0800cbec
+ 80054c0:	0800cbf0 	.word	0x0800cbf0
 
 080054c4 <gpioCPUSetPinMode>:
     palSetPadMode((ioportid_t)driver->driver, pin, pinMode);
@@ -4896,7 +4896,7 @@ static bool gpioCPUGetValue(const GPIOPort* driver, uint32_t* value)
  800552a:	6141      	streq	r1, [r0, #20]
  800552c:	e7d2      	b.n	80054d4 <gpioCPUSetPinMode+0x10>
  800552e:	bf00      	nop
- 8005530:	0800cbfc 	.word	0x0800cbfc
+ 8005530:	0800cc00 	.word	0x0800cc00
 
 08005534 <gpioGetPortDriver>:
     return &GPIODriverData.ports[index];
@@ -4921,7 +4921,7 @@ static const GPIOPort* gpioGetPortDriver(uint8_t index)
 }
  8005546:	4770      	bx	lr
  8005548:	20000928 	.word	0x20000928
- 800554c:	0800cd3c 	.word	0x0800cd3c
+ 800554c:	0800cd40 	.word	0x0800cd40
 
 08005550 <gpioPortIoDisable>:
 
@@ -5126,7 +5126,7 @@ void gpioCPUInit(uint8_t gpioPortId, ioportid_t port)
 }
  8005648:	bd10      	pop	{r4, pc}
  800564a:	bf00      	nop
- 800564c:	0800cd0c 	.word	0x0800cd0c
+ 800564c:	0800cd10 	.word	0x0800cd10
 
 08005650 <syslogPut>:
 
@@ -6046,12 +6046,12 @@ char hexNibble(unsigned char a)
     return NULL;
  8005bf8:	2000      	movs	r0, #0
  8005bfa:	e7ad      	b.n	8005b58 <get_descriptor+0x14>
- 8005bfc:	0800cf30 	.word	0x0800cf30
- 8005c00:	0800cfe0 	.word	0x0800cfe0
+ 8005bfc:	0800cf34 	.word	0x0800cf34
+ 8005c00:	0800cfe4 	.word	0x0800cfe4
  8005c04:	20001231 	.word	0x20001231
- 8005c08:	0800cff8 	.word	0x0800cff8
- 8005c0c:	0800d06b 	.word	0x0800d06b
- 8005c10:	0800cee4 	.word	0x0800cee4
+ 8005c08:	0800cffc 	.word	0x0800cffc
+ 8005c0c:	0800d06f 	.word	0x0800d06f
+ 8005c10:	0800cee8 	.word	0x0800cee8
 
 08005c14 <osalSysUnlockFromISR.lto_priv.0>:
     taskEXIT_CRITICAL_FROM_ISR(uxSavedInterruptStatus);
@@ -6220,7 +6220,7 @@ void systemEnableMCO(bool enable)
  8005d2e:	e8bd 4070 	ldmia.w	sp!, {r4, r5, r6, lr}
  8005d32:	f7fe ba4b 	b.w	80041cc <vPortExitCritical>
  8005d36:	bd70      	pop	{r4, r5, r6, pc}
- 8005d38:	0800cbd4 	.word	0x0800cbd4
+ 8005d38:	0800cbd8 	.word	0x0800cbd8
  8005d3c:	20001198 	.word	0x20001198
  8005d40:	2000119c 	.word	0x2000119c
  8005d44:	200011a8 	.word	0x200011a8
@@ -7175,7 +7175,7 @@ void _usb_reset(USBDriver *usbp) {
  8006296:	bd70      	pop	{r4, r5, r6, pc}
  8006298:	20000f54 	.word	0x20000f54
  800629c:	40005c00 	.word	0x40005c00
- 80062a0:	0800cca0 	.word	0x0800cca0
+ 80062a0:	0800cca4 	.word	0x0800cca4
 
 080062a4 <usb_packet_write_from_buffer>:
   stm32_usb_descriptor_t *udp = USB_GET_DESCRIPTOR(ep);
@@ -9091,10 +9091,10 @@ void _usb_ep0setup(USBDriver *usbp, usbep_t ep) {
  8007080:	601a      	str	r2, [r3, #0]
  8007082:	e7b0      	b.n	8006fe6 <_usb_ep0setup+0x25a>
  8007084:	40005c00 	.word	0x40005c00
- 8007088:	0800d058 	.word	0x0800d058
+ 8007088:	0800d05c 	.word	0x0800d05c
  800708c:	08007115 	.word	0x08007115
- 8007090:	0800cbd0 	.word	0x0800cbd0
- 8007094:	0800cd48 	.word	0x0800cd48
+ 8007090:	0800cbd4 	.word	0x0800cbd4
+ 8007094:	0800cd4c 	.word	0x0800cd4c
     if (usbp->setup[2] != USB_FEATURE_ENDPOINT_HALT) {
  8007098:	f894 3076 	ldrb.w	r3, [r4, #118]	; 0x76
  800709c:	2b00      	cmp	r3, #0
@@ -9242,7 +9242,7 @@ void spi_lld_receive(SPIDriver *spip, size_t n, void *rxbuf) {
   osalSysUnlock();
  800717e:	f7fe bb83 	b.w	8005888 <osalSysUnlock.lto_priv.0>
  8007182:	bf00      	nop
- 8007184:	0800cc9c 	.word	0x0800cc9c
+ 8007184:	0800cca0 	.word	0x0800cca0
 
 08007188 <sduInterruptTransmitted>:
  */
@@ -12754,7 +12754,7 @@ static int get_history(ShellHistory *shp, char *line, int dir) {
     for(; result<minLength; result++) {
  8008820:	3701      	adds	r7, #1
  8008822:	e7ec      	b.n	80087fe <printfFixed+0x1e>
- 8008824:	0800c764 	.word	0x0800c764
+ 8008824:	0800c766 	.word	0x0800c766
 
 08008828 <chprintf>:
  * @param[in] chp       pointer to a @p BaseSequentialStream implementing object
@@ -13068,7 +13068,7 @@ void vApplicationIdleHook(void)
  8008ac0:	20001648 	.word	0x20001648
  8008ac4:	200012cc 	.word	0x200012cc
  8008ac8:	0800bcb5 	.word	0x0800bcb5
- 8008acc:	0800ceb8 	.word	0x0800ceb8
+ 8008acc:	0800cebc 	.word	0x0800cebc
  8008ad0:	20001354 	.word	0x20001354
  8008ad4:	20001355 	.word	0x20001355
  8008ad8:	080055c1 	.word	0x080055c1
@@ -13212,7 +13212,7 @@ void cmdSanity(void* user, BaseSequentialStream *chp, int argc, char *argv[])
  8008be8:	0800bd2d 	.word	0x0800bd2d
  8008bec:	0800beb4 	.word	0x0800beb4
  8008bf0:	0800bca6 	.word	0x0800bca6
- 8008bf4:	0800cad4 	.word	0x0800cad4
+ 8008bf4:	0800cad8 	.word	0x0800cad8
 
 08008bf8 <gpioDummyStatus>:
 
@@ -13286,7 +13286,7 @@ void gpioDummyStatus(const GPIOPort* driver, BaseSequentialStream* chp)
  8008c62:	bf00      	nop
  8008c64:	20001334 	.word	0x20001334
  8008c68:	20001310 	.word	0x20001310
- 8008c6c:	0800ceb8 	.word	0x0800ceb8
+ 8008c6c:	0800cebc 	.word	0x0800cebc
  8008c70:	20001648 	.word	0x20001648
  8008c74:	0800bd4c 	.word	0x0800bd4c
 
@@ -14822,10 +14822,10 @@ void converterStatus(BaseSequentialStream* chp, ConverterManager* converter)
  800966c:	0800bdda 	.word	0x0800bdda
  8009670:	0800bde1 	.word	0x0800bde1
  8009674:	0800be01 	.word	0x0800be01
- 8009678:	0800c21d 	.word	0x0800c21d
+ 8009678:	0800c21f 	.word	0x0800c21f
  800967c:	0800be0a 	.word	0x0800be0a
  8009680:	0800be18 	.word	0x0800be18
- 8009684:	0800c3b0 	.word	0x0800c3b0
+ 8009684:	0800c3b2 	.word	0x0800c3b2
  8009688:	0800be37 	.word	0x0800be37
  800968c:	0800be30 	.word	0x0800be30
  8009690:	0800be28 	.word	0x0800be28
@@ -15083,7 +15083,7 @@ void cmdGPIO(void* user, BaseSequentialStream *chp, int argc, char *argv[])
                 chprintf(chp, "Value: %u"SHELL_NEWLINE_STR, gpioGetPin(pin));
  8009864:	f7fe bfe0 	b.w	8008828 <chprintf>
  8009868:	0800bdda 	.word	0x0800bdda
- 800986c:	0800c3b0 	.word	0x0800c3b0
+ 800986c:	0800c3b2 	.word	0x0800c3b2
  8009870:	0800c01d 	.word	0x0800c01d
  8009874:	0800c021 	.word	0x0800c021
  8009878:	0800c025 	.word	0x0800c025
@@ -15252,11 +15252,11 @@ uint32_t usbGetSofCounter(bool* sofDisableAllowed)
  8009966:	f7fc f8cd 	bl	8005b04 <sofNeededCallback>
  800996a:	e7db      	b.n	8009924 <cmdSof+0x18>
  800996c:	20000800 	.word	0x20000800
- 8009970:	0800c735 	.word	0x0800c735
- 8009974:	0800c0d4 	.word	0x0800c0d4
+ 8009970:	0800c0d4 	.word	0x0800c0d4
+ 8009974:	0800c0d6 	.word	0x0800c0d6
  8009978:	200012c8 	.word	0x200012c8
  800997c:	0800beb4 	.word	0x0800beb4
- 8009980:	0800c0e9 	.word	0x0800c0e9
+ 8009980:	0800c0eb 	.word	0x0800c0eb
  8009984:	20000f54 	.word	0x20000f54
 
 08009988 <TCA6408PrintStatus>:
@@ -15381,17 +15381,17 @@ static void TCA6408PrintStatus(const GPIOPort* context, BaseSequentialStream* ch
  8009a3c:	4909      	ldr	r1, [pc, #36]	; (8009a64 <TCA6408PrintStatus+0xdc>)
  8009a3e:	f7fe fef3 	bl	8008828 <chprintf>
  8009a42:	e7e3      	b.n	8009a0c <TCA6408PrintStatus+0x84>
- 8009a44:	0800c0f4 	.word	0x0800c0f4
- 8009a48:	0800c115 	.word	0x0800c115
+ 8009a44:	0800c0f6 	.word	0x0800c0f6
+ 8009a48:	0800c117 	.word	0x0800c117
  8009a4c:	0800beb4 	.word	0x0800beb4
- 8009a50:	0800c133 	.word	0x0800c133
- 8009a54:	0800c141 	.word	0x0800c141
- 8009a58:	0800c157 	.word	0x0800c157
- 8009a5c:	0800c163 	.word	0x0800c163
- 8009a60:	0800c16d 	.word	0x0800c16d
- 8009a64:	0800c14d 	.word	0x0800c14d
- 8009a68:	0800c129 	.word	0x0800c129
- 8009a6c:	0800c11f 	.word	0x0800c11f
+ 8009a50:	0800c135 	.word	0x0800c135
+ 8009a54:	0800c143 	.word	0x0800c143
+ 8009a58:	0800c159 	.word	0x0800c159
+ 8009a5c:	0800c165 	.word	0x0800c165
+ 8009a60:	0800c16f 	.word	0x0800c16f
+ 8009a64:	0800c14f 	.word	0x0800c14f
+ 8009a68:	0800c12b 	.word	0x0800c12b
+ 8009a6c:	0800c121 	.word	0x0800c121
 
 08009a70 <cmdMaxUsage>:
 #include <string.h>
@@ -15434,12 +15434,12 @@ static void cmdMaxUsage(BaseSequentialStream* chp)
  8009aaa:	f7fe bebd 	b.w	8008828 <chprintf>
  8009aae:	bf00      	nop
  8009ab0:	0800bce5 	.word	0x0800bce5
- 8009ab4:	0800c184 	.word	0x0800c184
- 8009ab8:	0800c1ad 	.word	0x0800c1ad
- 8009abc:	0800c1bb 	.word	0x0800c1bb
- 8009ac0:	0800c1cb 	.word	0x0800c1cb
- 8009ac4:	0800c1e5 	.word	0x0800c1e5
- 8009ac8:	0800c205 	.word	0x0800c205
+ 8009ab4:	0800c186 	.word	0x0800c186
+ 8009ab8:	0800c1af 	.word	0x0800c1af
+ 8009abc:	0800c1bd 	.word	0x0800c1bd
+ 8009ac0:	0800c1cd 	.word	0x0800c1cd
+ 8009ac4:	0800c1e7 	.word	0x0800c1e7
+ 8009ac8:	0800c207 	.word	0x0800c207
 
 08009acc <cmdThreadInfo>:
     else if(state == eDeleted) printfFixed(chp, 9, "Deleted");
@@ -15787,37 +15787,37 @@ void cmdThreadInfo(void* user, BaseSequentialStream *chp, int argc, char *argv[]
  8009d34:	200011b4 	.word	0x200011b4
  8009d38:	20001634 	.word	0x20001634
  8009d3c:	20001620 	.word	0x20001620
- 8009d40:	0800c210 	.word	0x0800c210
- 8009d44:	0800c218 	.word	0x0800c218
- 8009d48:	0800c222 	.word	0x0800c222
- 8009d4c:	0800c22d 	.word	0x0800c22d
- 8009d50:	0800c238 	.word	0x0800c238
- 8009d54:	0800c23e 	.word	0x0800c23e
- 8009d58:	0800c244 	.word	0x0800c244
- 8009d5c:	0800c3b0 	.word	0x0800c3b0
- 8009d60:	0800c292 	.word	0x0800c292
- 8009d64:	0800c29d 	.word	0x0800c29d
- 8009d68:	0800c2a8 	.word	0x0800c2a8
- 8009d6c:	0800c2b1 	.word	0x0800c2b1
+ 8009d40:	0800c212 	.word	0x0800c212
+ 8009d44:	0800c21a 	.word	0x0800c21a
+ 8009d48:	0800c224 	.word	0x0800c224
+ 8009d4c:	0800c22f 	.word	0x0800c22f
+ 8009d50:	0800c23a 	.word	0x0800c23a
+ 8009d54:	0800c240 	.word	0x0800c240
+ 8009d58:	0800c246 	.word	0x0800c246
+ 8009d5c:	0800c3b2 	.word	0x0800c3b2
+ 8009d60:	0800c294 	.word	0x0800c294
+ 8009d64:	0800c29f 	.word	0x0800c29f
+ 8009d68:	0800c2aa 	.word	0x0800c2aa
+ 8009d6c:	0800c2b3 	.word	0x0800c2b3
  8009d70:	200011a0 	.word	0x200011a0
  8009d74:	0800be31 	.word	0x0800be31
- 8009d78:	0800c258 	.word	0x0800c258
- 8009d7c:	0800c25d 	.word	0x0800c25d
+ 8009d78:	0800c25a 	.word	0x0800c25a
+ 8009d7c:	0800c25f 	.word	0x0800c25f
  8009d80:	200011a8 	.word	0x200011a8
- 8009d84:	0800c262 	.word	0x0800c262
- 8009d88:	0800c26a 	.word	0x0800c26a
- 8009d8c:	0800c270 	.word	0x0800c270
- 8009d90:	0800c278 	.word	0x0800c278
- 8009d94:	0800c282 	.word	0x0800c282
- 8009d98:	0800c28a 	.word	0x0800c28a
- 8009d9c:	0800c2b9 	.word	0x0800c2b9
- 8009da0:	0800c2c2 	.word	0x0800c2c2
+ 8009d84:	0800c264 	.word	0x0800c264
+ 8009d88:	0800c26c 	.word	0x0800c26c
+ 8009d8c:	0800c272 	.word	0x0800c272
+ 8009d90:	0800c27a 	.word	0x0800c27a
+ 8009d94:	0800c284 	.word	0x0800c284
+ 8009d98:	0800c28c 	.word	0x0800c28c
+ 8009d9c:	0800c2bb 	.word	0x0800c2bb
+ 8009da0:	0800c2c4 	.word	0x0800c2c4
  8009da4:	2000135c 	.word	0x2000135c
  8009da8:	200011b8 	.word	0x200011b8
- 8009dac:	0800c24a 	.word	0x0800c24a
- 8009db0:	0800c253 	.word	0x0800c253
+ 8009dac:	0800c24c 	.word	0x0800c24c
+ 8009db0:	0800c255 	.word	0x0800c255
  8009db4:	0800be34 	.word	0x0800be34
- 8009db8:	0800c9c0 	.word	0x0800c9c0
+ 8009db8:	0800c9c2 	.word	0x0800c9c2
 
 08009dbc <shellTerminationCallback>:
  8009dbc:	4b0e      	ldr	r3, [pc, #56]	; (8009df8 <shellTerminationCallback+0x3c>)
@@ -15858,7 +15858,7 @@ void cmdThreadInfo(void* user, BaseSequentialStream *chp, int argc, char *argv[]
 }
  8009df6:	bd70      	pop	{r4, r5, r6, pc}
  8009df8:	200011a8 	.word	0x200011a8
- 8009dfc:	0800c2c9 	.word	0x0800c2c9
+ 8009dfc:	0800c2cb 	.word	0x0800c2cb
 
 08009e00 <cmdLicense>:
 {
@@ -15901,7 +15901,7 @@ void cmdThreadInfo(void* user, BaseSequentialStream *chp, int argc, char *argv[]
  8009e3e:	4158      	adcs	r0, r3
  8009e40:	f7fb bf04 	b.w	8005c4c <systemEnableMCO>
  8009e44:	0800bce5 	.word	0x0800bce5
- 8009e48:	0800c2de 	.word	0x0800c2de
+ 8009e48:	0800c2e0 	.word	0x0800c2e0
 
 08009e4c <cmdSyslog>:
 {
@@ -16073,11 +16073,11 @@ void packetQueueInit(PacketQueue_t* queue, void* buffer, uint32_t bufferSize)
  8009f5c:	0800c036 	.word	0x0800c036
  8009f60:	20001334 	.word	0x20001334
  8009f64:	20001318 	.word	0x20001318
- 8009f68:	0800c2ec 	.word	0x0800c2ec
+ 8009f68:	0800c2ee 	.word	0x0800c2ee
  8009f6c:	0800be34 	.word	0x0800be34
  8009f70:	20001310 	.word	0x20001310
- 8009f74:	0800c2f0 	.word	0x0800c2f0
- 8009f78:	0800c3b0 	.word	0x0800c3b0
+ 8009f74:	0800c2f2 	.word	0x0800c2f2
+ 8009f78:	0800c3b2 	.word	0x0800c3b2
 
 08009f7c <cmdReboot>:
 {
@@ -16173,18 +16173,18 @@ void packetQueueInit(PacketQueue_t* queue, void* buffer, uint32_t bufferSize)
  800a01a:	f244 204d 	movw	r0, #16973	; 0x424d
  800a01e:	e7f3      	b.n	800a008 <cmdReboot+0x8c>
  800a020:	0800bce5 	.word	0x0800bce5
- 800a024:	0800c305 	.word	0x0800c305
- 800a028:	0800c315 	.word	0x0800c315
- 800a02c:	0800c327 	.word	0x0800c327
- 800a030:	0800c33a 	.word	0x0800c33a
- 800a034:	0800c34b 	.word	0x0800c34b
- 800a038:	0800c35e 	.word	0x0800c35e
- 800a03c:	0800c366 	.word	0x0800c366
- 800a040:	0800c36d 	.word	0x0800c36d
- 800a044:	0800c373 	.word	0x0800c373
+ 800a024:	0800c307 	.word	0x0800c307
+ 800a028:	0800c317 	.word	0x0800c317
+ 800a02c:	0800c329 	.word	0x0800c329
+ 800a030:	0800c33c 	.word	0x0800c33c
+ 800a034:	0800c34d 	.word	0x0800c34d
+ 800a038:	0800c360 	.word	0x0800c360
+ 800a03c:	0800c368 	.word	0x0800c368
+ 800a040:	0800c36f 	.word	0x0800c36f
+ 800a044:	0800c375 	.word	0x0800c375
  800a048:	2000084d 	.word	0x2000084d
- 800a04c:	0800c37b 	.word	0x0800c37b
- 800a050:	0800c386 	.word	0x0800c386
+ 800a04c:	0800c37d 	.word	0x0800c37d
+ 800a050:	0800c388 	.word	0x0800c388
  800a054:	40021000 	.word	0x40021000
  800a058:	40006c00 	.word	0x40006c00
 
@@ -16431,34 +16431,34 @@ void max2870StatusPrint(MAX2870Driver* driver, BaseSequentialStream* stdout)
  800a204:	f7fe fb10 	bl	8008828 <chprintf>
  800a208:	e7eb      	b.n	800a1e2 <max2870StatusPrint+0x186>
  800a20a:	bf00      	nop
- 800a20c:	0800c396 	.word	0x0800c396
- 800a210:	0800c3b3 	.word	0x0800c3b3
+ 800a20c:	0800c398 	.word	0x0800c398
+ 800a210:	0800c3b5 	.word	0x0800c3b5
  800a214:	0800be61 	.word	0x0800be61
- 800a218:	0800c3ca 	.word	0x0800c3ca
- 800a21c:	0800c3da 	.word	0x0800c3da
- 800a220:	0800c3e9 	.word	0x0800c3e9
- 800a224:	0800c3f9 	.word	0x0800c3f9
- 800a228:	0800c404 	.word	0x0800c404
- 800a22c:	0800c410 	.word	0x0800c410
- 800a230:	0800c41f 	.word	0x0800c41f
- 800a234:	0800c42f 	.word	0x0800c42f
- 800a238:	0800c437 	.word	0x0800c437
+ 800a218:	0800c3cc 	.word	0x0800c3cc
+ 800a21c:	0800c3dc 	.word	0x0800c3dc
+ 800a220:	0800c3eb 	.word	0x0800c3eb
+ 800a224:	0800c3fb 	.word	0x0800c3fb
+ 800a228:	0800c406 	.word	0x0800c406
+ 800a22c:	0800c412 	.word	0x0800c412
+ 800a230:	0800c421 	.word	0x0800c421
+ 800a234:	0800c431 	.word	0x0800c431
+ 800a238:	0800c439 	.word	0x0800c439
  800a23c:	0800beb4 	.word	0x0800beb4
- 800a240:	0800c443 	.word	0x0800c443
- 800a244:	0800c453 	.word	0x0800c453
- 800a248:	0800c470 	.word	0x0800c470
- 800a24c:	0800c482 	.word	0x0800c482
- 800a250:	0800c3a3 	.word	0x0800c3a3
- 800a254:	0800c3e3 	.word	0x0800c3e3
- 800a258:	0800c49e 	.word	0x0800c49e
- 800a25c:	0800c4ae 	.word	0x0800c4ae
- 800a260:	0800c4a2 	.word	0x0800c4a2
- 800a264:	0800c735 	.word	0x0800c735
- 800a268:	0800c4a6 	.word	0x0800c4a6
- 800a26c:	0800c4aa 	.word	0x0800c4aa
- 800a270:	0800c4ac 	.word	0x0800c4ac
- 800a274:	0800c4ca 	.word	0x0800c4ca
- 800a278:	0800c4be 	.word	0x0800c4be
+ 800a240:	0800c445 	.word	0x0800c445
+ 800a244:	0800c455 	.word	0x0800c455
+ 800a248:	0800c472 	.word	0x0800c472
+ 800a24c:	0800c484 	.word	0x0800c484
+ 800a250:	0800c3a5 	.word	0x0800c3a5
+ 800a254:	0800c3e5 	.word	0x0800c3e5
+ 800a258:	0800c4a0 	.word	0x0800c4a0
+ 800a25c:	0800c4b0 	.word	0x0800c4b0
+ 800a260:	0800c4a4 	.word	0x0800c4a4
+ 800a264:	0800c0d4 	.word	0x0800c0d4
+ 800a268:	0800c4a8 	.word	0x0800c4a8
+ 800a26c:	0800c4ac 	.word	0x0800c4ac
+ 800a270:	0800c4ae 	.word	0x0800c4ae
+ 800a274:	0800c4cc 	.word	0x0800c4cc
+ 800a278:	0800c4c0 	.word	0x0800c4c0
 
 0800a27c <cmdMax>:
     }
@@ -16771,26 +16771,26 @@ bool max2870VcoCacheSet(MAX2870Driver* driver, unsigned int vcoIndex, uint8_t va
  800a498:	f47f af50 	bne.w	800a33c <cmdMax+0xc0>
  800a49c:	4a12      	ldr	r2, [pc, #72]	; (800a4e8 <cmdMax+0x26c>)
  800a49e:	e748      	b.n	800a332 <cmdMax+0xb6>
- 800a4a0:	0800c534 	.word	0x0800c534
- 800a4a4:	0800c3b0 	.word	0x0800c3b0
+ 800a4a0:	0800c536 	.word	0x0800c536
+ 800a4a4:	0800c3b2 	.word	0x0800c3b2
  800a4a8:	0800bc61 	.word	0x0800bc61
- 800a4ac:	0800c539 	.word	0x0800c539
- 800a4b0:	0800c4db 	.word	0x0800c4db
- 800a4b4:	0800c504 	.word	0x0800c504
- 800a4b8:	0800c4f8 	.word	0x0800c4f8
- 800a4bc:	0800c4e9 	.word	0x0800c4e9
+ 800a4ac:	0800c53b 	.word	0x0800c53b
+ 800a4b0:	0800c4dd 	.word	0x0800c4dd
+ 800a4b4:	0800c506 	.word	0x0800c506
+ 800a4b8:	0800c4fa 	.word	0x0800c4fa
+ 800a4bc:	0800c4eb 	.word	0x0800c4eb
  800a4c0:	0800bdda 	.word	0x0800bdda
- 800a4c4:	0800c54d 	.word	0x0800c54d
- 800a4c8:	0800c556 	.word	0x0800c556
- 800a4cc:	0800c57e 	.word	0x0800c57e
- 800a4d0:	0800c588 	.word	0x0800c588
+ 800a4c4:	0800c54f 	.word	0x0800c54f
+ 800a4c8:	0800c558 	.word	0x0800c558
+ 800a4cc:	0800c580 	.word	0x0800c580
+ 800a4d0:	0800c58a 	.word	0x0800c58a
  800a4d4:	0800c032 	.word	0x0800c032
- 800a4d8:	0800c58f 	.word	0x0800c58f
- 800a4dc:	0800c5a3 	.word	0x0800c5a3
- 800a4e0:	0800c5af 	.word	0x0800c5af
- 800a4e4:	0800c5b3 	.word	0x0800c5b3
- 800a4e8:	0800c51b 	.word	0x0800c51b
- 800a4ec:	0800c574 	.word	0x0800c574
+ 800a4d8:	0800c591 	.word	0x0800c591
+ 800a4dc:	0800c5a5 	.word	0x0800c5a5
+ 800a4e0:	0800c5b1 	.word	0x0800c5b1
+ 800a4e4:	0800c5b5 	.word	0x0800c5b5
+ 800a4e8:	0800c51d 	.word	0x0800c51d
+ 800a4ec:	0800c576 	.word	0x0800c576
  800a4f0:	0800beb4 	.word	0x0800beb4
 
 0800a4f4 <cmd_mem>:
@@ -16857,14 +16857,14 @@ static void cmd_mem(void* user, BaseSequentialStream *chp, int argc, char *argv[
  800a54a:	4613      	mov	r3, r2
  800a54c:	e7e3      	b.n	800a516 <cmd_mem+0x22>
  800a54e:	bf00      	nop
- 800a550:	0800c5cd 	.word	0x0800c5cd
- 800a554:	0800c5d1 	.word	0x0800c5d1
+ 800a550:	0800c5cf 	.word	0x0800c5cf
+ 800a554:	0800c5d3 	.word	0x0800c5d3
  800a558:	200013a4 	.word	0x200013a4
  800a55c:	20001618 	.word	0x20001618
- 800a560:	0800c5dd 	.word	0x0800c5dd
- 800a564:	0800c5fb 	.word	0x0800c5fb
- 800a568:	0800c613 	.word	0x0800c613
- 800a56c:	0800c631 	.word	0x0800c631
+ 800a560:	0800c5df 	.word	0x0800c5df
+ 800a564:	0800c5fd 	.word	0x0800c5fd
+ 800a568:	0800c615 	.word	0x0800c615
+ 800a56c:	0800c633 	.word	0x0800c633
 
 0800a570 <cmd_systime>:
   if (argc > 0) {
@@ -16886,10 +16886,10 @@ static void cmd_systime(void* user, BaseSequentialStream *chp, int argc, char *a
  800a58a:	4904      	ldr	r1, [pc, #16]	; (800a59c <cmd_systime+0x2c>)
  800a58c:	681a      	ldr	r2, [r3, #0]
  800a58e:	e7f5      	b.n	800a57c <cmd_systime+0xc>
- 800a590:	0800c64f 	.word	0x0800c64f
- 800a594:	0800c5d1 	.word	0x0800c5d1
+ 800a590:	0800c651 	.word	0x0800c651
+ 800a594:	0800c5d3 	.word	0x0800c5d3
  800a598:	20001648 	.word	0x20001648
- 800a59c:	0800c657 	.word	0x0800c657
+ 800a59c:	0800c659 	.word	0x0800c659
 
 0800a5a0 <cmd_echo>:
   if (argc != 1) {
@@ -16905,9 +16905,9 @@ static void cmd_echo(void* user, BaseSequentialStream *chp, int argc, char *argv
  800a5ac:	4903      	ldreq	r1, [pc, #12]	; (800a5bc <cmd_echo+0x1c>)
  800a5ae:	f7fe b93b 	b.w	8008828 <chprintf>
  800a5b2:	bf00      	nop
- 800a5b4:	0800c65d 	.word	0x0800c65d
- 800a5b8:	0800c5d1 	.word	0x0800c5d1
- 800a5bc:	0800c722 	.word	0x0800c722
+ 800a5b4:	0800c65f 	.word	0x0800c65f
+ 800a5b8:	0800c5d3 	.word	0x0800c5d3
+ 800a5bc:	0800c724 	.word	0x0800c724
 
 0800a5c0 <cmd_info>:
   if (argc > 0) {
@@ -16982,25 +16982,25 @@ static void cmd_info(void* user, BaseSequentialStream *chp, int argc, char *argv
   for(uint8_t* i=&__buildid_base__+16; i<&__buildid_end__; i++){
  800a63c:	e7ef      	b.n	800a61e <cmd_info+0x5e>
  800a63e:	bf00      	nop
- 800a640:	0800c66c 	.word	0x0800c66c
- 800a644:	0800c5d1 	.word	0x0800c5d1
- 800a648:	0800c671 	.word	0x0800c671
- 800a64c:	0800c67e 	.word	0x0800c67e
- 800a650:	0800c691 	.word	0x0800c691
- 800a654:	0800c69e 	.word	0x0800c69e
- 800a658:	0800c6b1 	.word	0x0800c6b1
- 800a65c:	0800c6db 	.word	0x0800c6db
- 800a660:	0800c6ee 	.word	0x0800c6ee
- 800a664:	0800c714 	.word	0x0800c714
- 800a668:	0800c74e 	.word	0x0800c74e
- 800a66c:	0800c72b 	.word	0x0800c72b
- 800a670:	0800c737 	.word	0x0800c737
- 800a674:	0800c727 	.word	0x0800c727
- 800a678:	0800c757 	.word	0x0800c757
- 800a67c:	0800d06c 	.word	0x0800d06c
- 800a680:	0800d080 	.word	0x0800d080
- 800a684:	0800c766 	.word	0x0800c766
- 800a688:	0800c3b0 	.word	0x0800c3b0
+ 800a640:	0800c66e 	.word	0x0800c66e
+ 800a644:	0800c5d3 	.word	0x0800c5d3
+ 800a648:	0800c673 	.word	0x0800c673
+ 800a64c:	0800c680 	.word	0x0800c680
+ 800a650:	0800c693 	.word	0x0800c693
+ 800a654:	0800c6a0 	.word	0x0800c6a0
+ 800a658:	0800c6b3 	.word	0x0800c6b3
+ 800a65c:	0800c6dd 	.word	0x0800c6dd
+ 800a660:	0800c6f0 	.word	0x0800c6f0
+ 800a664:	0800c716 	.word	0x0800c716
+ 800a668:	0800c750 	.word	0x0800c750
+ 800a66c:	0800c72d 	.word	0x0800c72d
+ 800a670:	0800c739 	.word	0x0800c739
+ 800a674:	0800c729 	.word	0x0800c729
+ 800a678:	0800c759 	.word	0x0800c759
+ 800a67c:	0800d070 	.word	0x0800d070
+ 800a680:	0800d084 	.word	0x0800d084
+ 800a684:	0800c768 	.word	0x0800c768
+ 800a688:	0800c3b2 	.word	0x0800c3b2
 
 0800a68c <cmd_exit>:
   if (argc > 0) {
@@ -17036,8 +17036,8 @@ static inline void chEvtBroadcastI(event_source_t* event_source){
  800a6ac:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
     vTaskDelete(NULL);
  800a6b0:	f7fa bd4a 	b.w	8005148 <vTaskDelete.constprop.0>
- 800a6b4:	0800c76b 	.word	0x0800c76b
- 800a6b8:	0800c5d1 	.word	0x0800c5d1
+ 800a6b4:	0800c76d 	.word	0x0800c76d
+ 800a6b8:	0800c5d3 	.word	0x0800c5d3
  800a6bc:	200012b8 	.word	0x200012b8
 
 0800a6c0 <syslogISRUnknownPriority>:
@@ -17101,7 +17101,7 @@ void msObjectInit(MemoryStream *msp, uint8_t *buffer,
  800a70c:	2000      	movs	r0, #0
  800a70e:	e7f8      	b.n	800a702 <syslogISRUnknownPriority+0x42>
  800a710:	2000130c 	.word	0x2000130c
- 800a714:	0800d040 	.word	0x0800d040
+ 800a714:	0800d044 	.word	0x0800d044
  800a718:	200012cc 	.word	0x200012cc
 
 0800a71c <usb_event>:
@@ -17241,13 +17241,13 @@ void msObjectInit(MemoryStream *msp, uint8_t *buffer,
  800a814:	e7d2      	b.n	800a7bc <usb_event+0xa0>
 }
  800a816:	bd38      	pop	{r3, r4, r5, pc}
- 800a818:	0800c770 	.word	0x0800c770
- 800a81c:	0800ccc4 	.word	0x0800ccc4
- 800a820:	0800cce8 	.word	0x0800cce8
+ 800a818:	0800c772 	.word	0x0800c772
+ 800a81c:	0800ccc8 	.word	0x0800ccc8
+ 800a820:	0800ccec 	.word	0x0800ccec
  800a824:	20000a44 	.word	0x20000a44
  800a828:	20001354 	.word	0x20001354
- 800a82c:	0800c786 	.word	0x0800c786
- 800a830:	0800c78e 	.word	0x0800c78e
+ 800a82c:	0800c788 	.word	0x0800c788
+ 800a830:	0800c790 	.word	0x0800c790
 
 0800a834 <BusFault_Handler>:
 #error "the constant CORTEX_NUM_VECTORS must be between 8 and 240 inclusive"
@@ -17304,7 +17304,7 @@ void unhandledException(void)
  800a86e:	bf00      	nop
  800a870:	e000ed04 	.word	0xe000ed04
  800a874:	e000e280 	.word	0xe000e280
- 800a878:	0800c798 	.word	0x0800c798
+ 800a878:	0800c79a 	.word	0x0800c79a
 
 0800a87c <i2cSafeWriteRegStandard>:
 {
@@ -17596,23 +17596,23 @@ uint32_t i2cSafeGetNumberOfErrors(I2CDriver* i2c)
  800aa6c:	4620      	mov	r0, r4
  800aa6e:	f7fd fedb 	bl	8008828 <chprintf>
  800aa72:	e7ef      	b.n	800aa54 <cmdI2C+0x194>
- 800aa74:	0800c7ad 	.word	0x0800c7ad
- 800aa78:	0800c7b2 	.word	0x0800c7b2
+ 800aa74:	0800c7af 	.word	0x0800c7af
+ 800aa78:	0800c7b4 	.word	0x0800c7b4
  800aa7c:	0800c032 	.word	0x0800c032
  800aa80:	0800be31 	.word	0x0800be31
- 800aa84:	0800c7c4 	.word	0x0800c7c4
+ 800aa84:	0800c7c6 	.word	0x0800c7c6
  800aa88:	000186a1 	.word	0x000186a1
- 800aa8c:	0800c7c0 	.word	0x0800c7c0
- 800aa90:	0800c803 	.word	0x0800c803
- 800aa94:	0800c80a 	.word	0x0800c80a
- 800aa98:	0800c81b 	.word	0x0800c81b
- 800aa9c:	0800c762 	.word	0x0800c762
- 800aaa0:	0800c826 	.word	0x0800c826
- 800aaa4:	0800c82d 	.word	0x0800c82d
- 800aaa8:	0800c3b0 	.word	0x0800c3b0
- 800aaac:	0800c820 	.word	0x0800c820
- 800aab0:	0800c837 	.word	0x0800c837
- 800aab4:	0800c833 	.word	0x0800c833
+ 800aa8c:	0800c7c2 	.word	0x0800c7c2
+ 800aa90:	0800c805 	.word	0x0800c805
+ 800aa94:	0800c80c 	.word	0x0800c80c
+ 800aa98:	0800c81d 	.word	0x0800c81d
+ 800aa9c:	0800c764 	.word	0x0800c764
+ 800aaa0:	0800c828 	.word	0x0800c828
+ 800aaa4:	0800c82f 	.word	0x0800c82f
+ 800aaa8:	0800c3b2 	.word	0x0800c3b2
+ 800aaac:	0800c822 	.word	0x0800c822
+ 800aab0:	0800c839 	.word	0x0800c839
+ 800aab4:	0800c835 	.word	0x0800c835
 
 0800aab8 <TCA6408AWriteRegisters>:
 {
@@ -18139,34 +18139,34 @@ bool TCA6408AInit(TCA6408Driver* driver, GPIOPort* gpioPort, const TCA6408Driver
  800ae1e:	e03e      	b.n	800ae9e <main_+0x29e>
  800ae20:	20001310 	.word	0x20001310
  800ae24:	20001334 	.word	0x20001334
- 800ae28:	0800c83b 	.word	0x0800c83b
+ 800ae28:	0800c83d 	.word	0x0800c83d
  800ae2c:	40010800 	.word	0x40010800
  800ae30:	200012b8 	.word	0x200012b8
  800ae34:	08009dbd 	.word	0x08009dbd
  800ae38:	20000928 	.word	0x20000928
- 800ae3c:	0800c84b 	.word	0x0800c84b
- 800ae40:	0800c9b5 	.word	0x0800c9b5
+ 800ae3c:	0800c84d 	.word	0x0800c84d
+ 800ae40:	0800c9b7 	.word	0x0800c9b7
  800ae44:	200009bc 	.word	0x200009bc
- 800ae48:	0800cd24 	.word	0x0800cd24
- 800ae4c:	0800c867 	.word	0x0800c867
+ 800ae48:	0800cd28 	.word	0x0800cd28
+ 800ae4c:	0800c869 	.word	0x0800c869
  800ae50:	40010c00 	.word	0x40010c00
  800ae54:	40011000 	.word	0x40011000
  800ae58:	0800973d 	.word	0x0800973d
- 800ae5c:	0800c881 	.word	0x0800c881
+ 800ae5c:	0800c883 	.word	0x0800c883
  800ae60:	20000934 	.word	0x20000934
- 800ae64:	0800cd98 	.word	0x0800cd98
- 800ae68:	0800cb18 	.word	0x0800cb18
+ 800ae64:	0800cd9c 	.word	0x0800cd9c
+ 800ae68:	0800cb1c 	.word	0x0800cb1c
  800ae6c:	0800a8c1 	.word	0x0800a8c1
- 800ae70:	0800c886 	.word	0x0800c886
+ 800ae70:	0800c888 	.word	0x0800c888
  800ae74:	40021000 	.word	0x40021000
  800ae78:	e000e100 	.word	0xe000e100
- 800ae7c:	0800cecc 	.word	0x0800cecc
+ 800ae7c:	0800ced0 	.word	0x0800ced0
  800ae80:	200011a0 	.word	0x200011a0
- 800ae84:	0800c88a 	.word	0x0800c88a
+ 800ae84:	0800c88c 	.word	0x0800c88c
  800ae88:	0800abdb 	.word	0x0800abdb
- 800ae8c:	0800cb2c 	.word	0x0800cb2c
- 800ae90:	0800c8a8 	.word	0x0800c8a8
- 800ae94:	0800cd74 	.word	0x0800cd74
+ 800ae8c:	0800cb30 	.word	0x0800cb30
+ 800ae90:	0800c8aa 	.word	0x0800c8aa
+ 800ae94:	0800cd78 	.word	0x0800cd78
         syslog("TCA6408A init failed.");
  800ae98:	48bb      	ldr	r0, [pc, #748]	; (800b188 <main_+0x588>)
  800ae9a:	f7fd feb3 	bl	8008c04 <syslog>
@@ -18596,51 +18596,51 @@ bool MCP9804Init(MCP9804Driver* driver, const MCP9804Driver_config* config)
  800b182:	612b      	str	r3, [r5, #16]
  800b184:	e584      	b.n	800ac90 <main_+0x90>
  800b186:	bf00      	nop
- 800b188:	0800c892 	.word	0x0800c892
+ 800b188:	0800c894 	.word	0x0800c894
  800b18c:	2000119c 	.word	0x2000119c
- 800b190:	0800c8bc 	.word	0x0800c8bc
+ 800b190:	0800c8be 	.word	0x0800c8be
  800b194:	0800b6dd 	.word	0x0800b6dd
  800b198:	20001198 	.word	0x20001198
- 800b19c:	0800cd4c 	.word	0x0800cd4c
- 800b1a0:	0800c8c0 	.word	0x0800c8c0
+ 800b19c:	0800cd50 	.word	0x0800cd50
+ 800b1a0:	0800c8c2 	.word	0x0800c8c2
  800b1a4:	08009455 	.word	0x08009455
- 800b1a8:	0800c8c8 	.word	0x0800c8c8
+ 800b1a8:	0800c8ca 	.word	0x0800c8ca
  800b1ac:	0800a27d 	.word	0x0800a27d
- 800b1b0:	0800c8cc 	.word	0x0800c8cc
- 800b1b4:	0800cd6c 	.word	0x0800cd6c
+ 800b1b0:	0800c8ce 	.word	0x0800c8ce
+ 800b1b4:	0800cd70 	.word	0x0800cd70
  800b1b8:	20000934 	.word	0x20000934
- 800b1bc:	0800c8f4 	.word	0x0800c8f4
+ 800b1bc:	0800c8f6 	.word	0x0800c8f6
  800b1c0:	20001020 	.word	0x20001020
  800b1c4:	080094c5 	.word	0x080094c5
- 800b1c8:	0800cc10 	.word	0x0800cc10
- 800b1cc:	0800c937 	.word	0x0800c937
+ 800b1c8:	0800cc14 	.word	0x0800cc14
+ 800b1cc:	0800c939 	.word	0x0800c939
  800b1d0:	08005c65 	.word	0x08005c65
- 800b1d4:	0800c93f 	.word	0x0800c93f
- 800b1d8:	0800c953 	.word	0x0800c953
+ 800b1d4:	0800c941 	.word	0x0800c941
+ 800b1d8:	0800c955 	.word	0x0800c955
  800b1dc:	20000914 	.word	0x20000914
- 800b1e0:	0800c965 	.word	0x0800c965
+ 800b1e0:	0800c967 	.word	0x0800c967
  800b1e4:	2000121c 	.word	0x2000121c
- 800b1e8:	0800c997 	.word	0x0800c997
+ 800b1e8:	0800c999 	.word	0x0800c999
  800b1ec:	08007d85 	.word	0x08007d85
  800b1f0:	200011a4 	.word	0x200011a4
  800b1f4:	20000f54 	.word	0x20000f54
- 800b1f8:	0800c99e 	.word	0x0800c99e
+ 800b1f8:	0800c9a0 	.word	0x0800c9a0
  800b1fc:	08005735 	.word	0x08005735
- 800b200:	0800c8df 	.word	0x0800c8df
- 800b204:	0800c914 	.word	0x0800c914
+ 800b200:	0800c8e1 	.word	0x0800c8e1
+ 800b204:	0800c916 	.word	0x0800c916
  800b208:	08009899 	.word	0x08009899
- 800b20c:	0800c932 	.word	0x0800c932
- 800b210:	0800c97f 	.word	0x0800c97f
- 800b214:	0800ced4 	.word	0x0800ced4
+ 800b20c:	0800c934 	.word	0x0800c934
+ 800b210:	0800c981 	.word	0x0800c981
+ 800b214:	0800ced8 	.word	0x0800ced8
  800b218:	40021000 	.word	0x40021000
  800b21c:	40005c00 	.word	0x40005c00
  800b220:	e000e100 	.word	0xe000e100
  800b224:	20000a44 	.word	0x20000a44
- 800b228:	0800d020 	.word	0x0800d020
+ 800b228:	0800d024 	.word	0x0800d024
  800b22c:	0800721f 	.word	0x0800721f
  800b230:	0800772d 	.word	0x0800772d
- 800b234:	0800ce64 	.word	0x0800ce64
- 800b238:	0800c9a6 	.word	0x0800c9a6
+ 800b234:	0800ce68 	.word	0x0800ce68
+ 800b238:	0800c9a8 	.word	0x0800c9a8
  800b23c:	20001098 	.word	0x20001098
  800b240:	20001180 	.word	0x20001180
  800b244:	20001338 	.word	0x20001338
@@ -18695,7 +18695,7 @@ static char *parse_arguments(char *str, char **saveptr) {
  800b28a:	7003      	strb	r3, [r0, #0]
  800b28c:	e7f0      	b.n	800b270 <parse_arguments+0x28>
  800b28e:	bf00      	nop
- 800b290:	0800c9be 	.word	0x0800c9be
+ 800b290:	0800c9c0 	.word	0x0800c9c0
 
 0800b294 <shellStartThread>:
 {
@@ -19128,18 +19128,18 @@ static char *parse_arguments(char *str, char **saveptr) {
  800b57e:	f848 0b04 	str.w	r0, [r8], #4
  800b582:	e748      	b.n	800b416 <shellStartThread+0x182>
  800b584:	200011a8 	.word	0x200011a8
- 800b588:	0800c9c1 	.word	0x0800c9c1
- 800b58c:	0800c3b0 	.word	0x0800c3b0
- 800b590:	0800c9dc 	.word	0x0800c9dc
- 800b594:	0800c9f0 	.word	0x0800c9f0
+ 800b588:	0800c9c3 	.word	0x0800c9c3
+ 800b58c:	0800c3b2 	.word	0x0800c3b2
+ 800b590:	0800c9de 	.word	0x0800c9de
+ 800b594:	0800c9f2 	.word	0x0800c9f2
  800b598:	0800be34 	.word	0x0800be34
- 800b59c:	0800c9f4 	.word	0x0800c9f4
- 800b5a0:	0800c9f7 	.word	0x0800c9f7
+ 800b59c:	0800c9f6 	.word	0x0800c9f6
+ 800b5a0:	0800c9f9 	.word	0x0800c9f9
  800b5a4:	200012b8 	.word	0x200012b8
- 800b5a8:	0800ca13 	.word	0x0800ca13
- 800b5ac:	0800c5d1 	.word	0x0800c5d1
- 800b5b0:	0800c9fe 	.word	0x0800c9fe
- 800b5b4:	0800c9e5 	.word	0x0800c9e5
+ 800b5a8:	0800ca15 	.word	0x0800ca15
+ 800b5ac:	0800c5d3 	.word	0x0800c5d3
+ 800b5b0:	0800ca00 	.word	0x0800ca00
+ 800b5b4:	0800c9e7 	.word	0x0800c9e7
         chprintf(chp, "Commands: help ");
  800b5b8:	4638      	mov	r0, r7
  800b5ba:	491e      	ldr	r1, [pc, #120]	; (800b634 <shellStartThread+0x3a0>)
@@ -19208,12 +19208,12 @@ static char *parse_arguments(char *str, char **saveptr) {
  800b62e:	2800      	cmp	r0, #0
  800b630:	d1ef      	bne.n	800b612 <shellStartThread+0x37e>
  800b632:	e652      	b.n	800b2da <shellStartThread+0x46>
- 800b634:	0800ca18 	.word	0x0800ca18
- 800b638:	0800ce70 	.word	0x0800ce70
- 800b63c:	0800ca28 	.word	0x0800ca28
- 800b640:	0800c3b0 	.word	0x0800c3b0
+ 800b634:	0800ca1a 	.word	0x0800ca1a
+ 800b638:	0800ce74 	.word	0x0800ce74
+ 800b63c:	0800ca2a 	.word	0x0800ca2a
+ 800b640:	0800c3b2 	.word	0x0800c3b2
  800b644:	0800be34 	.word	0x0800be34
- 800b648:	0800ca2c 	.word	0x0800ca2c
+ 800b648:	0800ca2e 	.word	0x0800ca2e
 
 0800b64c <vTaskSwitchContext>:
  800b64c:	4b1e      	ldr	r3, [pc, #120]	; (800b6c8 <vTaskSwitchContext+0x7c>)
@@ -19793,14 +19793,14 @@ void boardInit(void) {
  800bac4:	40007000 	.word	0x40007000
  800bac8:	20001044 	.word	0x20001044
  800bacc:	20000fe8 	.word	0x20000fe8
- 800bad0:	0800cb44 	.word	0x0800cb44
+ 800bad0:	0800cb48 	.word	0x0800cb48
  800bad4:	40020000 	.word	0x40020000
  800bad8:	20000934 	.word	0x20000934
  800badc:	40010800 	.word	0x40010800
  800bae0:	88888288 	.word	0x88888288
- 800bae4:	0800cbbc 	.word	0x0800cbbc
+ 800bae4:	0800cbc0 	.word	0x0800cbc0
  800bae8:	40005400 	.word	0x40005400
- 800baec:	0800d000 	.word	0x0800d000
+ 800baec:	0800d004 	.word	0x0800d004
  800baf0:	200009bc 	.word	0x200009bc
  800baf4:	08005c3d 	.word	0x08005c3d
  800baf8:	20000ee0 	.word	0x20000ee0
@@ -19809,13 +19809,13 @@ void boardInit(void) {
  800bb04:	20000f54 	.word	0x20000f54
  800bb08:	20000fdc 	.word	0x20000fdc
  800bb0c:	40003000 	.word	0x40003000
- 800bb10:	0800d050 	.word	0x0800d050
+ 800bb10:	0800d054 	.word	0x0800d054
  800bb14:	0800ac01 	.word	0x0800ac01
- 800bb18:	0800ca31 	.word	0x0800ca31
+ 800bb18:	0800ca33 	.word	0x0800ca33
  800bb1c:	08005c31 	.word	0x08005c31
  800bb20:	20001588 	.word	0x20001588
  800bb24:	200013a8 	.word	0x200013a8
- 800bb28:	0800c253 	.word	0x0800c253
+ 800bb28:	0800c255 	.word	0x0800c255
  800bb2c:	08008845 	.word	0x08008845
  800bb30:	200015f8 	.word	0x200015f8
  800bb34:	20001614 	.word	0x20001614
@@ -19993,7 +19993,7 @@ void __init_ram_areas(void) {
  800bc22:	f843 6b04 	str.w	r6, [r3], #4
       p++;
  800bc26:	e7f0      	b.n	800bc0a <__init_ram_areas+0x2a>
- 800bc28:	0800cde4 	.word	0x0800cde4
+ 800bc28:	0800cde8 	.word	0x0800cde8
 
 0800bc2c <__default_exit>:
   while (true) {

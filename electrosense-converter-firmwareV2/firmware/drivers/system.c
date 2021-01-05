@@ -86,9 +86,7 @@ static const i2cSafeConfig I2C1SafeConfig = {
     .peripheralMode = PAL_MODE_STM32_ALTERNATE_OPENDRAIN
 };
 
-/* ~~~~~~~~~~~~~~~~~~~~~ I2C IO Extender ~~~~~~~~~~~~~~~~~~~~~ 
-TODO: remove this
-*/
+/* ~~~~~~~~~~~~~~~~~~~~~ I2C IO Extender ~~~~~~~~~~~~~~~~~~~~~ */
 static const TCA6408Driver_config tca6408Config = {
     .i2cPort = &I2CD1,
     .i2cAddr = 0x20
@@ -143,9 +141,7 @@ static const GPIOPinInit platformPinConfig[] = {
     {GPIO_UART_RX, PAL_MODE_INPUT, true},
     {-1, 0, false}
 };
-/* 
-TODO: add correct GPIO values
-*/
+
 static const GPIOPinInit platformI2CPinConfig[] = {
     {GPIO_ANT_HIGH, PAL_MODE_OUTPUT_PUSHPULL, false},
     {GPIO_ANT_MID, PAL_MODE_OUTPUT_PUSHPULL, false},
@@ -178,8 +174,7 @@ static void converterSetGpio(const ConverterManager* converter, uint32_t gpioVal
 
     gpioValues |= bandSpecificGpioSettings[converter->activeBand];
 
-    /* The lowest 8 bits are all connected over I2C
-    TODO: Fix this!!! No GPIOs are mapped over I2C anymore.  */
+    /* The lowest 8 bits are all connected over I2C */
     uint8_t i2cGpio = gpioValues & 0xFF;
     gpioSetPort(GPIO_PORT_I2C0, i2cGpio);
 
@@ -279,8 +274,7 @@ void startSystemComponents(void)
     /* Init shell */
     shellInitApp();
 
-    /* Init GPIO
-    TODO: Add GPIOs used to replace IO expander */
+    /* Init GPIO */
     if(!gpioInit(4)) {
         /* ?! Damn... */
         syslog("GPIO subsystem init failed.");
@@ -311,8 +305,7 @@ void startSystemComponents(void)
     /* Start serial port */
     sdStart(&SD3, &serial3Config);
 
-    /* Init IO extender
-    TODO: Must be be removed */
+    /* Init IO extender */
     if(!TCA6408AInit(NULL, gpioRegisterPortDriver(GPIO_PORT_I2C0), &tca6408Config)) {
         syslog("TCA6408A init failed.");
     } else {
@@ -343,10 +336,7 @@ void startSystemComponents(void)
         shellCommandRegister("temp", cmdTemp, &tcxoTempSensor);
     }
 
-    /* Init the converter, if I2C is present.
-    TODO:
-    - Remove check for I2C IO expander
-    */
+    /* Init the converter, if I2C is present */
     if(hasI2CIO) {
         converterInit(&converter, converterBands, converterSetGpio);
         shellCommandRegister("convert", cmdConvert, &converter);
