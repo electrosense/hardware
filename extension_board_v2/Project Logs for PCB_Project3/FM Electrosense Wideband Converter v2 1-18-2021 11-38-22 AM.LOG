@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=GND Pin=H2-0
+Change Component DesignItemId : Designator=R15 Old DesignItemId=240K/603 New DesignItemId=240R/603
+Change Component Description : Designator=R15 Old Description=weerstand SMD603, 240K New Description=weerstand SMD603, 240R
+Change Component Library : Designator=R15 Old Library=CDE_Library_Local.IntLib New Library=CDE_Library.IntLib
+Change component parameters: Designator = "R15"; Footprint = "smd C0603_0.45"; UniqueID = "\CHCMGKKC\FHVOIFMK"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF
