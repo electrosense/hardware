@@ -1,0 +1,146 @@
+Added Component: Designator=F1(DPX165850DT-8017A1)
+Added Component: Designator=SAW1(SAW_package)
+Added Component: Designator=U6(LFCSP)
+Added Component: Designator=U7(QFN-16_skyworks)
+Added Component: Designator=U9(LFCSP)
+Added Net: Name=3V3RF_L01CPU
+Added Net: Name=3V3
+Added Pin To Net: NetName=5V Pin=U7-1
+Added Net: Name=5V
+Added Pin To Net: NetName=BAND_SEL Pin=U7-2
+Added Net: Name=BAND_SEL
+Added Net: Name=CE_U1
+Added Net: Name=CLK_LED
+Added Net: Name=CPU_LOCK_LED
+Added Net: Name=CPU_MIX_LED
+Added Net: Name=CPU_OSC_IN
+Added Net: Name=CPU_OSC_OUT
+Added Net: Name=CPU_RX
+Added Net: Name=CPU_SCL
+Added Net: Name=CPU_SDA
+Added Net: Name=CPU_TX
+Added Net: Name=CPU_USB_LED
+Added Net: Name=CS_PLL
+Added Net: Name=CS_U1
+Added Pin To Net: NetName=GND Pin=F1-4
+Added Pin To Net: NetName=GND Pin=SAW1-1
+Added Pin To Net: NetName=GND Pin=SAW1-3
+Added Pin To Net: NetName=GND Pin=SAW1-4
+Added Pin To Net: NetName=GND Pin=SAW1-6
+Added Pin To Net: NetName=GND Pin=U6-2
+Added Pin To Net: NetName=GND Pin=U7-4
+Added Pin To Net: NetName=GND Pin=U7-5
+Added Pin To Net: NetName=GND Pin=U7-6
+Added Pin To Net: NetName=GND Pin=U7-7
+Added Pin To Net: NetName=GND Pin=U7-8
+Added Pin To Net: NetName=GND Pin=U7-10
+Added Pin To Net: NetName=GND Pin=U7-11
+Added Pin To Net: NetName=GND Pin=U7-13
+Added Pin To Net: NetName=GND Pin=U7-14
+Added Pin To Net: NetName=GND Pin=U7-15
+Added Pin To Net: NetName=GND Pin=U7-16
+Added Pin To Net: NetName=GND Pin=U7-17
+Added Pin To Net: NetName=GND Pin=U9-2
+Added Net: Name=GND
+Added Net: Name=GPS_RST
+Added Pin To Net: NetName=IMG_F_HIGH Pin=F1-3
+Added Net: Name=IMG_F_HIGH
+Added Pin To Net: NetName=IMG_F_LOW Pin=F1-1
+Added Net: Name=IMG_F_LOW
+Added Net: Name=LO+
+Added Net: Name=LO-
+Added Net: Name=MCO
+Added Net: Name=MIX_EN
+Added Net: Name=MIX_X2
+Added Net: Name=MIXER_SWITCH_IN
+Added Net: Name=MOSI_U1
+Added Net: Name=MOSI
+Added Net: Name=MUXOUT_U1
+Added Net: Name=NetC06_2
+Added Net: Name=NetC20_2
+Added Net: Name=NetC21_2
+Added Net: Name=NetC22_2
+Added Net: Name=NetC23_2
+Added Net: Name=NetC24_1
+Added Pin To Net: NetName=NetC31_1 Pin=U6-1
+Added Net: Name=NetC31_1
+Added Net: Name=NetC31_2
+Added Net: Name=NetC33_1
+Added Pin To Net: NetName=NetC35_1 Pin=U6-3
+Added Net: Name=NetC35_1
+Added Pin To Net: NetName=NetC35_2 Pin=F1-2
+Added Net: Name=NetC35_2
+Added Net: Name=NetC42_1
+Added Pin To Net: NetName=NetC42_2 Pin=SAW1-2
+Added Pin To Net: NetName=NetC42_2 Pin=SAW1-2
+Added Net: Name=NetC42_2
+Added Pin To Net: NetName=NetC43_1 Pin=SAW1-5
+Added Net: Name=NetC43_1
+Added Pin To Net: NetName=NetC43_2 Pin=U9-1
+Added Net: Name=NetC43_2
+Added Pin To Net: NetName=NetC44_1 Pin=U9-3
+Added Net: Name=NetC44_1
+Added Net: Name=NetC51_1
+Added Net: Name=NetC51_2
+Added Net: Name=NetC53_1
+Added Net: Name=NetC53_2
+Added Net: Name=NetC54_2
+Added Net: Name=NetC55_2
+Added Net: Name=NetC56_2
+Added Net: Name=NetC57_2
+Added Net: Name=NetC59_2
+Added Net: Name=NetC60_2
+Added Net: Name=NetC61_2
+Added Net: Name=NetC65_2
+Added Net: Name=NetC67_1
+Added Net: Name=NetC68_1
+Added Net: Name=NetC68_2
+Added Net: Name=NetL5_2
+Added Net: Name=NetLOCK_1
+Added Net: Name=NetMIX_1
+Added Net: Name=NetR01_2
+Added Net: Name=NetR02_1
+Added Net: Name=NetR08_2
+Added Net: Name=NetR10_2
+Added Pin To Net: NetName=NetU7_3 Pin=U7-3
+Added Net: Name=NetU7_3
+Added Net: Name=PLL_EN
+Added Net: Name=PLL_MISO
+Added Net: Name=PPS_IN
+Added Net: Name=REF_PLL
+Added Net: Name=RFOUTA+
+Added Net: Name=RFOUTA-
+Added Net: Name=SCK
+Added Net: Name=SMA_SW
+Added Net: Name=SW_BYPASS
+Added Net: Name=SW_MIX_CPU
+Added Net: Name=SW_MIX
+Added Net: Name=SW_U1
+Added Net: Name=SWCLK
+Added Net: Name=SWDIO
+Added Net: Name=T2_BASE
+Added Net: Name=TUNE
+Added Net: Name=U15_INA
+Added Net: Name=U15_INB
+Added Net: Name=U15_OSCB_FILTERED
+Added Net: Name=U15_OSCB
+Added Net: Name=U15_OUTA
+Added Net: Name=U15_OUTB
+Added Net: Name=UPCONV_EN#
+Added Net: Name=UPCONV_IN
+Added Pin To Net: NetName=URFSW_J1 Pin=U7-12
+Added Net: Name=URFSW_J1
+Added Pin To Net: NetName=URFSW_J2 Pin=U7-9
+Added Net: Name=URFSW_J2
+Added Net: Name=USB_D+_CON
+Added Net: Name=USB_D+
+Added Net: Name=USB_D-_CON
+Added Net: Name=USB_D-
+Added Net: Name=USB_EN
+Added Net: Name=X1_OUT
+Added Class: Name=Toplevel
+Added Class: Name=U_CPU
+Added Class: Name=U_LO
+Added Class: Name=U_MixerHF
+Added Class: Name=U_Mixer
+Added Class: Name=RF
