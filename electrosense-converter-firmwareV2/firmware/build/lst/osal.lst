@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccJPvahB.s 			page 1
+ARM GAS  /tmp/ccHroQE2.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -19,29 +19,29 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
   16              		.file 5 "../FreeRTOS/include/osal_ch.h"
   17              		.section	.gnu.debuglto_.debug_info,"e",%progbits
   18              	.Ldebug_info0:
-  19              		.hidden	osal.c.c676abb1
-  20              		.weak	osal.c.c676abb1
-  21              	osal.c.c676abb1:
+  19              		.hidden	osal.c.ae0c7a63
+  20              		.weak	osal.c.ae0c7a63
+  21              	osal.c.ae0c7a63:
   22 0000 27010000 		.4byte	0x127
   23 0004 0400     		.2byte	0x4
   24 0006 00000000 		.4byte	.Ldebug_abbrev0
   25 000a 04       		.byte	0x4
   26 000b 01       		.uleb128 0x1
-  27 000c 65000000 		.4byte	.LASF22
+  27 000c 7C000000 		.4byte	.LASF22
   28 0010 0C       		.byte	0xc
-  29 0011 E6010000 		.4byte	.LASF23
-  30 0015 4D020000 		.4byte	.LASF24
+  29 0011 2D020000 		.4byte	.LASF23
+  30 0015 E6010000 		.4byte	.LASF24
   31 0019 00000000 		.4byte	.Ldebug_line0
   32 001d 02       		.uleb128 0x2
   33 001e 01       		.byte	0x1
   34 001f 06       		.byte	0x6
-  35 0020 23020000 		.4byte	.LASF0
+  35 0020 6A020000 		.4byte	.LASF0
   36 0024 02       		.uleb128 0x2
   37 0025 02       		.byte	0x2
   38 0026 05       		.byte	0x5
-  39 0027 3B020000 		.4byte	.LASF1
+  39 0027 82020000 		.4byte	.LASF1
   40 002b 03       		.uleb128 0x3
-  41 002c 45020000 		.4byte	.LASF4
+  41 002c 8C020000 		.4byte	.LASF4
   42 0030 01       		.byte	0x1
   43 0031 28       		.byte	0x28
   44 0032 18       		.byte	0x18
@@ -51,14 +51,14 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
   48 003c 02       		.uleb128 0x2
   49 003d 04       		.byte	0x4
   50 003e 05       		.byte	0x5
-  51 003f 0D020000 		.4byte	.LASF2
+  51 003f 54020000 		.4byte	.LASF2
   52 0043 02       		.uleb128 0x2
   53 0044 08       		.byte	0x8
   54 0045 05       		.byte	0x5
   55 0046 00000000 		.4byte	.LASF3
   56 004a 03       		.uleb128 0x3
-  57 004b 7E010000 		.4byte	.LASF5
-ARM GAS  /tmp/ccJPvahB.s 			page 2
+  57 004b 95010000 		.4byte	.LASF5
+ARM GAS  /tmp/ccHroQE2.s 			page 2
 
 
   58 004f 01       		.byte	0x1
@@ -70,13 +70,13 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
   64 005b 02       		.uleb128 0x2
   65 005c 01       		.byte	0x1
   66 005d 08       		.byte	0x8
-  67 005e 86010000 		.4byte	.LASF6
+  67 005e 9D010000 		.4byte	.LASF6
   68 0062 02       		.uleb128 0x2
   69 0063 02       		.byte	0x2
   70 0064 07       		.byte	0x7
   71 0065 0E000000 		.4byte	.LASF7
   72 0069 03       		.uleb128 0x3
-  73 006a A8010000 		.4byte	.LASF8
+  73 006a BF010000 		.4byte	.LASF8
   74 006e 01       		.byte	0x1
   75 006f 34       		.byte	0x34
   76 0070 19       		.byte	0x19
@@ -84,11 +84,11 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
   78 0075 02       		.uleb128 0x2
   79 0076 04       		.byte	0x4
   80 0077 07       		.byte	0x7
-  81 0078 2E000000 		.4byte	.LASF9
+  81 0078 45000000 		.4byte	.LASF9
   82 007c 02       		.uleb128 0x2
   83 007d 08       		.byte	0x8
   84 007e 07       		.byte	0x7
-  85 007f 4E000000 		.4byte	.LASF10
+  85 007f 65000000 		.4byte	.LASF10
   86 0083 06       		.uleb128 0x6
   87 0084 04       		.byte	0x4
   88 0085 05       		.byte	0x5
@@ -98,13 +98,13 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
   92 008c 07       		.byte	0x7
   93 008d 21000000 		.4byte	.LASF11
   94 0091 07       		.uleb128 0x7
-  95 0092 16020000 		.4byte	.LASF12
+  95 0092 5D020000 		.4byte	.LASF12
   96 0096 02       		.byte	0x2
   97 0097 9606     		.2byte	0x696
   98 0099 19       		.byte	0x19
   99 009a 37000000 		.4byte	0x37
  100 009e 08       		.uleb128 0x8
- 101 009f B1010000 		.4byte	.LASF13
+ 101 009f C8010000 		.4byte	.LASF13
  102 00a3 03       		.byte	0x3
  103 00a4 45       		.byte	0x45
  104 00a5 11       		.byte	0x11
@@ -118,11 +118,11 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
  112 00b9 00       		.byte	0
  113 00ba 05       		.uleb128 0x5
  114 00bb AA000000 		.4byte	0xaa
-ARM GAS  /tmp/ccJPvahB.s 			page 3
+ARM GAS  /tmp/ccHroQE2.s 			page 3
 
 
  115 00bf 08       		.uleb128 0x8
- 116 00c0 40000000 		.4byte	.LASF14
+ 116 00c0 57000000 		.4byte	.LASF14
  117 00c4 03       		.byte	0x3
  118 00c5 46       		.byte	0x46
  119 00c6 17       		.byte	0x17
@@ -137,7 +137,7 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
  128 00db 05       		.uleb128 0x5
  129 00dc CB000000 		.4byte	0xcb
  130 00e0 08       		.uleb128 0x8
- 131 00e1 C1010000 		.4byte	.LASF15
+ 131 00e1 D8010000 		.4byte	.LASF15
  132 00e5 03       		.byte	0x3
  133 00e6 47       		.byte	0x47
  134 00e7 17       		.byte	0x17
@@ -145,21 +145,21 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
  136 00ec 02       		.uleb128 0x2
  137 00ed 08       		.byte	0x8
  138 00ee 04       		.byte	0x4
- 139 00ef 2F020000 		.4byte	.LASF16
+ 139 00ef 76020000 		.4byte	.LASF16
  140 00f3 03       		.uleb128 0x3
- 141 00f4 72010000 		.4byte	.LASF17
+ 141 00f4 89010000 		.4byte	.LASF17
  142 00f8 04       		.byte	0x4
  143 00f9 3C       		.byte	0x3c
  144 00fa 17       		.byte	0x17
  145 00fb 75000000 		.4byte	0x75
  146 00ff 08       		.uleb128 0x8
- 147 0100 94010000 		.4byte	.LASF18
+ 147 0100 AB010000 		.4byte	.LASF18
  148 0104 04       		.byte	0x4
  149 0105 57       		.byte	0x57
  150 0106 11       		.byte	0x11
  151 0107 69000000 		.4byte	0x69
  152 010b 08       		.uleb128 0x8
- 153 010c 60010000 		.4byte	.LASF19
+ 153 010c 77010000 		.4byte	.LASF19
  154 0110 04       		.byte	0x4
  155 0111 79       		.byte	0x79
  156 0112 14       		.byte	0x14
@@ -167,9 +167,9 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
  158 0117 02       		.uleb128 0x2
  159 0118 01       		.byte	0x1
  160 0119 08       		.byte	0x8
- 161 011a A3010000 		.4byte	.LASF20
+ 161 011a BA010000 		.4byte	.LASF20
  162 011e 08       		.uleb128 0x8
- 163 011f CF010000 		.4byte	.LASF21
+ 163 011f 2E000000 		.4byte	.LASF21
  164 0123 05       		.byte	0x5
  165 0124 CB       		.byte	0xcb
  166 0125 14       		.byte	0x14
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
  169              		.section	.gnu.debuglto_.debug_abbrev,"e",%progbits
  170              	.Ldebug_abbrev0:
  171 0000 01       		.uleb128 0x1
-ARM GAS  /tmp/ccJPvahB.s 			page 4
+ARM GAS  /tmp/ccHroQE2.s 			page 4
 
 
  172 0001 11       		.uleb128 0x11
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
  226 0037 06       		.uleb128 0x6
  227 0038 24       		.uleb128 0x24
  228 0039 00       		.byte	0
-ARM GAS  /tmp/ccJPvahB.s 			page 5
+ARM GAS  /tmp/ccHroQE2.s 			page 5
 
 
  229 003a 0B       		.uleb128 0xb
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
  283 0070 00       		.byte	0
  284 0071 0A       		.uleb128 0xa
  285 0072 21       		.uleb128 0x21
-ARM GAS  /tmp/ccJPvahB.s 			page 6
+ARM GAS  /tmp/ccHroQE2.s 			page 6
 
 
  286 0073 00       		.byte	0
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
  325      706F7274 
  325      61626C65 
  326 00a3 00       		.byte	0
-ARM GAS  /tmp/ccJPvahB.s 			page 7
+ARM GAS  /tmp/ccHroQE2.s 			page 7
 
 
  327 00a4 2F757372 		.ascii	"/usr/lib/gcc/arm-none-eabi/9.2.1/include"
@@ -418,191 +418,194 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
  358              	.LASF11:
  359 0021 756E7369 		.ascii	"unsigned int\000"
  359      676E6564 
-ARM GAS  /tmp/ccJPvahB.s 			page 8
+ARM GAS  /tmp/ccHroQE2.s 			page 8
 
 
  359      20696E74 
  359      00
- 360              	.LASF9:
- 361 002e 6C6F6E67 		.ascii	"long unsigned int\000"
- 361      20756E73 
- 361      69676E65 
- 361      6420696E 
- 361      7400
- 362              	.LASF14:
- 363 0040 41484250 		.ascii	"AHBPrescTable\000"
- 363      72657363 
- 363      5461626C 
- 363      6500
- 364              	.LASF10:
- 365 004e 6C6F6E67 		.ascii	"long long unsigned int\000"
- 365      206C6F6E 
- 365      6720756E 
- 365      7369676E 
- 365      65642069 
- 366              	.LASF22:
- 367 0065 474E5520 		.ascii	"GNU C17 9.2.1 20191025 (release) [ARM/arm-9-branch "
- 367      43313720 
- 367      392E322E 
- 367      31203230 
- 367      31393130 
- 368 0098 72657669 		.ascii	"revision 277599] -mcpu=cortex-m3 -mno-thumb-interwo"
- 368      73696F6E 
- 368      20323737 
- 368      3539395D 
- 368      202D6D63 
- 369 00cb 726B202D 		.ascii	"rk -mthumb -mfloat-abi=soft -march=armv7-m -ggdb -O"
- 369      6D746875 
- 369      6D62202D 
- 369      6D666C6F 
- 369      61742D61 
- 370 00fe 73202D66 		.ascii	"s -fomit-frame-pointer -falign-functions=16 -ffunct"
- 370      6F6D6974 
- 370      2D667261 
- 370      6D652D70 
- 370      6F696E74 
- 371 0131 696F6E2D 		.ascii	"ion-sections -fdata-sections -fno-common -flto\000"
- 371      73656374 
- 371      696F6E73 
- 371      202D6664 
- 371      6174612D 
- 372              	.LASF19:
- 373 0160 75784372 		.ascii	"uxCriticalNesting\000"
- 373      69746963 
- 373      616C4E65 
- 373      7374696E 
- 373      6700
- 374              	.LASF17:
- 375 0172 55426173 		.ascii	"UBaseType_t\000"
- 375      65547970 
- 375      655F7400 
- 376              	.LASF5:
- 377 017e 75696E74 		.ascii	"uint8_t\000"
-ARM GAS  /tmp/ccJPvahB.s 			page 9
+ 360              	.LASF21:
+ 361 002e 75785361 		.ascii	"uxSavedInterruptStatus\000"
+ 361      76656449 
+ 361      6E746572 
+ 361      72757074 
+ 361      53746174 
+ 362              	.LASF9:
+ 363 0045 6C6F6E67 		.ascii	"long unsigned int\000"
+ 363      20756E73 
+ 363      69676E65 
+ 363      6420696E 
+ 363      7400
+ 364              	.LASF14:
+ 365 0057 41484250 		.ascii	"AHBPrescTable\000"
+ 365      72657363 
+ 365      5461626C 
+ 365      6500
+ 366              	.LASF10:
+ 367 0065 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 367      206C6F6E 
+ 367      6720756E 
+ 367      7369676E 
+ 367      65642069 
+ 368              	.LASF22:
+ 369 007c 474E5520 		.ascii	"GNU C17 9.2.1 20191025 (release) [ARM/arm-9-branch "
+ 369      43313720 
+ 369      392E322E 
+ 369      31203230 
+ 369      31393130 
+ 370 00af 72657669 		.ascii	"revision 277599] -mcpu=cortex-m3 -mno-thumb-interwo"
+ 370      73696F6E 
+ 370      20323737 
+ 370      3539395D 
+ 370      202D6D63 
+ 371 00e2 726B202D 		.ascii	"rk -mthumb -mfloat-abi=soft -march=armv7-m -ggdb -O"
+ 371      6D746875 
+ 371      6D62202D 
+ 371      6D666C6F 
+ 371      61742D61 
+ 372 0115 73202D66 		.ascii	"s -fomit-frame-pointer -falign-functions=16 -ffunct"
+ 372      6F6D6974 
+ 372      2D667261 
+ 372      6D652D70 
+ 372      6F696E74 
+ 373 0148 696F6E2D 		.ascii	"ion-sections -fdata-sections -fno-common -flto\000"
+ 373      73656374 
+ 373      696F6E73 
+ 373      202D6664 
+ 373      6174612D 
+ 374              	.LASF19:
+ 375 0177 75784372 		.ascii	"uxCriticalNesting\000"
+ 375      69746963 
+ 375      616C4E65 
+ 375      7374696E 
+ 375      6700
+ARM GAS  /tmp/ccHroQE2.s 			page 9
 
 
- 377      385F7400 
- 378              	.LASF6:
- 379 0186 756E7369 		.ascii	"unsigned char\000"
- 379      676E6564 
- 379      20636861 
- 379      7200
- 380              	.LASF18:
- 381 0194 756C5379 		.ascii	"ulSyspri2Value\000"
- 381      73707269 
- 381      3256616C 
- 381      756500
- 382              	.LASF20:
- 383 01a3 63686172 		.ascii	"char\000"
- 383      00
- 384              	.LASF8:
- 385 01a8 75696E74 		.ascii	"uint32_t\000"
- 385      33325F74 
+ 376              	.LASF17:
+ 377 0189 55426173 		.ascii	"UBaseType_t\000"
+ 377      65547970 
+ 377      655F7400 
+ 378              	.LASF5:
+ 379 0195 75696E74 		.ascii	"uint8_t\000"
+ 379      385F7400 
+ 380              	.LASF6:
+ 381 019d 756E7369 		.ascii	"unsigned char\000"
+ 381      676E6564 
+ 381      20636861 
+ 381      7200
+ 382              	.LASF18:
+ 383 01ab 756C5379 		.ascii	"ulSyspri2Value\000"
+ 383      73707269 
+ 383      3256616C 
+ 383      756500
+ 384              	.LASF20:
+ 385 01ba 63686172 		.ascii	"char\000"
  385      00
- 386              	.LASF13:
- 387 01b1 53797374 		.ascii	"SystemCoreClock\000"
- 387      656D436F 
- 387      7265436C 
- 387      6F636B00 
- 388              	.LASF15:
- 389 01c1 41504250 		.ascii	"APBPrescTable\000"
- 389      72657363 
- 389      5461626C 
- 389      6500
- 390              	.LASF21:
- 391 01cf 75785361 		.ascii	"uxSavedInterruptStatus\000"
- 391      76656449 
- 391      6E746572 
- 391      72757074 
- 391      53746174 
- 392              	.LASF23:
- 393 01e6 2E2E2F43 		.ascii	"../ChibiOS/os/hal/osal/freertos/osal.c\000"
- 393      68696269 
- 393      4F532F6F 
- 393      732F6861 
- 393      6C2F6F73 
- 394              	.LASF2:
- 395 020d 6C6F6E67 		.ascii	"long int\000"
- 395      20696E74 
- 395      00
- 396              	.LASF12:
- 397 0216 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 397      52784275 
- 397      66666572 
- 397      00
- 398              	.LASF0:
- 399 0223 7369676E 		.ascii	"signed char\000"
- 399      65642063 
- 399      68617200 
- 400              	.LASF16:
- 401 022f 6C6F6E67 		.ascii	"long double\000"
- 401      20646F75 
- 401      626C6500 
-ARM GAS  /tmp/ccJPvahB.s 			page 10
+ 386              	.LASF8:
+ 387 01bf 75696E74 		.ascii	"uint32_t\000"
+ 387      33325F74 
+ 387      00
+ 388              	.LASF13:
+ 389 01c8 53797374 		.ascii	"SystemCoreClock\000"
+ 389      656D436F 
+ 389      7265436C 
+ 389      6F636B00 
+ 390              	.LASF15:
+ 391 01d8 41504250 		.ascii	"APBPrescTable\000"
+ 391      72657363 
+ 391      5461626C 
+ 391      6500
+ 392              	.LASF24:
+ 393 01e6 2F6D6E74 		.ascii	"/mnt/c/Users/ingfr/hardware/electrosense-converter-"
+ 393      2F632F55 
+ 393      73657273 
+ 393      2F696E67 
+ 393      66722F68 
+ 394 0219 6669726D 		.ascii	"firmwareV2/firmware\000"
+ 394      77617265 
+ 394      56322F66 
+ 394      69726D77 
+ 394      61726500 
+ 395              	.LASF23:
+ 396 022d 2E2E2F43 		.ascii	"../ChibiOS/os/hal/osal/freertos/osal.c\000"
+ 396      68696269 
+ 396      4F532F6F 
+ 396      732F6861 
+ 396      6C2F6F73 
+ 397              	.LASF2:
+ 398 0254 6C6F6E67 		.ascii	"long int\000"
+ 398      20696E74 
+ 398      00
+ 399              	.LASF12:
+ 400 025d 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ARM GAS  /tmp/ccHroQE2.s 			page 10
 
 
- 402              	.LASF1:
- 403 023b 73686F72 		.ascii	"short int\000"
- 403      7420696E 
- 403      7400
- 404              	.LASF4:
- 405 0245 696E7433 		.ascii	"int32_t\000"
- 405      325F7400 
- 406              	.LASF24:
- 407 024d 2F6D6E74 		.ascii	"/mnt/d/hardware/electrosense-converter-firmwareV2/f"
- 407      2F642F68 
- 407      61726477 
- 407      6172652F 
- 407      656C6563 
- 408 0280 69726D77 		.ascii	"irmware\000"
- 408      61726500 
+ 400      52784275 
+ 400      66666572 
+ 400      00
+ 401              	.LASF0:
+ 402 026a 7369676E 		.ascii	"signed char\000"
+ 402      65642063 
+ 402      68617200 
+ 403              	.LASF16:
+ 404 0276 6C6F6E67 		.ascii	"long double\000"
+ 404      20646F75 
+ 404      626C6500 
+ 405              	.LASF1:
+ 406 0282 73686F72 		.ascii	"short int\000"
+ 406      7420696E 
+ 406      7400
+ 407              	.LASF4:
+ 408 028c 696E7433 		.ascii	"int32_t\000"
+ 408      325F7400 
  409              		.text
- 410              		.section	.gnu.lto_.profile.90f5d761ef8621f1,"e",%progbits
+ 410              		.section	.gnu.lto_.profile.a8a679b21630ba1c,"e",%progbits
  411 0000 789CE360 		.ascii	"x\234\343``\004B \000\000\000]\000\013"
  411      60044220 
  411      0000005D 
  411      000B
  412              		.text
- 413              		.section	.gnu.lto_.icf.90f5d761ef8621f1,"e",%progbits
+ 413              		.section	.gnu.lto_.icf.a8a679b21630ba1c,"e",%progbits
  414 0000 789CE360 		.ascii	"x\234\343``d`b@\006\000\000\316\000\014"
  414      60646062 
  414      40060000 
  414      CE000C
  415              		.text
- 416              		.section	.gnu.lto_.jmpfuncs.90f5d761ef8621f1,"e",%progbits
+ 416              		.section	.gnu.lto_.jmpfuncs.a8a679b21630ba1c,"e",%progbits
  417 0000 789CE360 		.ascii	"x\234\343``d`b@\006\000\000\316\000\014"
  417      60646062 
  417      40060000 
  417      CE000C
  418              		.text
- 419              		.section	.gnu.lto_.inline.90f5d761ef8621f1,"e",%progbits
+ 419              		.section	.gnu.lto_.inline.a8a679b21630ba1c,"e",%progbits
  420 0000 789CE360 		.ascii	"x\234\343``d`b@\006\000\000\316\000\014"
  420      60646062 
  420      40060000 
  420      CE000C
  421              		.text
- 422              		.section	.gnu.lto_.pureconst.90f5d761ef8621f1,"e",%progbits
+ 422              		.section	.gnu.lto_.pureconst.a8a679b21630ba1c,"e",%progbits
  423 0000 789CE360 		.ascii	"x\234\343``\004B \000\000\000]\000\013"
  423      60044220 
  423      0000005D 
  423      000B
  424              		.text
- 425              		.section	.gnu.lto_.symbol_nodes.90f5d761ef8621f1,"e",%progbits
+ 425              		.section	.gnu.lto_.symbol_nodes.a8a679b21630ba1c,"e",%progbits
  426 0000 789CE360 		.ascii	"x\234\343``d`b\000\001\000\000n\000\014"
  426      60646062 
  426      00010000 
  426      6E000C
  427              		.text
- 428              		.section	.gnu.lto_.refs.90f5d761ef8621f1,"e",%progbits
+ 428              		.section	.gnu.lto_.refs.a8a679b21630ba1c,"e",%progbits
  429 0000 789CE360 		.ascii	"x\234\343``\004B \000\000\000]\000\013"
+ARM GAS  /tmp/ccHroQE2.s 			page 11
+
+
  429      60044220 
  429      0000005D 
  429      000B
-ARM GAS  /tmp/ccJPvahB.s 			page 11
-
-
  430              		.text
- 431              		.section	.gnu.lto_.decls.90f5d761ef8621f1,"e",%progbits
+ 431              		.section	.gnu.lto_.decls.a8a679b21630ba1c,"e",%progbits
  432 0000 789CE360 		.ascii	"x\234\343``d\000\001\020\251\002\304\377\201\000\304"
  432      60640001 
  432      10A902C4 
@@ -611,7 +614,7 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
  433      0000C135 
  433      04FD
  434              		.text
- 435              		.section	.gnu.lto_.symtab.90f5d761ef8621f1,"e",%progbits
+ 435              		.section	.gnu.lto_.symtab.a8a679b21630ba1c,"e",%progbits
  436              		.text
  437              		.section	.gnu.lto_.opts,"e",%progbits
  438 0000 272D666E 		.ascii	"'-fno-openmp' '-fno-openacc' '-fno-pie' '-mcpu=cort"
@@ -643,12 +646,12 @@ ARM GAS  /tmp/ccJPvahB.s 			page 1
  444              		.comm	__gnu_lto_v1,1,1
  445              		.comm	__gnu_lto_slim,1,1
  446              		.ident	"GCC: (15:9-2019-q4-0ubuntu1) 9.2.1 20191025 (release) [ARM/arm-9-branch revision 277599]"
-ARM GAS  /tmp/ccJPvahB.s 			page 12
+ARM GAS  /tmp/ccHroQE2.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 osal.c
-     /tmp/ccJPvahB.s:21     .gnu.debuglto_.debug_info:0000000000000000 osal.c.c676abb1
+     /tmp/ccHroQE2.s:21     .gnu.debuglto_.debug_info:0000000000000000 osal.c.ae0c7a63
                             *COM*:0000000000000001 __gnu_lto_v1
                             *COM*:0000000000000001 __gnu_lto_slim
 
