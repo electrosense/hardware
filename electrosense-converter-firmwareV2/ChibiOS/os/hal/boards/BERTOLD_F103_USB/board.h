@@ -85,6 +85,7 @@
  * Please refer to the STM32 Reference Manual for details.
  */
 
+//To be fixed!!
 /*
  * Port A setup.
  * Everything input with pull-up except:
@@ -93,6 +94,7 @@
 #define VAL_GPIOACRH            0x88888288      /* PA15...PA8 */
 #define VAL_GPIOAODR            0xFFCFFFFF
 
+//To be fixed!!
 /*
  * Port B setup.
  * Everything input with pull-up except:
