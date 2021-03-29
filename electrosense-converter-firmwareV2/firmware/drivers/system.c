@@ -276,7 +276,6 @@ void startSystemComponents(void)
 
     /* Init GPIO */
     if(!gpioInit(4)) {
-        /* ?! Damn... */
         syslog("GPIO subsystem init failed.");
         return;
     } else {
@@ -342,16 +341,16 @@ void startSystemComponents(void)
         shellCommandRegister("convert", cmdConvert, &converter);
 
         /* Without the LO PLL all SHF bands are not available */
-        if(!hasLoPLL) {
+        /*if(!hasLoPLL) {
             syslog("SHF bands disabled!");
             converter.disabledBands |= _BV(1) | _BV(2) | _BV(3) | _BV(4);
-        }
+        }*/
 
-        /* Without the SW mixer the SW band is not available (duh) */
-        if(!hasSWMix) {
+        /* Without the SW mixer the SW band is not available */
+        /*if(!hasSWMix) {
             syslog("SW band disabled!");
             converter.disabledBands |= _BV(0);
-        }
+        }*/
 
         if(!converterTune(&converter, &startupTuneRequest)) {
             syslog("Converter startup failed.");
