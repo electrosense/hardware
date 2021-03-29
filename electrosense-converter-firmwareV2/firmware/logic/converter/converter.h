@@ -45,7 +45,6 @@
 #define CONVERTER_IO_PIN_SW_MIX GPIOB_SW_MIX//Changed in V2 hardware
 #define CONVERTER_IO_PIN_SW_SW GPIOB_SW_SW //Changed in V2 hardware
 #define CONVERTER_IO_PIN_MIX_X2 GPIOB_MIX_X2//Changed in V2 hardware
-//#define CONVERTER_IO_PIN_MIX_EN 6
 #define CONVERTER_IO_PIN_MIX_EN GPIOB_MIX_EN //Changed in V2 hardware
 #define CONVERTER_IO_PIN_LOWBAND GPIOA_BANDSEL //Changed in V2 hardware
 #define CONVERTER_IO_PIN_MIX_SW_EN 8

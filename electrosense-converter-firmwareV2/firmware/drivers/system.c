@@ -184,9 +184,17 @@ static void converterSetGpio(const ConverterManager* converter, uint32_t gpioVal
     gpioValues |= bandSpecificGpioSettings[converter->activeBand];
 
     /* The lowest 8 bits are all connected over I2C */
-    uint8_t i2cGpio = gpioValues & 0xFF;
-    gpioSetPort(GPIO_PORT_I2C0, i2cGpio);
-
+    //Not anymore! Changed in hardware V2
+    
+    uint8_t gpioVals = gpioValues & 0xFF;
+    //gpioSetPort(GPIO_PORT_GPIOB, i2cGpio);
+    gpioSetPin(GPIO_SW_BYPASS, (gpioVals & _BV(CONVERTER_IO_PIN_SW_BYPASS)) == 0);
+    gpioSetPin(GPIO_SW_MIX, (gpioVals & _BV(CONVERTER_IO_PIN_SW_MIX)) == 0);
+    gpioSetPin(GPIO_SW_SW, (gpioVals & _BV(CONVERTER_IO_PIN_SW_SW)) == 0);
+    gpioSetPin(GPIO_MIX_EN, (gpioVals & _BV(CONVERTER_IO_PIN_MIX_EN)) == 0);
+    gpioSetPin(GPIO_MIX_X2, (gpioVals & _BV(CONVERTER_IO_PIN_MIX_X2)) == 0);
+    gpioSetPin(GPIO_LOWBAND, (gpioVals & _BV(CONVERTER_IO_PIN_LOWBAND)) == 0);
+    
     /* Handle the others */
     gpioSetPin(GPIO_MIX_SW_EN, (gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_EN)) == 0);
     systemEnableMCO((gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_LO)) > 0);
