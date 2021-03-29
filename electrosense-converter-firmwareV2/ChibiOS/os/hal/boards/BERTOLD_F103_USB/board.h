@@ -25,7 +25,7 @@
  * Board identifier.
  */
 #define BERTOLD_F103_USB
-#define BOARD_NAME              "STMicroelectronics STM32F103 with USB"
+#define BOARD_NAME              "Electrosense converter extension board"
 
 /*
  * Board frequencies.
@@ -38,6 +38,7 @@
  */
 #define STM32F103xB
 
+#define GPIOA_BANDSEL       2 //Changed in V2 hardware
 #define GPIOA_PLL_SCK       5
 #define GPIOA_PLL_MISO      6
 #define GPIOA_PLL_MOSI      7
@@ -45,6 +46,7 @@
 #define GPIOA_PLL_CE        3
 #define GPIOA_MIX_SW_LO     8
 
+#define GPIOB_SW_SW         0 //Changed in V2 hardware
 #define GPIOB_LED_USB       3
 #define GPIOB_LED_LOCK      4
 #define GPIOB_LED_MIX       5
@@ -53,6 +55,12 @@
 #define GPIOB_MIX_SW_EN     8
 #define GPIOB_UART_TX       10
 #define GPIOB_UART_RX       11
+//Changed in V2 hardware
+//New! Replace I2C expander
+#define GPIOB_SW_BYPASS     12
+#define GPIOB_SW_MIX        13
+#define GPIOB_MIX_X2        14
+#define GPIOB_MIX_EN        15 
 /*
  * I/O ports initial setup, this configuration is established soon after reset
  * in the initialization code.

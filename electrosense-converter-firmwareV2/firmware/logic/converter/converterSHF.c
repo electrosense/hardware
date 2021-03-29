@@ -35,11 +35,12 @@ static bool converterTuneSHF(const ConverterManager* converter, const ConverterB
     uint32_t ioOut = _BV(CONVERTER_IO_PIN_MIX_EN);
     uint32_t loFreq = 0;
 
-    if(tuneRequest->antennaInput) {
+    //Changed in V2 hardware
+    /*if(tuneRequest->antennaInput) {
         ioOut |= _BV(CONVERTER_IO_PIN_ANT_MID);
     } else {
         ioOut |= _BV(CONVERTER_IO_PIN_ANT_HIGH);
-    }
+    }*/
 
     if(config->useHighSideMixing) {
         loFreq = tuneRequest->inputFrequencyKHz + config->ifFrequencyKHz;

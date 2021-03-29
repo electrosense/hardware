@@ -87,13 +87,14 @@ static const i2cSafeConfig I2C1SafeConfig = {
 };
 
 /* ~~~~~~~~~~~~~~~~~~~~~ I2C IO Extender ~~~~~~~~~~~~~~~~~~~~~ */
-static const TCA6408Driver_config tca6408Config = {
+//Removed in hardware V2
+/*static const TCA6408Driver_config tca6408Config = {
     .i2cPort = &I2CD1,
     .i2cAddr = 0x20
 };
 
 TCA6408Driver mixerControllerIO;
-
+*/
 /* ~~~~~~~~~~~~~~~~~~~~~ I2C TCXO Temp sensor ~~~~~~~~~~~~~~~~~~~~~ */
 static const MCP9804Driver_config mcp9804Config = {
     .i2cPort = &I2CD1,
@@ -139,12 +140,7 @@ static const GPIOPinInit platformPinConfig[] = {
     {GPIO_MIX_SW_LO, PAL_MODE_STM32_ALTERNATE_PUSHPULL, false},
     {GPIO_UART_TX, PAL_MODE_STM32_ALTERNATE_PUSHPULL, true},
     {GPIO_UART_RX, PAL_MODE_INPUT, true},
-    {-1, 0, false}
-};
-
-static const GPIOPinInit platformI2CPinConfig[] = {
-    {GPIO_ANT_HIGH, PAL_MODE_OUTPUT_PUSHPULL, false},
-    {GPIO_ANT_MID, PAL_MODE_OUTPUT_PUSHPULL, false},
+    //Added in Hardware V2
     {GPIO_SW_BYPASS, PAL_MODE_OUTPUT_PUSHPULL, false},
     {GPIO_SW_MIX, PAL_MODE_OUTPUT_PUSHPULL, false},
     {GPIO_SW_SW, PAL_MODE_OUTPUT_PUSHPULL, false},
@@ -153,6 +149,19 @@ static const GPIOPinInit platformI2CPinConfig[] = {
     {GPIO_LOWBAND, PAL_MODE_OUTPUT_PUSHPULL, false},
     {-1, 0, false}
 };
+
+/* Removed from Hardware V2
+static const GPIOPinInit platformI2CPinConfig[] = {
+    //{GPIO_ANT_HIGH, PAL_MODE_OUTPUT_PUSHPULL, false},
+    //{GPIO_ANT_MID, PAL_MODE_OUTPUT_PUSHPULL, false},
+    {GPIO_SW_BYPASS, PAL_MODE_OUTPUT_PUSHPULL, false},
+    {GPIO_SW_MIX, PAL_MODE_OUTPUT_PUSHPULL, false},
+    {GPIO_SW_SW, PAL_MODE_OUTPUT_PUSHPULL, false},
+    {GPIO_MIX_X2, PAL_MODE_OUTPUT_PUSHPULL, false},
+    {GPIO_MIX_EN, PAL_MODE_OUTPUT_PUSHPULL, false},
+    {GPIO_LOWBAND, PAL_MODE_OUTPUT_PUSHPULL, false},
+    {-1, 0, false}
+};*/
 
 /* ~~~~~~~~~~~~~~~~~~~~~ Converter ~~~~~~~~~~~~~~~~~~~~~ */
 ConverterManager converter;
