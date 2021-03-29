@@ -266,7 +266,7 @@ ConverterTuneRequest startupTuneRequest = {
 /* ~~~~~~~~~~~~~~~~~~~~~ Init function ~~~~~~~~~~~~~~~~~~~~~ */
 void startSystemComponents(void)
 {
-    bool hasI2CIO = false, hasLoPLL = false, hasSWMix = true;
+    bool hasI2CIO = true, hasLoPLL = true, hasSWMix = true;
 
     /* Unplug USB */
     usbDisconnectBus(serusbcfg.usbp);
@@ -306,14 +306,14 @@ void startSystemComponents(void)
     sdStart(&SD3, &serial3Config);
 
     /* Init IO extender */
-    if(!TCA6408AInit(NULL, gpioRegisterPortDriver(GPIO_PORT_I2C0), &tca6408Config)) {
+    /*if(!TCA6408AInit(NULL, gpioRegisterPortDriver(GPIO_PORT_I2C0), &tca6408Config)) {
         syslog("TCA6408A init failed.");
     } else {
         syslog("TCA6408A init done.");
         gpioInitPins(platformI2CPinConfig);
 
         hasI2CIO = true;
-    }
+    }*/
 
     xTaskCreate(mixLedTask, "Led", 64, (void*)&mixLedDelay, 1, &mixLedTaskHandle);
 
@@ -337,7 +337,7 @@ void startSystemComponents(void)
     }
 
     /* Init the converter, if I2C is present */
-    if(hasI2CIO) {
+    //if(hasI2CIO) {
         converterInit(&converter, converterBands, converterSetGpio);
         shellCommandRegister("convert", cmdConvert, &converter);
 
@@ -359,7 +359,7 @@ void startSystemComponents(void)
             syslog("Converter startup done.");
         }
 
-    }
+    //}
 
 
     /* Start sanity reboot monitor */
