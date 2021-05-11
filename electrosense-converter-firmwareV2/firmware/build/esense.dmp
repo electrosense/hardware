@@ -84,9 +84,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  32 .debug_line   00019b52  00000000  00000000  000af920  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 33 .debug_str    00006fbd  00000000  00000000  000c9472  2**0
+ 33 .debug_str    00006ff8  00000000  00000000  000c9472  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 34 .debug_frame  00001d54  00000000  00000000  000d0430  2**2
+ 34 .debug_frame  00001d54  00000000  00000000  000d046c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 SYMBOL TABLE:
 20000000 l    d  .mstack	00000000 .mstack
@@ -2046,151 +2046,149 @@ SYMBOL TABLE:
 0007ad8b l       .debug_info	00000000 
 0007ad8b l       .debug_info	00000000 
 0007ad8b l       .debug_info	00000000 
-00033629  w      .debug_info	00000000 .hidden shell.c.4c28055a
-000261ea  w      .debug_info	00000000 .hidden hal_i2c_lld.c.14546255
-00042a7d  w      .debug_info	00000000 .hidden cmdtasks.c.c610fcac
+0002d246  w      .debug_info	00000000 .hidden hal_wdg_lld.c.daee6665
 0800cbb4 g       .rodata	00000000 __buildid_base__
 00000000 g       .ARM.exidx	00000000 __ram4_start__
 08002234 g       .text	00000000 _binary_data_license_bin_start
-000784bb  w      .debug_info	00000000 .hidden converterSHF.c.d83aeb82
 00000000 g       .ram5	00000000 __ram5_clear__
+0003fae9  w      .debug_info	00000000 .hidden appshell.c.d4cb8998
 20001650 g       .ram0_init	00000000 __ram0_init__
-0003d0d9  w      .debug_info	00000000 .hidden util.c.461ad5c2
+0001caec  w      .debug_info	00000000 .hidden hal_usb.c.f07d3837
+0003599a  w      .debug_info	00000000 .hidden shell_cmd.c.a52cd6a4
+0002adde  w      .debug_info	00000000 .hidden hal_usb_lld.c.32f6b8fb
 00000000 g       .ram1	00000000 __ram1_free__
+0007ad8b  w      .debug_info	00000000 .hidden cmdsanity.c.9cb9377f
 00000000 g       .ARM.exidx	00000000 __ram6_start__
-0002fdc0  w      .debug_info	00000000 .hidden chprintf.c.2963b42c
 08002000 g     O .vectors	00000160 _vectors
 0800cbe0 g       .ARM.exidx	00000000 __exidx_end
-00055c0a  w      .debug_info	00000000 .hidden cmdi2c.c.eb4870e6
-00010dc1  w      .debug_info	00000000 .hidden hal_buffers.c.6c357e00
-00075c21  w      .debug_info	00000000 .hidden converterSW.c.36434cb6
 20001650 g       .ram0	00000000 __ram0_free__
 20001650 g       .heap	00000000 __heap_base__
-0002962a  w      .debug_info	00000000 .hidden hal_serial_lld.c.6718f8fe
-0001ed5f  w      .debug_info	00000000 .hidden hal_wdg.c.2769a57f
+0002962a  w      .debug_info	00000000 .hidden hal_serial_lld.c.6940e8bc
+0005d7ad  w      .debug_info	00000000 .hidden monitor.c.ac98c637
+0001b113  w      .debug_info	00000000 .hidden hal_spi.c.c6cc961b
 0800cd08 g       *ABS*	00000000 __ram3_init_text__
-00021c7e  w      .debug_info	00000000 .hidden hal_lld.c.c277fac7
-00052de1  w      .debug_info	00000000 .hidden i2csafe.c.aea63d50
+0004d2af  w      .debug_info	00000000 .hidden system.c.987d9426
 00000000 g       *ABS*	00000000 __ram5_end__
 00000000 g       .ram5	00000000 __ram5_noinit__
 00000000 g       *ABS*	00000000 __ram5_size__
 08003ac4 g     F .text	000000ec memcpy
+00075c21  w      .debug_info	00000000 .hidden converterSW.c.be3f48f9
+00050193  w      .debug_info	00000000 .hidden usb.c.1dacdbc3
 08004974 g     F .text	00000030 xPortSysTickHandler
 080037cc g     F .text	00000000 .hidden __aeabi_uldivmod
 08002160 g       .vectors	00000000 __fini_array_end
 20000800 g       .pstack	00000000 __main_thread_stack_end__
 0800cbb4 g       .rodata	00000000 __rodata_end__
-0006ec8a  w      .debug_info	00000000 .hidden unhandled_exception.c.9fee9610
-0002334e  w      .debug_info	00000000 .hidden stm32_dma.c.3286426c
+00070ab3  w      .debug_info	00000000 .hidden converter.c.c2034dca
 08004120 g     F .text	00000068 xPortPendSVHandler
-0003599a  w      .debug_info	00000000 .hidden shell_cmd.c.978ab29a
 20000928 g       .bss	00000000 _bss_start
-00064c9c  w      .debug_info	00000000 .hidden syslog.c.7d0696c1
+00013298  w      .debug_info	00000000 .hidden hal_queues.c.f92a1627
 20005000 g       .heap	00000000 __heap_end__
-00050193  w      .debug_info	00000000 .hidden usb.c.cc70fbeb
+0002e7ee  w      .debug_info	00000000 .hidden board.c.17eb4a87
+0000f869  w      .debug_info	00000000 .hidden hal.c.ab26f28b
 00000000 g       *ABS*	00000000 __ram1_size__
 080037fc g     F .text	000002c4 .hidden __udivmoddi4
 00000000 g       .ram1	00000000 __ram1_clear__
+000163f2  w      .debug_info	00000000 .hidden hal_pal.c.f3738abc
 00000000 g       .ram7	00000000 __ram7_free__
 00000000 g       *ABS*	00000000 __ram4_size__
-00031687  w      .debug_info	00000000 .hidden memstreams.c.0cb248a1
 00000000 g       *ABS*	00000000 __ram1_end__
 00000000 g       *ABS*	00000000 __ram4_end__
 0800cbd8 g       .ARM.exidx	00000000 __exidx_start
 0800cd08 g       *ABS*	00000000 __ram0_init_text__
 0800cd08 g       *ABS*	00000000 __ram1_init_text__
 00005000 g       *ABS*	00000000 __ram0_size__
+000640ef  w      .debug_info	00000000 .hidden packetqueue.c.9d0953b7
 0800cd08 g       *ABS*	00000000 __ram5_init_text__
+0002334e  w      .debug_info	00000000 .hidden stm32_dma.c.2e357000
+00010dc1  w      .debug_info	00000000 .hidden hal_buffers.c.a5d1c028
 20001650 g       .bss	00000000 _bss_end
+0003a2d8  w      .debug_info	00000000 .hidden max2870.c.ce9ccbc1
+00052de1  w      .debug_info	00000000 .hidden i2csafe.c.c3bcb64c
+0003d0d9  w      .debug_info	00000000 .hidden util.c.8f6a2307
 08002160 g     F .text	00000000 Reset_Handler
-000193bd  w      .debug_info	00000000 .hidden hal_serial_usb.c.44cc3689
+000585ff  w      .debug_info	00000000 .hidden mcp9804.c.9d0ebabc
 0000f2fd  w      .debug_info	00000000 .hidden crt1.c.2f7ac446
 00000000 g       .ram4	00000000 __ram4_clear__
-0007ad8b  w      .debug_info	00000000 .hidden cmdsanity.c.7c36fd6f
 00000000 g       .ram5	00000000 __ram5_free__
 0800cd08 g       *ABS*	00000000 __ram6_init_text__
 080037cb g       .text	00000000 _binary_data_license_bin_end
-00017a66  w      .debug_info	00000000 .hidden hal_serial.c.dbd10822
 00000000 g       .ram3	00000000 __ram3_clear__
-000617fd  w      .debug_info	00000000 .hidden cmdconvert.c.bb0a1da6
 0800b898 g     F .text	00000002 __default_exit
 00000000 g       *ABS*	00000000 __ram6_end__
 00000000 g       .ram6_init	00000000 __ram6_init__
+0006ec8a  w      .debug_info	00000000 .hidden unhandled_exception.c.fb5eed7c
 00000000 g       .ram7_init	00000000 __ram7_init__
 00000000 g       .ram6	00000000 __ram6_free__
 00000000 g       .ram2	00000000 __ram2_noinit__
-000379fc  w      .debug_info	00000000 .hidden main.c.69deaac7
-000585ff  w      .debug_info	00000000 .hidden mcp9804.c.1fdbdbd8
 00000000 g       .ram6	00000000 __ram6_noinit__
-0005d7ad  w      .debug_info	00000000 .hidden monitor.c.e0f09f10
+000617fd  w      .debug_info	00000000 .hidden cmdconvert.c.c1d185cb
 00000000 g       .ram4_init	00000000 __ram4_init__
 0000f636  w      .debug_info	00000000 .hidden vectors.c.640c6263
 00000000 g       .ram7	00000000 __ram7_clear__
-0002d246  w      .debug_info	00000000 .hidden hal_wdg_lld.c.858447c8
 20000800 g       .data	00000000 _data_start
+0006c29e  w      .debug_info	00000000 .hidden cpugpio.c.11b5338c
 00000000 g       *ABS*	00000000 __ram7_size__
-00070ab3  w      .debug_info	00000000 .hidden converter.c.8792e714
-00027db6  w      .debug_info	00000000 .hidden hal_spi_lld.c.7e941fcb
-0006c29e  w      .debug_info	00000000 .hidden cpugpio.c.c7a6bfa7
-00014b6f  w      .debug_info	00000000 .hidden hal_i2c.c.e052e916
-000640ef  w      .debug_info	00000000 .hidden packetqueue.c.eef90f63
 0800b89c g     F .text	00000002 __core_init
 00000000 g       .ram4	00000000 __ram4_noinit__
 0800b89a g     F .text	00000002 __late_init
 0800b2b8 g     F .text	00000090 vTaskSwitchContext
 0800cbd8 g       .rodata	00000000 __buildid_end__
+000379fc  w      .debug_info	00000000 .hidden main.c.ec9aedc9
 00000000 g       .ARM.exidx	00000000 __ram7_start__
 00000000 g       .ram6	00000000 __ram6_clear__
-0002e7ee  w      .debug_info	00000000 .hidden board.c.8ba9a462
-000733b0  w      .debug_info	00000000 .hidden converterBypass.c.0866c52c
-0003a2d8  w      .debug_info	00000000 .hidden max2870.c.b0a72f62
 20000928 g       .data	00000000 _data_end
 08003ac0  w    F .text	00000002 .hidden __aeabi_ldiv0
 00000000 g       *ABS*	00000000 __ram3_size__
+00064c9c  w      .debug_info	00000000 .hidden syslog.c.205ea88e
+00031687  w      .debug_info	00000000 .hidden memstreams.c.de407ed8
 08002160 g       .vectors	00000000 __fini_array_start
 00000000 g       .ram2	00000000 __ram2_clear__
 00000000 g       *ABS*	00000000 __ram3_end__
 00000000 g       *ABS*	00000000 __ram2_size__
-0005af08  w      .debug_info	00000000 .hidden cmdtemp.c.512fd968
-00069975  w      .debug_info	00000000 .hidden dummygpio.c.aa909c49
 00000000 g       .ARM.exidx	00000000 __ram1_start__
 0800b8a0 g       .rodata	00000000 __rodata_base__
 08003bb0 g     F .text	000000a0 memset
 0800b480 g     F .text	0000034c main
 00000000 g       *ABS*	00000000 __ram6_size__
-0004d2af  w      .debug_info	00000000 .hidden system.c.cbb79068
 0800cd08 g       *ABS*	00000000 __ram2_init_text__
 00000000 g       .ram3	00000000 __ram3_free__
 08002160 g       .vectors	00000000 __init_array_end
 08004230 g     F .text	00000034 vPortSVCHandler
-00013298  w      .debug_info	00000000 .hidden hal_queues.c.a9d50aee
+0004aa14  w      .debug_info	00000000 .hidden cmdsof.c.c711ed85
 0800cd08 g       *ABS*	00000000 __ram4_init_text__
 00000000 g       .ram1	00000000 __ram1_noinit__
+00021c7e  w      .debug_info	00000000 .hidden hal_lld.c.0fbc4da9
+000784bb  w      .debug_info	00000000 .hidden converterSHF.c.c136cb1b
 08003d18 g     F .text	000001ba strcmp
-0001b113  w      .debug_info	00000000 .hidden hal_spi.c.4e3687d3
+000203b5  w      .debug_info	00000000 .hidden nvic.c.44a95e0e
+00066e13  w      .debug_info	00000000 .hidden gpio.c.a7da743e
+0005af08  w      .debug_info	00000000 .hidden cmdtemp.c.ef414cc9
 00000000 g       .ram2_init	00000000 __ram2_init__
 00000000 g       *ABS*	00000000 __ram2_end__
 20000400 g       .pstack	00000000 __process_stack_base__
 20001650 g       .ram0	00000000 __ram0_clear__
-0002adde  w      .debug_info	00000000 .hidden hal_usb_lld.c.56588388
+00045447  w      .debug_info	00000000 .hidden cmdmax.c.c6b8b56d
+000193bd  w      .debug_info	00000000 .hidden hal_serial_usb.c.34fd598a
 00000000 g       .ram3	00000000 __ram3_noinit__
 20001650 g       .ram0	00000000 __ram0_noinit__
+000733b0  w      .debug_info	00000000 .hidden converterBypass.c.f03c1699
 0800b84c g     F .text	0000004c __init_ram_areas
+00014b6f  w      .debug_info	00000000 .hidden hal_i2c.c.2a2074f0
 00000000 g       .ARM.exidx	00000000 __ram2_start__
 00000000 g       *ABS*	00000000 __ram7_end__
-00066e13  w      .debug_info	00000000 .hidden gpio.c.25f305a0
 20000400 g       .mstack	00000000 __main_stack_end__
-00047de2  w      .debug_info	00000000 .hidden tca6408a.c.ad5a4a66
+00069975  w      .debug_info	00000000 .hidden dummygpio.c.ba8b4065
 00000000 g       .ram5_init	00000000 __ram5_init__
-00045447  w      .debug_info	00000000 .hidden cmdmax.c.c66b71ba
-0000f869  w      .debug_info	00000000 .hidden hal.c.29109180
+0002fdc0  w      .debug_info	00000000 .hidden chprintf.c.898c3e0f
+00017a66  w      .debug_info	00000000 .hidden hal_serial.c.d00e9db4
+0005ef2d  w      .debug_info	00000000 .hidden cmdgpio.c.3ad30f58
+00033629  w      .debug_info	00000000 .hidden shell.c.c5c8337f
 20000400 g       .pstack	00000000 __main_thread_stack_base__
-00024b33  w      .debug_info	00000000 .hidden hal_pal_lld.c.f475f560
 0800cd08 g       *ABS*	00000000 __ram7_init_text__
 00000000 g       .ram3_init	00000000 __ram3_init__
-0004aa14  w      .debug_info	00000000 .hidden cmdsof.c.b812e7a6
-0003fae9  w      .debug_info	00000000 .hidden appshell.c.812acf83
-0001caec  w      .debug_info	00000000 .hidden hal_usb.c.79f78bfa
+0001ed5f  w      .debug_info	00000000 .hidden hal_wdg.c.96fcc8ec
+00042a7d  w      .debug_info	00000000 .hidden cmdtasks.c.4c5002ea
 20000000 g       .ARM.exidx	00000000 __ram0_start__
 00000000 g       .ram1_init	00000000 __ram1_init__
 08003ac0  w    F .text	00000002 .hidden __aeabi_idiv0
@@ -2198,12 +2196,13 @@ SYMBOL TABLE:
 0800cbe0 g       *ABS*	00000000 _textdata_start
 00000000 g       .ARM.exidx	00000000 __ram5_start__
 08003f74 g     F .text	00000034 strspn
+00055c0a  w      .debug_info	00000000 .hidden cmdi2c.c.15896e7a
+00047de2  w      .debug_info	00000000 .hidden tca6408a.c.b404fdd9
 08003ed4 g     F .text	0000005c strlen
-0005ef2d  w      .debug_info	00000000 .hidden cmdgpio.c.812e898f
 00000000 g       .ram2	00000000 __ram2_free__
-000163f2  w      .debug_info	00000000 .hidden hal_pal.c.b995ff2b
 00000000 g       .ram4	00000000 __ram4_free__
 20005000 g       *ABS*	00000000 __ram0_end__
+00024b33  w      .debug_info	00000000 .hidden hal_pal_lld.c.50143808
 08003c50 g     F .text	000000c6 strchr
 20000000 g       .mstack	00000000 __main_stack_base__
 00000400 g       *ABS*	00000000 __main_stack_size__
@@ -2211,9 +2210,10 @@ SYMBOL TABLE:
 00000000 g       .ram7	00000000 __ram7_noinit__
 20000800 g       .pstack	00000000 __process_stack_end__
 0800b7cc g     F .text	00000080 __early_init
+00027db6  w      .debug_info	00000000 .hidden hal_spi_lld.c.32cf15fd
 00000000 g       .ARM.exidx	00000000 __ram3_start__
 00000400 g       *ABS*	00000000 __process_stack_size__
 08003f30 g     F .text	00000044 strpbrk
-000203b5  w      .debug_info	00000000 .hidden nvic.c.408178f2
+000261ea  w      .debug_info	00000000 .hidden hal_i2c_lld.c.cf4234ac
 
 
