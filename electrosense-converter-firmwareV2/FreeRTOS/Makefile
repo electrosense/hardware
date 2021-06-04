@@ -12,7 +12,7 @@ GCCPATH=$(shell $(CC) -print-search-dirs | awk '/install/{print $$2}')
 
 #Most CFLAGs are ignored when an LTO compatible linker is used, but not otherwise. This is why they have been set.
 CFLAGS=-c -Wall -Os -mcpu=$(DEVICE) -fomit-frame-pointer -falign-functions=16 -ffunction-sections -fdata-sections -fno-common -mthumb -flto -I include -I . -I $(PORTABLE)
-ARFLAGS=--plugin $(GCCPATH)/liblto_plugin.so
+#ARFLAGS=--plugin $(GCCPATH)/liblto_plugin.so
 
 EXECUTABLE=libFreeRTOS
 
@@ -25,7 +25,7 @@ OBJECTS_OBJ = $(addprefix obj/,$(SOURCES_SRC:.c=.o)) $(addprefix obj/,$(notdir $
 all: $(EXECUTABLE).a
 
 $(EXECUTABLE).a: $(OBJECTS_OBJ)
-	$(AR) rcs $(@) $(OBJECTS_OBJ) $(ARFLAGS) 
+	$(AR) rcs $(@) $(OBJECTS_OBJ) #$(ARFLAGS) 
 	
 obj/%.o: %.c $(INCLUDES_SRC)
 	@mkdir -p obj

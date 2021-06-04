@@ -1,57 +1,48 @@
 build/obj/packetqueue.o: util/packetqueue/packetqueue.c \
  util/packetqueue/packetqueue.h \
- /usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h \
- /usr/lib/gcc/arm-none-eabi/9.2.1/include/stdbool.h \
- /usr/include/newlib/string.h /usr/include/newlib/_ansi.h \
- /usr/include/newlib/newlib.h /usr/include/newlib/_newlib_version.h \
- /usr/include/newlib/sys/config.h /usr/include/newlib/machine/ieeefp.h \
- /usr/include/newlib/sys/features.h /usr/include/newlib/sys/reent.h \
- /usr/include/newlib/_ansi.h \
- /usr/lib/gcc/arm-none-eabi/9.2.1/include/stddef.h \
- /usr/include/newlib/sys/_types.h /usr/include/newlib/machine/_types.h \
- /usr/include/newlib/machine/_default_types.h \
- /usr/include/newlib/sys/lock.h /usr/include/newlib/sys/cdefs.h \
- /usr/include/newlib/sys/_locale.h /usr/include/newlib/strings.h \
- /usr/include/newlib/sys/string.h
-
+ /usr/lib/gcc/arm-none-eabi/10.2.0/include/stdint.h \
+ /usr/arm-none-eabi/include/stdint.h \
+ /usr/arm-none-eabi/include/machine/_default_types.h \
+ /usr/arm-none-eabi/include/sys/features.h \
+ /usr/arm-none-eabi/include/_newlib_version.h \
+ /usr/arm-none-eabi/include/sys/_intsup.h \
+ /usr/arm-none-eabi/include/sys/_stdint.h \
+ /usr/lib/gcc/arm-none-eabi/10.2.0/include/stdbool.h \
+ /usr/arm-none-eabi/include/string.h /usr/arm-none-eabi/include/_ansi.h \
+ /usr/arm-none-eabi/include/newlib.h \
+ /usr/arm-none-eabi/include/sys/config.h \
+ /usr/arm-none-eabi/include/machine/ieeefp.h \
+ /usr/arm-none-eabi/include/sys/reent.h \
+ /usr/arm-none-eabi/include/_ansi.h \
+ /usr/lib/gcc/arm-none-eabi/10.2.0/include/stddef.h \
+ /usr/arm-none-eabi/include/sys/_types.h \
+ /usr/arm-none-eabi/include/machine/_types.h \
+ /usr/arm-none-eabi/include/sys/lock.h \
+ /usr/arm-none-eabi/include/sys/cdefs.h \
+ /usr/arm-none-eabi/include/sys/_locale.h \
+ /usr/arm-none-eabi/include/strings.h \
+ /usr/arm-none-eabi/include/sys/string.h
 util/packetqueue/packetqueue.h:
-
-/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h:
-
-/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdbool.h:
-
-/usr/include/newlib/string.h:
-
-/usr/include/newlib/_ansi.h:
-
-/usr/include/newlib/newlib.h:
-
-/usr/include/newlib/_newlib_version.h:
-
-/usr/include/newlib/sys/config.h:
-
-/usr/include/newlib/machine/ieeefp.h:
-
-/usr/include/newlib/sys/features.h:
-
-/usr/include/newlib/sys/reent.h:
-
-/usr/include/newlib/_ansi.h:
-
-/usr/lib/gcc/arm-none-eabi/9.2.1/include/stddef.h:
-
-/usr/include/newlib/sys/_types.h:
-
-/usr/include/newlib/machine/_types.h:
-
-/usr/include/newlib/machine/_default_types.h:
-
-/usr/include/newlib/sys/lock.h:
-
-/usr/include/newlib/sys/cdefs.h:
-
-/usr/include/newlib/sys/_locale.h:
-
-/usr/include/newlib/strings.h:
-
-/usr/include/newlib/sys/string.h:
+/usr/lib/gcc/arm-none-eabi/10.2.0/include/stdint.h:
+/usr/arm-none-eabi/include/stdint.h:
+/usr/arm-none-eabi/include/machine/_default_types.h:
+/usr/arm-none-eabi/include/sys/features.h:
+/usr/arm-none-eabi/include/_newlib_version.h:
+/usr/arm-none-eabi/include/sys/_intsup.h:
+/usr/arm-none-eabi/include/sys/_stdint.h:
+/usr/lib/gcc/arm-none-eabi/10.2.0/include/stdbool.h:
+/usr/arm-none-eabi/include/string.h:
+/usr/arm-none-eabi/include/_ansi.h:
+/usr/arm-none-eabi/include/newlib.h:
+/usr/arm-none-eabi/include/sys/config.h:
+/usr/arm-none-eabi/include/machine/ieeefp.h:
+/usr/arm-none-eabi/include/sys/reent.h:
+/usr/arm-none-eabi/include/_ansi.h:
+/usr/lib/gcc/arm-none-eabi/10.2.0/include/stddef.h:
+/usr/arm-none-eabi/include/sys/_types.h:
+/usr/arm-none-eabi/include/machine/_types.h:
+/usr/arm-none-eabi/include/sys/lock.h:
+/usr/arm-none-eabi/include/sys/cdefs.h:
+/usr/arm-none-eabi/include/sys/_locale.h:
+/usr/arm-none-eabi/include/strings.h:
+/usr/arm-none-eabi/include/sys/string.h:
