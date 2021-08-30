@@ -191,6 +191,7 @@ static void converterSetGpio(const ConverterManager* converter, uint32_t gpioVal
     uint8_t gpioVals = gpioValues;// & 0xFF;
     switch(converter->activeBand){
         case 0:
+            systemEnableMCO(1);
             gpioSetPin(GPIO_SW_SW,0);//PB 0
             gpioSetPin(GPIO_SW_BYPASS,0);//PB 12
             gpioSetPin(GPIO_SW_MIX, 1);//PB 13
@@ -257,7 +258,8 @@ static void converterSetGpio(const ConverterManager* converter, uint32_t gpioVal
     /* Handle the others */
     gpioSetPin(GPIO_MIX_SW_EN, (gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_EN)) == 0);
     
-    systemEnableMCO((gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_LO)) > 0);
+    //systemEnableMCO((gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_LO)) > 0);
+    
 
 
     uint32_t mixBlinkDelay = 0;
