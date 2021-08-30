@@ -210,8 +210,8 @@ static void converterSetGpio(const ConverterManager* converter, uint32_t gpioVal
         case 2:
             gpioSetPin(GPIO_SW_SW,1);//PB 0
             gpioSetPin(GPIO_SW_BYPASS,0);//PB 12
-            gpioSetPin(GPIO_SW_MIX, 0);//PB 13
-            gpioSetPin(GPIO_MIX_X2, 0);//PB 14
+            gpioSetPin(GPIO_SW_MIX, 1);//PB 13
+            gpioSetPin(GPIO_MIX_X2, 1);//PB 14
             gpioSetPin(GPIO_MIX_EN, 1);//PB 15
             gpioSetPin(GPIO_LOWBAND, 0);//PA 2
             //gpioSetPin(CONVERTER_IO_PIN_LED2,1);
@@ -219,8 +219,8 @@ static void converterSetGpio(const ConverterManager* converter, uint32_t gpioVal
         case 3:
             gpioSetPin(GPIO_SW_SW,1);//PB 0
             gpioSetPin(GPIO_SW_BYPASS,0);//PB 12
-            gpioSetPin(GPIO_SW_MIX, 0);//PB 13
-            gpioSetPin(GPIO_MIX_X2, 0);//PB 14
+            gpioSetPin(GPIO_SW_MIX, 1);//PB 13
+            gpioSetPin(GPIO_MIX_X2, 1);//PB 14
             gpioSetPin(GPIO_MIX_EN, 1);//PB 15
             gpioSetPin(GPIO_LOWBAND, 0);//PA 2
             //gpioSetPin(CONVERTER_IO_PIN_LED2,1);
@@ -228,8 +228,8 @@ static void converterSetGpio(const ConverterManager* converter, uint32_t gpioVal
         case 4:
             gpioSetPin(GPIO_SW_SW,1);//PB 0
             gpioSetPin(GPIO_SW_BYPASS,0);//PB 12
-            gpioSetPin(GPIO_SW_MIX, 0);//PB 13
-            gpioSetPin(GPIO_MIX_X2, 0);//PB 14
+            gpioSetPin(GPIO_SW_MIX, 1);//PB 13
+            gpioSetPin(GPIO_MIX_X2, 1);//PB 14
             gpioSetPin(GPIO_MIX_EN, 1);//PB 15
             gpioSetPin(GPIO_LOWBAND, 0);//PA 2
             //gpioSetPin(CONVERTER_IO_PIN_LED2,1);
