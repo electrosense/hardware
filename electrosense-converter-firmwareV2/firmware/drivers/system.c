@@ -191,12 +191,12 @@ static void converterSetGpio(const ConverterManager* converter, uint32_t gpioVal
     uint8_t gpioVals = gpioValues;// & 0xFF;
     switch(converter->activeBand){
         case 0:
-            systemEnableMCO(1);
             gpioSetPin(GPIO_SW_SW,0);//PB 0
             gpioSetPin(GPIO_SW_BYPASS,0);//PB 12
             gpioSetPin(GPIO_SW_MIX, 1);//PB 13
             gpioSetPin(GPIO_MIX_X2, 0);//PB 14
             gpioSetPin(GPIO_MIX_EN, 0);//PB 15
+            gpioSetPin(GPIO_MIX_SW_EN,1);
             //gpioSetPin(CONVERTER_IO_PIN_LED2,0);
             break;
         case 1:
@@ -235,6 +235,7 @@ static void converterSetGpio(const ConverterManager* converter, uint32_t gpioVal
             gpioSetPin(GPIO_LOWBAND, 0);//PA 2
             //gpioSetPin(CONVERTER_IO_PIN_LED2,1);
             break;
+        default:
         case 5:
             gpioSetPin(GPIO_SW_SW,0);//PB 0
             gpioSetPin(GPIO_SW_BYPASS,1);//PB 12
@@ -244,7 +245,9 @@ static void converterSetGpio(const ConverterManager* converter, uint32_t gpioVal
             gpioSetPin(GPIO_LOWBAND, 0);//PA 2
             //gpioSetPin(CONVERTER_IO_PIN_LED2,0);
             break;
+        
     }
+    systemEnableMCO(true);
     /*syslog("gpio set: %X",gpioVals);
     syslog("Active band: %d",converter->activeBand);
     //gpioSetPort(GPIO_PORT_GPIOB, i2cGpio);
@@ -256,7 +259,7 @@ static void converterSetGpio(const ConverterManager* converter, uint32_t gpioVal
     gpioSetPin(GPIO_LOWBAND, (gpioVals & _BV(CONVERTER_IO_PIN_LOWBAND)) == 0);
     
     /* Handle the others */
-    gpioSetPin(GPIO_MIX_SW_EN, (gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_EN)) == 0);
+    //gpioSetPin(GPIO_MIX_SW_EN, (gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_EN)) == 0);
     
     //systemEnableMCO((gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_LO)) > 0);
     
@@ -456,9 +459,11 @@ void startSystemComponents(void)
 void systemEnableMCO(bool enable)
 {
     if(enable) {
-        RCC->CFGR |= STM32_MCOSEL_SYSCLK;
+        //RCC->CFGR |= STM32_MCOSEL_SYSCLK;
+        RCC->CFGR |=STM32_MCOSEL_PLLDIV2;
     } else {
-        RCC->CFGR &=~ STM32_MCOSEL_SYSCLK;
+        //RCC->CFGR &=~ STM32_MCOSEL_SYSCLK;
+        RCC->CFGR &=~STM32_MCOSEL_PLLDIV2;
     }
 }
 
