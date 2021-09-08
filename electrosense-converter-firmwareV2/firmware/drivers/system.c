@@ -166,12 +166,14 @@ static const GPIOPinInit platformI2CPinConfig[] = {
 /* ~~~~~~~~~~~~~~~~~~~~~ Converter ~~~~~~~~~~~~~~~~~~~~~ */
 ConverterManager converter;
 static const uint32_t bandSpecificGpioSettings[] = {
+    
     _BV(CONVERTER_IO_PIN_SW_SW) | _BV(CONVERTER_IO_PIN_LED1), 	 /* SW */
-    _BV(CONVERTER_IO_PIN_LOWBAND) | _BV(CONVERTER_IO_PIN_SW_MIX) | _BV(CONVERTER_IO_PIN_LED2),    /* SHF, 1.5-3.5 GHz */
+    0x8001, //_BV(CONVERTER_IO_PIN_LOWBAND) | _BV(CONVERTER_IO_PIN_SW_MIX) | _BV(CONVERTER_IO_PIN_LED2),    /* SHF, 1.5-3.5 GHz */
     _BV(CONVERTER_IO_PIN_SW_MIX) | _BV(CONVERTER_IO_PIN_LED2), /* SHF, 3.5-6.5 GHz */
     _BV(CONVERTER_IO_PIN_SW_MIX) | _BV(CONVERTER_IO_PIN_LED2), /* SHF, 6.5-10.5 GHz */
     _BV(CONVERTER_IO_PIN_SW_MIX) | _BV(CONVERTER_IO_PIN_LED2), /* SHF, 10.5-13.5 GHz */
-    _BV(CONVERTER_IO_PIN_SW_BYPASS), /* Bypass */
+    _BV(CONVERTER_IO_PIN_SW_BYPASS),//| _BV(CONVERTER_IO_PIN_LED1), /* Bypass */
+    
 };
 
 static xTaskHandle mixLedTaskHandle;
@@ -186,7 +188,68 @@ static void converterSetGpio(const ConverterManager* converter, uint32_t gpioVal
     /* The lowest 8 bits are all connected over I2C */
     //Not anymore! Changed in hardware V2
     
-    uint8_t gpioVals = gpioValues & 0xFF;
+    uint8_t gpioVals = gpioValues;// & 0xFF;
+    switch(converter->activeBand){
+        case 0:
+            gpioSetPin(GPIO_SW_SW,0);//PB 0
+            gpioSetPin(GPIO_SW_BYPASS,0);//PB 12
+            gpioSetPin(GPIO_SW_MIX, 1);//PB 13
+            gpioSetPin(GPIO_MIX_X2, 0);//PB 14
+            gpioSetPin(GPIO_MIX_EN, 0);//PB 15
+            gpioSetPin(GPIO_MIX_SW_EN,1);
+            //gpioSetPin(CONVERTER_IO_PIN_LED2,0);
+            break;
+        case 1:
+            gpioSetPin(GPIO_SW_SW,1);//PB 0
+            gpioSetPin(GPIO_SW_BYPASS,0);//PB 12
+            gpioSetPin(GPIO_SW_MIX, 0);//PB 13
+            gpioSetPin(GPIO_MIX_X2, 0);//PB 14
+            gpioSetPin(GPIO_MIX_EN, 1);//PB 15
+            gpioSetPin(GPIO_LOWBAND, 1);//PA 2
+            //gpioSetPin(CONVERTER_IO_PIN_LED2,1);
+            break;
+        case 2:
+            gpioSetPin(GPIO_SW_SW,1);//PB 0
+            gpioSetPin(GPIO_SW_BYPASS,0);//PB 12
+            gpioSetPin(GPIO_SW_MIX, 1);//PB 13
+            gpioSetPin(GPIO_MIX_X2, 1);//PB 14
+            gpioSetPin(GPIO_MIX_EN, 1);//PB 15
+            gpioSetPin(GPIO_LOWBAND, 0);//PA 2
+            //gpioSetPin(CONVERTER_IO_PIN_LED2,1);
+            break;
+        case 3:
+            gpioSetPin(GPIO_SW_SW,1);//PB 0
+            gpioSetPin(GPIO_SW_BYPASS,0);//PB 12
+            gpioSetPin(GPIO_SW_MIX, 1);//PB 13
+            gpioSetPin(GPIO_MIX_X2, 1);//PB 14
+            gpioSetPin(GPIO_MIX_EN, 1);//PB 15
+            gpioSetPin(GPIO_LOWBAND, 0);//PA 2
+            //gpioSetPin(CONVERTER_IO_PIN_LED2,1);
+            break;
+        case 4:
+            gpioSetPin(GPIO_SW_SW,1);//PB 0
+            gpioSetPin(GPIO_SW_BYPASS,0);//PB 12
+            gpioSetPin(GPIO_SW_MIX, 1);//PB 13
+            gpioSetPin(GPIO_MIX_X2, 1);//PB 14
+            gpioSetPin(GPIO_MIX_EN, 1);//PB 15
+            gpioSetPin(GPIO_LOWBAND, 0);//PA 2
+            //gpioSetPin(CONVERTER_IO_PIN_LED2,1);
+            break;
+        default:
+        case 5:
+            gpioSetPin(GPIO_SW_SW,0);//PB 0
+            gpioSetPin(GPIO_SW_BYPASS,1);//PB 12
+            gpioSetPin(GPIO_SW_MIX, 0);//PB 13
+            gpioSetPin(GPIO_MIX_X2, 0);//PB 14
+            gpioSetPin(GPIO_MIX_EN, 0);//PB 15
+            gpioSetPin(GPIO_LOWBAND, 0);//PA 2
+            //gpioSetPin(CONVERTER_IO_PIN_LED2,0);
+            break;
+        
+    }
+    systemEnableMCO(true);
+    /*syslog("gpio set: %X",gpioVals);
+    syslog("Active band: %d",converter->activeBand);
     //gpioSetPort(GPIO_PORT_GPIOB, i2cGpio);
     gpioSetPin(GPIO_SW_BYPASS, (gpioVals & _BV(CONVERTER_IO_PIN_SW_BYPASS)) == 0);
     gpioSetPin(GPIO_SW_MIX, (gpioVals & _BV(CONVERTER_IO_PIN_SW_MIX)) == 0);
@@ -196,8 +259,10 @@ static void converterSetGpio(const ConverterManager* converter, uint32_t gpioVal
     gpioSetPin(GPIO_LOWBAND, (gpioVals & _BV(CONVERTER_IO_PIN_LOWBAND)) == 0);
     
     /* Handle the others */
-    gpioSetPin(GPIO_MIX_SW_EN, (gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_EN)) == 0);
-    systemEnableMCO((gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_LO)) > 0);
+    //gpioSetPin(GPIO_MIX_SW_EN, (gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_EN)) == 0);
+    
+    //systemEnableMCO((gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_LO)) > 0);
+    
 
 
     uint32_t mixBlinkDelay = 0;
@@ -394,9 +459,11 @@ void startSystemComponents(void)
 void systemEnableMCO(bool enable)
 {
     if(enable) {
-        RCC->CFGR |= STM32_MCOSEL_SYSCLK;
+        //RCC->CFGR |= STM32_MCOSEL_SYSCLK;
+        RCC->CFGR |=STM32_MCOSEL_PLLDIV2;
     } else {
-        RCC->CFGR &=~ STM32_MCOSEL_SYSCLK;
+        //RCC->CFGR &=~ STM32_MCOSEL_SYSCLK;
+        RCC->CFGR &=~STM32_MCOSEL_PLLDIV2;
     }
 }
 
