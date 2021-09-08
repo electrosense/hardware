@@ -1,0 +1,29 @@
+Removed Pin From Net: NetName=GND Pin=H2-0
+Removed Member From Class: ClassName=RF Member=NetU7_3
+Change Component DesignItemId : Designator=R15 Old DesignItemId=240K/603 New DesignItemId=240R/603
+Change Component Comment : Designator=R11 Old Comment= New Comment=DNP
+Change Component Description : Designator=R15 Old Description=weerstand SMD603, 240K New Description=weerstand SMD603, 240R
+Change Component Library : Designator=R15 Old Library=CDE_Library_Local.IntLib New Library=CDE_Library.IntLib
+Change component parameters: Designator = "R15" ("R15"); Footprint = "smd C0603_0.45"; UniqueID = "\CHCMGKKC\FHVOIFMK" ("\CHCMGKKC\FHVOIFMK")
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C70(smd C0402)
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "CSMD402/100pF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC70_1 Pin=C70-1
+Added Pin To Net: NetName=NetC70_1 Pin=U7-3
+Added Net: Name=NetC70_1
+Added Pin To Net: NetName=NetC70_2 Pin=C70-2
+Added Pin To Net: NetName=NetC70_2 Pin=U8-5
+Added Net: Name=NetC70_2
+Added Member To Class: ClassName=U_Mixer Member=Component C70 100pF
+Added Member To Class: ClassName=RF Member=Wire NetC70_1
+Added Member To Class: ClassName=RF Member=Wire NetC70_2
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF
