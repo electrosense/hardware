@@ -1,13 +1,13 @@
 Protel Design System Design Rule Check
-PCB File : D:\elesensehw\hardware\extension_board_v2\Template2.PcbDoc
-Date     : 11/26/2020
-Time     : 11:00:11 AM
+PCB File : D:\hardware\extension_board_v2\Template2.PcbDoc
+Date     : 20/09/2021
+Time     : 13:39:23
 
 WARNING: Unplated multi-layer pad(s) detected
-   Pad JUSB-6(1.87mm,18.36mm) on Multi-Layer on Net GND
-   Pad JUSB-6(1.87mm,26.54mm) on Multi-Layer on Net GND
-   Pad JUSB-6(5.05mm,24.675mm) on Multi-Layer on Net GND
-   Pad JUSB-6(5.05mm,20.225mm) on Multi-Layer on Net GND
+   Pad JUSB-6(68.638mm,29.218mm) on Multi-Layer on Net GND
+   Pad JUSB-6(68.638mm,21.038mm) on Multi-Layer on Net GND
+   Pad JUSB-6(65.458mm,22.903mm) on Multi-Layer on Net GND
+   Pad JUSB-6(65.458mm,27.353mm) on Multi-Layer on Net GND
 
 Processing Rule : Clearance Constraint (Gap=0.15mm) (All),(All)
 Rule Violations :0
@@ -22,21 +22,21 @@ Processing Rule : Un-Routed Net Constraint ( (All) )
 Rule Violations :0
 
 Processing Rule : Width Constraint (Min=0.15mm) (Max=2.54mm) (Preferred=0.22mm) (All)
-   Violation between Width Constraint: Arc (38.25mm,34.475mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
-   Violation between Width Constraint: Track (35.55mm,34.475mm)(35.55mm,35.8mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
-   Violation between Width Constraint: Track (35.55mm,34.475mm)(35.925mm,34.475mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
-   Violation between Width Constraint: Track (35.55mm,37.175mm)(35.55mm,35.8mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
-   Violation between Width Constraint: Track (35.55mm,37.175mm)(35.925mm,37.175mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
-   Violation between Width Constraint: Track (35.925mm,34.475mm)(36.575mm,34.475mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
-   Violation between Width Constraint: Track (35.925mm,37.175mm)(36.575mm,37.175mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
-   Violation between Width Constraint: Track (36.575mm,34.475mm)(37.226mm,34.475mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
-   Violation between Width Constraint: Track (36.575mm,37.175mm)(37.225mm,37.175mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
-   Violation between Width Constraint: Track (37.225mm,37.175mm)(37.875mm,37.175mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
-   Violation between Width Constraint: Track (37.226mm,34.475mm)(37.875mm,34.475mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
-   Violation between Width Constraint: Track (37.875mm,34.475mm)(38.05mm,34.475mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
-   Violation between Width Constraint: Track (37.875mm,37.175mm)(38.25mm,37.175mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
-   Violation between Width Constraint: Track (38.25mm,34.675mm)(38.25mm,36.8mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
-   Violation between Width Constraint: Track (38.25mm,36.8mm)(38.25mm,37.175mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Arc (35.786mm,34.458mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (33.086mm,34.458mm)(33.086mm,35.783mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (33.086mm,34.458mm)(33.461mm,34.458mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (33.086mm,37.158mm)(33.086mm,35.783mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (33.086mm,37.158mm)(33.461mm,37.158mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (33.461mm,34.458mm)(34.111mm,34.458mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (33.461mm,37.158mm)(34.111mm,37.158mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (34.111mm,34.458mm)(34.762mm,34.458mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (34.111mm,37.158mm)(34.761mm,37.158mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (34.761mm,37.158mm)(35.411mm,37.158mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (34.762mm,34.458mm)(35.411mm,34.458mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (35.411mm,34.458mm)(35.586mm,34.458mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (35.411mm,37.158mm)(35.786mm,37.158mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (35.786mm,34.658mm)(35.786mm,36.783mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
+   Violation between Width Constraint: Track (35.786mm,36.783mm)(35.786mm,37.158mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.15mm
 Rule Violations :15
 
 Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
@@ -69,4 +69,4 @@ Rule Violations :0
 
 Violations Detected : 15
 Waived Violations : 0
-Time Elapsed        : 00:00:00
+Time Elapsed        : 00:00:02
