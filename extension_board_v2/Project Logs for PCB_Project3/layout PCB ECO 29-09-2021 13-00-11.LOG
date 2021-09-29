@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=GND Pin=H2-0
+Removed Pin From Net: NetName=GND Pin=X2-2
+Removed Pin From Net: NetName=X1_OUT Pin=X2-3
+Removed Pin From Net: NetName=3V3 Pin=X2-4
+Removed Member From Class: ClassName=U_LO Member=X2
+Added Component: Designator=X?(TCXO 2.5x2x0.8mm)
+Added Pin To Net: NetName=GND Pin=X?-2
+Added Pin To Net: NetName=X1_OUT Pin=X?-3
+Added Pin To Net: NetName=3V3 Pin=X?-4
+Added Member To Class: ClassName=U_Mixer Member=Component D3 ESD0P8RFL
+Added Member To Class: ClassName=U_Mixer Member=Component U7 SKY13286-359LF
+Added Member To Class: ClassName=U_LO Member=Component X? 7L-38.400MDG-T
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF
