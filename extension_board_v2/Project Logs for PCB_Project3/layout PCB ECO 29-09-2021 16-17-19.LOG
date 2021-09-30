@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=GND Pin=H2-0
+Removed Pin From Net: NetName=3V3 Pin=RZ100-1
+Removed Pin From Net: NetName=1V8 Pin=RZ100-2
+Removed Member From Class: ClassName=U_LO Member=RZ100
+Added Component: Designator=R100(smd C0603_0.45)
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3V3 Pin=R100-1
+Added Pin To Net: NetName=1V8 Pin=R100-2
+Added Member To Class: ClassName=U_LO Member=Component R100 240
+Added Room: Name=Toplevel
+Added Room: Name=U_CPU
+Added Room: Name=U_LO
+Added Room: Name=U_Mixer
+Added Room: Name=U_MixerHF
